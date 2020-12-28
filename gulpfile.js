@@ -87,7 +87,7 @@ function styles() {
 function images() {
 	return src(paths.images.src)
 		.pipe(webp({
-			quality: 70
+			quality: 90
 		}))
 		.pipe(src(paths.images.src))
 		.pipe(newer(paths.images.dest))

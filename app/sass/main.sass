@@ -1,1 +1,347 @@
 @import config
+
+
+// Header Block
+.header
+  position: relative
+  padding-top: 29px
+  &__search
+    margin-left: 17px
+    +media-breakpoint-down(sm)
+      margin-left: 0
+      margin-top: 35px
+  &__iconMenu
+    display: flex
+    justify-content: flex-end
+    +media-breakpoint-down(md)
+      justify-content: space-between
+  .mainMenu
+    margin-top: 26px
+  &__bottom
+    position: relative
+    +media-breakpoint-down(sm)
+      display: none
+
+// Logotype Block
+.logotype
+  display: block
+  max-width: 152px
+  img
+    max-width: 100%
+    height: auto
+
+// Hamburger Block
+.hamburger
+  position: absolute
+  right: 15px
+  top: 0
+  width: 35px
+  height: 35px
+  cursor: pointer
+  justify-content: center
+  align-items: center
+  display: none
+  +media-breakpoint-down(sm)
+    display: flex
+  &__menu
+    width: 35px
+    height: 3px
+    background: $textcolor
+    transition: $trs
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      width: 35px
+      height: 3px
+      background: $textcolor
+      transition: $trs
+    &::before
+      transform: translateY(-10px)
+    &::after
+      transform: translateY(10px)
+  &.hamburger__active
+    .hamburger__menu
+      transform: translateX(-40px)
+      background-color: transparent
+      &::before
+        transform: rotate(45deg) translate(30px, -30px)
+      &::after
+        transform: rotate(-45deg) translate(30px, 30px)
+      
+  
+// Mobile Menu
+.mobileMenu
+  position: absolute
+  top: 50%
+  left: 0
+  display: none
+  height: auto
+  width: 100%
+  transition: $trs
+  z-index: 99
+  opacity: 0
+  visibility: hidden
+  &-active
+    opacity: 1
+    visibility: visible
+  +media-breakpoint-down(sm)
+    display: block
+  &__nav
+    position: relative
+    background: $mainBgColor
+    width: 100%
+    display: flex
+    flex-direction: column
+    padding: 35px 0
+  &__link
+    display: block
+    margin-bottom: 20px
+    box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25)
+    border-radius: 300px
+    padding: 9px 20px
+    font-size: 18px
+    color: $textcolor
+    line-height: 22px
+    font-weight: 500
+    &:hover
+      color: #ffffff
+      background: linear-gradient(90deg, #3C7AEA 0%, #59BCF4 100%)
+      text-decoration: none
+    &-active
+      color: #ffffff
+      background: linear-gradient(90deg, #3C7AEA 0%, #59BCF4 100%)
+      text-decoration: none
+
+// Search Block
+.search
+  position: relative
+  +media-breakpoint-down(md)
+    width: 100%
+  &::after
+    content: ''
+    width: 15px
+    height: 15px
+    display: block
+    background-image: url(../images/dest/search.svg)
+    position: absolute
+    top: 10px
+    left: 15px
+  input
+    height: 36px
+    width: 350px
+    padding-left: 39px
+    color: #555668
+    font-size: 15px
+    font-weight: 500
+    border: none
+    background: #ffffff
+    box-shadow: -3px -4px 5px #FFFFFF
+    border-radius: 24px
+    +media-breakpoint-down(md)
+      width: 100%
+
+// Icon menu block
+.iconMenu
+  position: relative
+  +media-breakpoint-down(sm)
+    display: none
+  &__link
+    display: inline-block
+    width: 36px
+    height: 36px
+    background: #ffffff
+    line-height: 32px
+    text-align: center
+    box-shadow: -3px -3px 5px #FFFFFF
+    border-radius: 50%
+    margin-left: 30px
+    transition: $trs
+    +media-breakpoint-down(lg)
+      margin-left: 10px
+    +media-breakpoint-down(md)
+      margin-left: 0
+    &:hover
+      background: $themeGradient
+      transform: scale(1.1)
+      svg
+        fill: #fff
+    &:last-child
+      margin-right: 0
+    svg
+      fill: #7676A8
+
+// Main Menu
+.mainMenu
+  position: relative
+  display: flex
+  justify-content: space-between
+  &__link
+    position: relative
+    display: inline-block
+    background: $themeGradient
+    box-shadow: 0px 10px 20px rgba(77, 73, 245, 0.27)
+    font-family: HelveticaNeue
+    font-weight: 700
+    color: #ffffff
+    font-size: 20px
+    line-height: 25px
+    padding: 19px 26px
+    border-radius: 40px
+    overflow: hidden
+    z-index: 1
+    transition: $trs
+    +media-breakpoint-down(lg)
+      font-size: 18px
+      padding: 16px 24px
+    +media-breakpoint-down(md)
+      padding: 10px
+      font-size: 16px
+    &:hover
+      text-decoration: none
+      color: #ffffff
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      width: 100%
+      height: 0
+      background: $hoverColor
+      z-index: -1
+      top: 0
+      border-radius: 0 0 50% 50%
+      transition: $trs
+    &:hover::before
+      height: 180%
+    svg
+      margin-right: 12px
+      fill: #ffffff
+      width: 33px
+      height: 19px
+      +media-breakpoint-down(md)
+        width: 25px
+        height: 14px
+        margin-bottom: 3px
+        margin-right: 8px
+    &-active
+      color: $textcolor
+      background: $mainBgColor
+      border-bottom-left-radius: unset
+      border-bottom-right-radius: unset
+      z-index: 2
+      &:hover
+        color: $textcolor
+        background: $mainBgColor
+      svg
+        fill: $textcolor
+      &::before
+        display: none
+  .dropdown
+    position: absolute
+    top: 100%
+
+// Dropdown Menu Block
+.dropdown
+  position: relative
+  background: $mainBgColor
+  box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
+  width: 100%
+  height: auto
+  padding: 66px 71px 21px 59px
+  z-index: 2
+  border-radius: 0px 35px 35px 35px
+  transition: $trs
+  opacity: 0
+  visibility: hidden
+  +media-breakpoint-down(md)
+    padding: 40px 40px 10px 50px
+  &__active
+    opacity: 1
+    visibility: visible
+  &__list
+    margin: 0 0 45px 0
+    padding: 0
+    list-style: none
+    +media-breakpoint-down(md)
+      margin: 0 0 30px 0
+  &__item
+    position: relative
+    &:last-child
+      .dropdown__link
+        margin-bottom: 0
+  &__link
+    position: relative
+    display: inline-block
+    color: $textcolor
+    font-size: 16px
+    line-height: 21px
+    margin-bottom: 20px
+    transition: $trs
+    +media-breakpoint-down(md)
+      margin-bottom: 15px
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -2px
+      width: 0
+      height: 1px
+      background: $accent
+      transition: $trs
+    &-title
+      font-weight: 700
+      font-size: 17px
+      +media-breakpoint-down(md)
+        font-size: 16px
+    &:hover
+      color: $accent
+      text-decoration: none
+      &::after
+        width: 100%
+
+// Intro Block
+.intro
+  position: relative
+  padding-top: 55px
+  +media-breakpoint-down(sm)
+    padding-top: 35px
+  &__title
+    margin-top: 43px
+    +media-breakpoint-down(md)
+      margin-top: 0
+  &__text
+    position: relative
+    max-width: 400px
+    margin-top: 21px
+    +media-breakpoint-down(md)
+      max-width: 100%
+      margin-top: 20px
+    p
+      font-size: 17px
+      line-height: 24px
+      +media-breakpoint-down(md)
+        font-size: 16px
+      +media-breakpoint-down(sm)
+        font-size: 15px
+  &__btn
+    margin-top: 25px
+    +media-breakpoint-down(md)
+      margin-top: 20px
+  &__image
+    position: relative
+    +media-breakpoint-down(md)
+      height: 100%
+      display: flex
+      align-items: center
+    +media-breakpoint-down(xs)
+      display: none
+    img
+      position: absolute
+      top: -15px
+      left: -90px
+      object-fit: cover
+      +media-breakpoint-down(md)
+        max-width: 100%
+        position: relative
+        top: 0
+        left: 0

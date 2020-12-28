@@ -1,10 +1,14 @@
 // USER VARIABLES SECTION
-
-$accent: orange // Accent Color
-$fontsize: 16px // Body Font Size
-$textcolor: #333 // Text Color
+$accent: #4188EB // Accent Color
+$hoverColor: #57B9F3
+$fontsize: 17px // Body Font Size
+$textcolor: #595A6C // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 $roboto: Roboto, sans-serif // Roboto Font Family
+$buttonGradient: linear-gradient(90deg, #3C7AEA 0%, #59BCF4 100%)
+$themeGradient: linear-gradient(180deg, #3D7CEA 0%, #57B9F3 100%)
+$mainBgColor: #F0F0F8
+$trs: all .7s ease
 
 // Bootstrap compatible gutter variable => $gutter
 $grid-gutter-width: 30px
@@ -29,8 +33,10 @@ $gutter: $grid-gutter-width
 
 @include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
 @include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+@include font('Roboto', normal, 500, '../fonts/Roboto-Medium.woff2')
 @include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
 @include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+@include font('HelveticaNeue', normal, 700, '../fonts/HelveticaNeueBoldCondensed.woff2')
 
 // GENERAL DOCUMENT STYLES
 
@@ -56,3 +62,70 @@ body
 	line-height: 1.65
 	overflow-x: hidden
 	color: $textcolor
+	background: $mainBgColor
+	
+.container
+	padding-left: 0
+	padding-right: 0
+	+media-breakpoint-down(xs)
+		padding-left: 15px
+		padding-right: 15px
+
+.mb-130
+	margin-bottom: 130px
+.section-title
+	font-weight: 700
+	font-size: 43.5px
+	line-height: 53px
+	text-transform: uppercase
+	+media-breakpoint-down(md)
+		font-size: 36px
+		line-height: 46px
+	+media-breakpoint-down(sm)
+		font-size: 32px
+		line-height: 42px
+	+media-breakpoint-down(xs)
+		font-size: 26px
+		line-height: 36px
+	span
+		color: $accent
+	b
+		color: $accent
+// Theme Btn
+.theme-btn
+	display: inline-block
+	position: relative
+	background: linear-gradient(90deg, #3C7AEA 0%, #59BCF4 100%)
+	box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
+	border-radius: 24px
+	text-transform: uppercase
+	color: #ffffff
+	padding: 15px 49px
+	font-family: HelveticaNeue
+	font-weight: 700
+	font-size: 14px
+	line-height: 17px
+	overflow: hidden
+	z-index: 1
+	transition: $trs
+	+media-breakpoint-down(sm)
+		padding: 12px 40px
+	+media-breakpoint-down(xs)
+		font-size: 12px
+		padding: 12px 36px
+	&:hover
+		text-decoration: none
+		color: #ffffff
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		width: 100%
+		height: 0
+		background: $hoverColor
+		z-index: -1
+		top: 0
+		border-radius: 0 0 50% 50%
+		transition: $trs
+	&:hover::before
+		height: 180%
