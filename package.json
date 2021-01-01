@@ -24,6 +24,9 @@
 		"gulp-stylus": "^2.7.0",
 		"gulp-uglify-es": "^2.0.0",
 		"gulp-webp": "^4.0.1",
-		"gulp-webp-css": "^1.1.0"
+		"gulp-webp-css": "^1.1.0",
+		"jquery": "^3.5.1",
+		"slick-carousel": "^1.8.1",
+		"swiper": "^6.4.5"
 	}
 }

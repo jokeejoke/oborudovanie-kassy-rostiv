@@ -25,9 +25,8 @@
 // Logotype Block
 .logotype
   display: block
-  max-width: 152px
   img
-    max-width: 100%
+    max-width: 152px
     height: auto
 
 // Hamburger Block
@@ -170,6 +169,23 @@
       margin-right: 0
     svg
       fill: #7676A8
+    .count
+      position: absolute
+      bottom: -4px
+      right: -5px
+
+// Count Block
+.count
+  display: block
+  position: relative
+  height: 18px
+  width: 18px
+  color: #ffffff
+  text-align: center
+  line-height: 18px
+  background: #FF553E
+  font-size: 12px
+  border-radius: 50%
 
 // Main Menu
 .mainMenu
@@ -253,11 +269,13 @@
   transition: $trs
   opacity: 0
   visibility: hidden
+  display: none
   +media-breakpoint-down(md)
     padding: 40px 40px 10px 50px
   &__active
     opacity: 1
     visibility: visible
+    display: block
   &__list
     margin: 0 0 45px 0
     padding: 0
@@ -327,9 +345,13 @@
     margin-top: 25px
     +media-breakpoint-down(md)
       margin-top: 20px
+    +media-breakpoint-down(xs)
+      font-size: 16px
+      line-height: 1.8
+      padding: 9px 36px
   &__image
     position: relative
-    +media-breakpoint-down(md)
+    +media-breakpoint-down(lg)
       height: 100%
       display: flex
       align-items: center
@@ -340,8 +362,696 @@
       top: -15px
       left: -90px
       object-fit: cover
-      +media-breakpoint-down(md)
+      +media-breakpoint-down(lg)
         max-width: 100%
         position: relative
         top: 0
         left: 0
+
+// assortment block
+.assortment
+  position: relative
+  margin-bottom: 80px
+  +media-breakpoint-down(sm)
+    margin-bottom: 30px
+  +media-breakpoint-down(xs)
+    margin-bottom: 35px
+  &__title
+    text-align: center
+
+// assortmentSlider
+.assortmentSlider
+  position: relative
+  &__container
+    padding-bottom: 50px
+    padding-top: 50px
+    +media-breakpoint-down(xs)
+      padding-top: 40px
+  &__wrapper
+    position: relative
+  &__slide
+    position: relative
+    overflow: visible
+    width: 248px
+    height: 350px
+    +media-breakpoint-down(lg)
+      height: 340px
+    +media-breakpoint-down(xs)
+      height: 305px
+    &.swiper-slide-active,
+    &.swiper-slide-next
+      .assortmentSlider__title
+        box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
+        +media-breakpoint-down(sm)
+          box-shadow: none
+    &.swiper-slide-next + div
+      .assortmentSlider__title
+        box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
+        +media-breakpoint-down(md)
+          box-shadow: none
+    &:hover
+      .assortmentSlider__image
+        transform: translateX(-50%) scale(1.05)
+  &__image
+    position: absolute
+    top: 0
+    left: 50%
+    max-width: 100%
+    height: 280px
+    object-fit: cover
+    z-index: 2
+    transform: translateX(-50%)
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+    transition: $trs
+    +media-breakpoint-down(lg)
+      height: 250px
+    +media-breakpoint-down(sm)
+      height: 270px
+    +media-breakpoint-down(xs)
+      height: 220px
+  &__title
+    position: absolute
+    bottom: 0
+    left: 0
+    display: block
+    width: 100%
+    height: 249px
+    border-radius: 35px
+    background: $themeGradient
+    transition: $trs
+    +media-breakpoint-down(xs)
+      height: 235px
+    span
+      position: absolute
+      width: 100%
+      height: 100%
+      text-align: center
+      bottom: 0
+      left: 0
+      color: #ffffff
+      font-weight: 700
+      text-transform: uppercase
+      font-size: 15px
+      line-height: 18px
+      z-index: 3
+      display: flex
+      align-items: flex-end
+      justify-content: center
+      padding-bottom: 32px
+      +media-breakpoint-down(lg)
+        font-size: 14px
+
+.questions
+  position: relative
+  &__title
+    text-align: center
+  &__accordion
+    margin-top: 50px
+    +media-breakpoint-down(xs)
+      margin-top: 40px
+
+.accordion
+  position: relative
+  &__item
+    position: relative
+    border-radius: 4px
+    margin-bottom: 24px
+    box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
+    border-radius: 35px
+    &:last-child
+      margin-bottom: 0
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: -39px
+      width: 38px
+      height: 130%
+      border-top: 9px solid
+      border-right: 9px solid
+      border-bottom: 9px solid
+      border-image-slice: 1
+      border-image-source: linear-gradient(0.22deg, #3B74E2 -1.1%, #57B8F2 97.92%)
+      z-index: -1
+      transition: $trs
+      +media-breakpoint-down(lg)
+        width: 32px
+        right: -32px
+      +media-breakpoint-down(md)
+        display: none
+    &:nth-child(even)
+      &::after
+        right: unset
+        left: -39px
+        border-right: none
+        border-left: 9px solid
+        +media-breakpoint-down(lg)
+          left: -32px
+    &:last-child
+      &::after
+        display: none
+    &.active
+      &::after
+        height: 100%
+  &__header
+    position: relative
+    height: 100%
+    width: 100%
+    background: #F0F0F8
+    padding: 26px 15px 26px 66px
+    cursor: pointer
+    font-size: 32px
+    font-weight: 500
+    border-radius: 35px
+    line-height: 49px
+    z-index: 3
+    transition: $trs
+    +media-breakpoint-down(lg)
+      font-size: 27px
+    +media-breakpoint-down(md)
+      font-size: 24px
+      padding: 20px 15px 20px 66px
+    +media-breakpoint-down(sm)
+      font-size: 20px
+      padding: 15px 40px
+    +media-breakpoint-down(xs)
+      font-size: 18px
+      padding: 20px 60px 20px 25px
+      line-height: 1.3
+    &::after
+      content: '\002B'
+      position: absolute
+      right: 35px
+      top: 50%
+      transform: translateY(-50%)
+      width: 51px
+      height: 51px
+      line-height: 51px
+      background: $themeGradient
+      box-shadow: -7px -7px 7px #FFFFFF
+      color: #ffffff
+      display: block
+      font-size: 46px
+      border-radius: 50%
+      text-align: center
+      transition: $trs
+      +media-breakpoint-down(md)
+        width: 45px
+        height: 45px
+        line-height: 45px
+        font-size: 40px
+      +media-breakpoint-down(sm)
+        width: 36px
+        height: 36px
+        line-height: 36px
+        font-size: 32px
+        right: 22px
+      +media-breakpoint-down(xs)
+        right: 15px
+        width: 30px
+        height: 30px
+        line-height: 30px
+        font-size: 32px
+    &.accordion__header-active::after
+      transform: translateY(-50%) rotate(-45deg)
+    &:not(.accordion__header-active):hover
+      &::after
+        transform: translateY(-50%) rotate(180deg)
+    &.accordion__header-active
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0
+  &__body
+    position: relative
+    max-height: 0
+    overflow: hidden
+    transition: all .5s ease
+  &__content
+    position: relative
+    padding: 0 66px 14px
+    background: #F0F0F8
+    border-bottom-left-radius: 35px
+    border-bottom-right-radius: 35px
+    +media-breakpoint-down(sm)
+      padding: 0 40px 14px
+    +media-breakpoint-down(xs)
+      padding: 0 25px 20px
+    p
+      font-size: 16px
+      line-height: 24px
+      margin-bottom: 12px
+      +media-breakpoint-down(sm)
+        font-size: 15px
+
+.complexApproach
+  position: relative
+  &__title
+    text-align: center
+  &__list
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-top: 50px
+    +media-breakpoint-down(lg)
+      justify-content: center
+    +media-breakpoint-down(sm)
+      justify-content: space-between
+    +media-breakpoint-down(xs)
+      margin-top: 40px
+  &__more
+    position: absolute
+    top: 50%
+    right: -7px
+    width: 55px
+    height: 55px
+    background: $mainBgColor
+    border-radius: 50%
+    padding: 8px
+    cursor: pointer
+    z-index: 2
+    +media-breakpoint-down(lg)
+      right: 25px
+    +media-breakpoint-down(sm)
+      display: none
+    &:hover
+      .icon
+        transform: rotate(360deg)
+    &.complexApproach__more-active
+      &:hover
+        .icon
+          transform: rotate(180deg)
+    .icon
+      width: 47px
+      height: 47px
+      background: $buttonGradient
+      line-height: 47px
+      text-align: center
+      border-radius: 50%
+      position: absolute
+      top: 4px
+      right: 5px
+      transition: $trs
+  &__item
+    position: relative
+    margin-right: 50px
+    background: $mainBgColor
+    box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
+    border-radius: 35px
+    text-align: center
+    padding: 21px 24px
+    flex: 1
+    +media-breakpoint-down(lg)
+      flex: 0 0 30%
+      margin-right: 20px
+      margin-bottom: 20px
+    +media-breakpoint-down(sm)
+      flex: 0 0 46%
+      margin-right: 0
+      margin-bottom: 35px
+    +media-breakpoint-down(sm)
+      flex: 0 0 100%
+      margin-bottom: 24px
+    &::after
+      content: ''
+      position: absolute
+      right: -50px
+      top: 50%
+      width: 50px
+      height: 9px
+      background: $buttonGradient
+      +media-breakpoint-down(sm)
+        display: none
+    &:last-child
+      margin-right: 0
+      &::after
+        display: none
+    &:nth-child(3)
+      &::after
+        +media-breakpoint-down(lg)
+          display: none
+  &__name
+    font-weight: 700
+    font-size: 17px
+    line-height: 18px
+    margin: 0
+    +media-breakpoint-down(sm)
+      margin: 15px 0
+      font-size: 20px
+  &__text
+    max-height: 0
+    transition: all 0.5s ease-in
+    overflow: hidden
+    +media-breakpoint-down(sm)
+      max-height: 100% !important
+    &.complexApproach__text-active
+      p
+        opacity: 1
+    p
+      font-size: 13px
+      margin: 7px 0 0 0
+      opacity: 0
+      transition: opacity 1s ease-in
+      +media-breakpoint-down(sm)
+        opacity: 1
+        font-size: 15px
+        margin: 0
+  &__icon
+    position: relative
+    height: 80px
+    margin-bottom: 11px
+
+// Слайдер Кассы
+.kassy
+  position: relative
+  &__title
+    text-align: center
+  &__slider
+    position: relative
+    max-width: 1340px
+    margin: 0 auto
+    display: flex
+  &__flex
+    max-width: 1540px
+    margin: auto
+    +media-breakpoint-down(md)
+      max-width: 750px
+      margin: 50px auto 0
+    +media-breakpoint-down(sm)
+      max-width: 570px
+    +media-breakpoint-down(xs)
+      max-width: 100%
+      margin: 40px auto 0
+
+
+
+
+.kassySlider
+  position: relative
+  margin-top: 50px
+  box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
+  border-radius: 35px
+  background: $mainBgColor
+  max-width: 910px
+  margin-left: 55px
+  +media-breakpoint-down(lg)
+    max-width: 760px !important
+    height: 90%
+  +media-breakpoint-down(md)
+    max-width: 100% !important
+    border-radius: 0
+    border-top-left-radius: 35px
+    border-top-right-radius: 35px
+    height: 100%
+    margin-top: 0
+  +media-breakpoint-down(xs)
+    max-width: 100% !important
+  &__mobile
+    display: none
+    +media-breakpoint-down(sm)
+      display: block
+    .kassySlider__price
+      display: block
+      margin: 0 0 20px
+    .kassySlider__btn
+      display: block
+      text-align: center
+  &__slide
+    position: relative
+    display: flex !important
+    padding: 66px 0 51px
+    +media-breakpoint-down(lg)
+      padding: 55px 0 20px
+    +media-breakpoint-down(sm)
+      flex-direction: column
+      padding: 40px
+  &__left
+    position: relative
+    padding: 25px 48px 0 48px
+    flex: 0 0 60%
+    text-align: center
+    +media-breakpoint-down(lg)
+      flex: 0 0 55%
+      padding: 25px 38px 0 38px
+    +media-breakpoint-down(md)
+      padding: 0
+  &__right
+    position: relative
+    padding-right: 50px
+    +media-breakpoint-down(lg)
+      padding-right: 38px
+    +media-breakpoint-down(sm)
+      padding-right: 0
+  &__image
+    position: relative
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    img
+      max-width: 100%
+      height: 327px
+      object-fit: cover
+      +media-breakpoint-down(lg)
+        height: 250px !important
+      +media-breakpoint-down(md)
+        height: 240px
+      +media-breakpoint-down(xs)
+        height: auto
+        max-height: 200px
+  &__price
+    text-align: center
+    font-size: 40px
+    margin: 41px 0
+    font-weight: 700
+    line-height: 56px
+    +media-breakpoint-down(lg)
+      margin: 20px 0
+      font-size: 24px !important
+    +media-breakpoint-down(xs)
+      display: none
+      font-size: 20px !important
+    span
+      font-weight: 700
+  &__btn
+    font-size: 27px
+    line-height: 33px
+    padding: 18px 98px
+    box-shadow: 15px 15px 40px rgba(43,43,163,.15)
+    border-radius: 38px
+    +media-breakpoint-down(lg)
+      padding: 12px 60px !important
+      font-size: 16px !important
+    +media-breakpoint-down(sm)
+      display: none
+      font-size: 20px !important
+    +media-breakpoint-down(xs)
+      font-size: 16px !important
+      padding: 9px 0 !important
+      line-height: 1.8
+  &__title
+    font-weight: 700
+    font-size: 38px
+    background: $buttonGradient
+    box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
+    border-radius: 100px
+    margin-bottom: 26px
+    padding: 12px 46px
+    line-height: 44px
+    text-align: center
+    +media-breakpoint-down(lg)
+      padding: 12px 60px
+      font-size: 16px !important
+      line-height: 1.8
+    +media-breakpoint-down(md)
+      width: 100%
+    +media-breakpoint-down(sm)
+      font-size: 32px !important
+      margin: 40px 0 30px 0
+      padding: 0
+    +media-breakpoint-down(xs)
+      font-size: 20px !important
+      padding: 5px 0
+      margin: 25px 0
+  &__text
+    p
+      font-weight: 400
+      font-size: 17px
+      line-height: 24px
+      text-align: left
+      margin-bottom: 25px
+      +media-breakpoint-down(lg)
+        font-size: 16px
+      +media-breakpoint-down(sm)
+        text-align: center
+        font-size: 15px
+      +media-breakpoint-down(xs)
+        margin-bottom: 15px
+        line-height: 25px
+      b
+        font-weight: 500
+
+.kassyThumbs
+  position: relative
+  margin-top: 50px
+  +media-breakpoint-down(md)
+    margin-top: 0
+    box-shadow: 15px 20px 23px rgba(43,43,163,.15)
+    border-bottom-left-radius: 35px
+    border-bottom-right-radius: 35px
+    //background: rgba(255,255,255,.35)
+  .slick-track
+    position: relative
+    +media-breakpoint-down(md)
+      display: flex
+  &__slide
+    position: relative
+    margin: 0 auto 36px auto
+    +media-breakpoint-down(lg)
+      margin: 0 auto 27px auto !important
+    +media-breakpoint-down(md)
+      margin: 0 !important
+    +media-breakpoint-down(sm)
+      margin: 0 !important
+      //width: calc(540px / 3) !important
+      box-shadow: none !important
+      //background: rgba(255,255,255,.35)
+      border-radius: 35px
+    +media-breakpoint-down(xs)
+      //width: 270px !important
+    &:not(.slick-current) .kassyThumbs__item::before
+      display: block
+      +media-breakpoint-down(md)
+        display: none
+    &.slick-current + div + div + div .kassyThumbs__item::after
+      display: none
+    &.slick-current + div .kassyThumbs__item::after
+      display: block
+      +media-breakpoint-down(md)
+        display: none
+    &.slick-current + div + div .kassyThumbs__item::after
+      display: block
+      +media-breakpoint-down(md)
+        display: none
+    &.slick-current + div + div + div .kassyThumbs__item::after
+      display: none
+      +media-breakpoint-down(lg)
+        //display: block
+      +media-breakpoint-down(sm)
+        display: none
+    &.slick-active .kassyThumbs__item
+      border-bottom-left-radius: 35px
+      border-bottom-right-radius: 35px
+      display: block
+    &.slick-active:last-child .kassyThumbs__item
+      border-bottom-right-radius: 35px
+    &.slick-active:first-child .kassyThumbs__item::before
+      border-bottom-left-radius: 35px
+    &.slick-active:last-child .kassyThumbs__item::before
+      border-bottom-right-radius: 35px
+    &.slick-current
+      +media-breakpoint-down(md)
+        color: $accent
+  &__image
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    img
+      max-width: 100%
+      height: auto
+      max-height: 119px
+      object-fit: cover
+      +media-breakpoint-down(md)
+        max-height: 110px
+  &__title
+    font-weight: 700
+    font-size: 16px
+    line-height: 19px
+    text-transform: uppercase
+    margin-top: 23px
+    +media-breakpoint-down(md)
+      margin-top: 25px
+    +media-breakpoint-down(xs)
+      font-size: 14px
+  &__item
+    width: 170px !important
+    height: 207px !important
+    background: $mainBgColor
+    box-shadow: 15px 20px 23px rgba(43,43,163,.15)
+    padding: 24px 15px
+    cursor: pointer
+    border-radius: 35px
+    text-align: center
+    position: relative
+    +media-breakpoint-down(md)
+      width: 100% !important
+      border-radius: 0
+      box-shadow: none
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      border-radius: 35px
+      transition: $trs
+      background: rgba(255,255,255,.35)
+      z-index: 55
+      display: none
+      +media-breakpoint-down(md)
+        border-radius: 35px
+    &::after
+      content: ''
+      position: absolute
+      bottom: 100%
+      left: 50%
+      background: linear-gradient(90.04deg, #3B74E2 0.03%, #57B8F2 99.35%)
+      height: 49px
+      width: 9px
+      z-index: -1
+      transition: $trs
+      display: none
+    
+
+.slick-slide
+  outline: none
+
+
+@media screen and ( max-width: 1355px )
+  .kassySlider
+    margin-left: 0
+    max-width: 820px
+  .kassySlider__btn
+    font-size: 20px
+    padding: 15px 98px
+  .kassySlider__price
+    font-size: 32px
+  .kassySlider__title
+    font-size: 28px
+  .kassyThumbs__slide
+    margin: 0 auto 50px auto
+  .kassyThumbs__slide::after
+    height: 65px
+  .kassySlider__image img
+    height: 295px
+
+
+@media screen and ( max-width: 359px )
+  .assortmentSlider__title
+    width: 85%
+    margin: 0 auto
+    left: 50%
+    transform: translateX(-50%)
+    span
+      font-size: 12px !important
+@media screen and ( max-width: 460px )
+  .assortmentSlider__title
+    height: 210px
+  .assortmentSlider__title span
+    font-size: 10px
+    padding-bottom: 30px
+  .assortmentSlider__image
+    height: 200px
+  .assortmentSlider__slide
+    height: 280px
