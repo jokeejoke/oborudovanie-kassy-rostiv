@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+	// gsap animation
+	gsap.registerPlugin(ScrollTrigger);
+	gsap.config({
+		nullTargetWarn: false
+	})
+
 	function catalogButton() {
 		$catalogBtn = document.querySelector('.catalog__link')
 		$dropdown = document.querySelector('.dropdown')
@@ -48,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		grabCursor: true,
 		loop: true,
 		autoplay: {
-			delay: 2500,
+			delay: 4000,
 			disableOnInteraction: true,
 		},
 		breakpoints: {
@@ -158,14 +164,96 @@ document.addEventListener("DOMContentLoaded", function() {
 		]
 	});
 
-	function sliderThumbsWidth() {
-		const $thumbArr = document.querySelectorAll('.kassyThumbs__slide').forEach(item => {
-			let $elWIdth = item.getAttribute('style');
-			let $newWidth = $elWIdth.substring(0, $elWIdth.length - 1);
-			
-			
+	function footerArrow() {
+		$arrow = document.querySelector('.footer__arrow')
+		$footerTop = document.querySelector('.footer__top')
+		$footerBottom = document.querySelector('.footer__bottom')
+		$arrow.addEventListener('click', function() {
+			$footerTop.classList.toggle('active')
+			$footerBottom.classList.toggle('active')
+			this.classList.toggle('active')
 		})
-		//log($thumbWidth)
+	}
+
+	
+	function boxAnimation() {
+		const box = gsap.timeline({
+			repeat: -1
+		})
+		box.to('.box', { duration: 7, ease: Power0.easeOut, rotate: 360})
+	}
+	
+
+	function startAnimation() {
+		const tl = gsap.timeline()
+
+		tl.from('.home .header', { duration: 1.5, y: -50, opacity: 0 })
+		tl.from('.home .intro__title', { duration: 1.5, x: -50, opacity: 0 }, '-=1.2')
+		tl.from('.home .intro__text', { duration: 1.5, x: -50, opacity: 0 }, '-=1.2')
+		tl.to('.home .intro__btn', { duration: 1.5, opacity: 1 }, '-=1.5')
+		tl.from('.home .intro__image', { duration: 1.5, x: 150, opacity: 0 }, '-=1.7')
+	}
+
+	function assortmentAnimation() {
+		const scrollAnim = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.assortment'
+			}
+		})
+		scrollAnim.from('.home .assortment__title', { y: 100, opacity: 0, duration: 1 })
+		scrollAnim.from('.home .assortmentSlider__slide', { x: -100, opacity: 0, duration: 1, stagger: 0.4 })
+	}
+
+	function questionsAnimation() {
+		const scrollAnim = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.questions'
+			}
+		})
+		scrollAnim.from('.questions__title', { y: 100, opacity: 0, duration: 1 })
+		scrollAnim.from('.questions__accordion .accordion__item', { y: 100, opacity: 0, duration: 1.7, stagger: 0.7 })
+	}
+
+	function complexApproachAnimation() {
+		const scrollAnim = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.complexApproach'
+			}
+		})
+		scrollAnim.from('.complexApproach__title', { y: 100, opacity: 0, duration: 1 })
+		scrollAnim.from('.complexApproach__item', { x: -100, opacity: 0, duration: 1.3, stagger: 0.5 })
+		scrollAnim.from('.complexApproach__more', { opacity: 0, duration: 1, scale: 0 })
+	}
+
+	function kassyAnimation() {
+		const scrollAnim = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.kassy'
+			}
+		})
+		scrollAnim.from('.kassy__title', { y: 100, opacity: 0, duration: 1 })
+		scrollAnim.from('.kassySlider', { opacity: 0, duration: 1 })
+		scrollAnim.from('.kassyThumbs', { opacity: 0, duration: 1 })
+	}
+
+	function aboutAnimation() {
+		const scrollAnim = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.about'
+			}
+		})
+		scrollAnim.from('.about__title', { y: 100, opacity: 0, duration: 1 })
+		scrollAnim.from('.about__logotype', { opacity: 0, duration: 1 })
+		scrollAnim.from('.about__text', { opacity: 0, duration: 1 }, '-=0.5')
+	}
+
+	function formAnimation() {
+		const scrollAnim = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.form'
+			}
+		})
+		scrollAnim.from('.home .themeForm', { y: 100, opacity: 0, duration: 2 })
 	}
 
 
@@ -173,6 +261,14 @@ document.addEventListener("DOMContentLoaded", function() {
 	hamburgerMenu()
 	accordion()
 	complexMoreBtn()
-	sliderThumbsWidth()
+	footerArrow()
+	boxAnimation()
+	startAnimation()
+	complexApproachAnimation()
+	assortmentAnimation()
+	questionsAnimation()
+	kassyAnimation()
+	aboutAnimation()
+	formAnimation()
 
 });

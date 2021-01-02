@@ -144,3 +144,114 @@ body
 	&:hover,
 	&:active
 		outline: none
+
+.themeForm
+	position: relative
+	background: $mainBgColor
+	box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
+	border-radius: 35px
+	max-width: 960px
+	&__left
+		position: relative
+		padding: 60px 0 57px
+		+media-breakpoint-down(md)
+			padding: 60px
+		+media-breakpoint-down(sm)
+			padding: 40px
+		+media-breakpoint-down(xs)
+			padding: 40px 10px
+	&__title
+		text-transform: uppercase
+		font-family: HelveticaNeue
+		font-weight: 700
+		font-size: 30px
+		line-height: 38px
+		margin-bottom: 25px
+		+media-breakpoint-down(xs)
+			font-size: 26px
+	&__text
+		position: relative
+		margin: 0 0 31px
+		p
+			font-weight: 300
+			font-size: 15px
+			line-height: 22px
+			margin: 0
+			+media-breakpoint-down(xs)
+				line-height: 25px
+	&__input
+		position: relative
+		margin: 16px 0 0
+		max-width: 342px
+		input
+			width: 100%
+			margin-bottom: 25px
+			box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.2)
+			border-radius: 37px
+			border: none
+			padding: 6px 6px 6px 21px
+			+media-breakpoint-down(xs)
+				font-size: 15px
+		.submit
+			border: none
+			margin-top: 13px
+			margin-bottom: 31px
+			font-size: 22px
+			padding: 19px 49px
+			border-radius: 38px
+			+media-breakpoint-down(md)
+				font-size: 16px
+				padding: 16px 60px
+			+media-breakpoint-down(xs)
+				font-size: 15px
+			&:focus,
+			&:active
+				outline: none
+	p.note
+		font-size: 12px
+		line-height: 17px
+		text-align: justify
+		color: rgba(0, 0, 0, 0.5)
+		margin: 0
+	&__right
+		position: relative
+		height: 100%
+		background: linear-gradient(270deg, #3E7EEA 0%, #58B9F3 100%)
+		border-radius: 300px 35px 35px 300px
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		+media-breakpoint-down(md)
+			display: none
+		img
+			max-width: 236px
+			height: auto
+			object-fit: cover
+			position: relative
+			top: 0
+			right: 68px
+
+.box
+	position: relative
+	width: 111px
+	height: 111px
+	border-radius: 50%
+	background: linear-gradient(270deg, rgba(62, 126, 234, 0.9) 0%, rgba(88, 185, 243, 0.9) 100%)
+	z-index: -1
+	+media-breakpoint-down(md)
+		display: none
+	.box__inner
+		width: 38px
+		height: 38px
+		background: rgba(255, 255, 255, 0.2)
+		border-radius: 50%
+		position: absolute
+		top: 15px
+		right: 15px
+	&.middle
+		width: 87px
+		height: 87px
+	&.small
+		width: 57px
+		height: 57px
+

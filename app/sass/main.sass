@@ -5,6 +5,7 @@
 .header
   position: relative
   padding-top: 29px
+  z-index: 99
   &__search
     margin-left: 17px
     +media-breakpoint-down(sm)
@@ -25,6 +26,8 @@
 // Logotype Block
 .logotype
   display: block
+  position: relative
+  z-index: 99
   img
     max-width: 152px
     height: auto
@@ -40,6 +43,7 @@
   justify-content: center
   align-items: center
   display: none
+  z-index: 101
   +media-breakpoint-down(sm)
     display: flex
   &__menu
@@ -343,6 +347,7 @@
         font-size: 15px
   &__btn
     margin-top: 25px
+    opacity: 0
     +media-breakpoint-down(md)
       margin-top: 20px
     +media-breakpoint-down(xs)
@@ -367,6 +372,16 @@
         position: relative
         top: 0
         left: 0
+  .box.small
+    position: absolute
+    left: 50%
+    top: 60px
+    opacity: 0.4
+  .box.middle
+    position: absolute
+    left: 40%
+    bottom: 20px
+    opacity: 0.5
 
 // assortment block
 .assortment
@@ -378,6 +393,11 @@
     margin-bottom: 35px
   &__title
     text-align: center
+  .box
+    position: absolute
+    right: 60px
+    top: -60px
+    opacity: 0.44
 
 // assortmentSlider
 .assortmentSlider
@@ -469,6 +489,10 @@
     margin-top: 50px
     +media-breakpoint-down(xs)
       margin-top: 40px
+  .box
+    position: absolute
+    top: 0
+    left: 0
 
 .accordion
   position: relative
@@ -604,6 +628,10 @@
 
 .complexApproach
   position: relative
+  .box
+    position: absolute
+    top: -60px
+    right: 70px
   &__title
     text-align: center
   &__list
@@ -723,6 +751,11 @@
 // Слайдер Кассы
 .kassy
   position: relative
+  margin-bottom: 100px
+  .box
+    position: absolute
+    top: 50px
+    left: 50px
   &__title
     text-align: center
   &__slider
@@ -841,6 +874,8 @@
     +media-breakpoint-down(lg)
       padding: 12px 60px !important
       font-size: 16px !important
+    +media-breakpoint-down(md)
+      line-height: 28px
     +media-breakpoint-down(sm)
       display: none
       font-size: 20px !important
@@ -1013,6 +1048,185 @@
       transition: $trs
       display: none
     
+
+// About Block
+.about
+  position: relative
+  .box
+    position: absolute
+    right: 70px
+    top: 15px
+    opacity: 0.44
+  &__title
+    text-align: center
+    margin-bottom: 50px
+    +media-breakpoint-down(xs)
+      margin-bottom: 30px
+  &__logotype
+    position: relative
+    background: $mainBgColor
+    box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.25)
+    max-width: 304px
+    padding: 26px 43px
+    border-radius: 35px
+    display: flex
+    justify-content: center
+    align-items: center
+    +media-breakpoint-down(md)
+      margin: 0 auto 50px auto
+    +media-breakpoint-down(xs)
+      margin: 0 auto 30px auto
+  &__text
+    position: relative
+    p
+      font-weight: 400
+      font-size: 17px
+      line-height: 24px
+      text-align: justify
+      +media-breakpoint-down(md)
+        font-size: 16px
+      +media-breakpoint-down(sm)
+        font-size: 15px
+        line-height: 25px
+
+.form
+  position: relative
+  .box
+    position: absolute
+    left: 50px
+    top: 15px
+
+.footer
+  position: relative
+  padding: 25px 0 30px
+  &__arrow
+    position: absolute
+    top: -25px
+    left: 50%
+    cursor: pointer
+    +media-breakpoint-down(md)
+      display: none
+    .icon
+      width: 47px
+      height: 47px
+      text-align: center
+      line-height: 47px
+      background: linear-gradient(90deg,#3c7aea 0,#59bcf4 100%)
+      box-shadow: -10px -10px 27px #FFFFFF
+      border-radius: 50%
+      transition: all .6s ease
+    &:hover
+      .icon
+        transform: rotate(360deg)
+    &.active:hover
+      .icon
+        transform: rotate(180deg)
+  &__bottom
+    position: relative
+    +media-breakpoint-down(md)
+      display: none
+    &.active
+      display: none
+    .copyright
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      +media-breakpoint-down(lg)
+        flex-direction: column
+      +media-breakpoint-down(md)
+        position: relative
+        top: 0
+        left: 0
+        transform: unset
+  &__top
+    position: relative
+    padding-top: 15px
+    display: none
+    +media-breakpoint-down(md)
+      display: block
+      padding-top: 0
+    &.active
+      display: block
+      .footer__nav
+        opacity: 1
+    .copyright
+      justify-content: flex-start
+      p
+        margin: 0
+  &__phone
+    display: inline-block
+    font-weight: 500
+    color: $textcolor
+    font-size: 21px
+    margin-top: 15px
+    +media-breakpoint-down(md)
+      margin-bottom: 15px
+    &:hover
+      color: $textcolor
+  &__nav
+    position: relative
+    height: 100%
+    opacity: 0
+    transition: opacity 1s ease
+    +media-breakpoint-down(md)
+      opacity: 1
+    .nav
+      display: flex
+      flex-direction: column
+      flex-wrap: wrap
+      max-height: 110px
+      +media-breakpoint-down(md)
+        max-height: 100%
+      a
+        display: block
+        margin-bottom: 15px
+        font-size: 13px
+        line-height: 16px
+        color: $textcolor
+        +media-breakpoint-down(md)
+          font-size: 16px
+          margin-bottom: 20px
+          line-height: 18px
+        +media-breakpoint-down(sm)
+          font-size: 15px
+  &__contacts
+    margin-top: 15px
+
+.copyright
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  p
+    font-weight: 300
+    font-size: 13px
+    margin: 0 15px
+  a
+    color: $textcolor
+
+.address, .workingTime
+  p
+    margin: 0
+    font-size: 13px
+    line-height: 18px
+
+.geek
+  position: relative
+  max-width: 128px
+  transition: all 1s ease
+  &::after
+    content: 'GK'
+    color: #7676A8
+    font-size: 12px
+    white-space: nowrap
+  &:hover
+    text-decoration: none
+    width: 100%
+    border-radius: 300px
+    &::after
+      content: 'Сделано в GEEK'
+      color: #fff
 
 .slick-slide
   outline: none
