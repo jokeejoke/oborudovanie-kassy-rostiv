@@ -1,27 +1,47 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+	$(window).on("load", function () {
+		$(".preloader").delay(700).fadeOut("slow");
+	});
+
+	const $dropdownMenu = $('.dropdownMenu');
+
+	$(document).mouseup(e => {
+		if (!$dropdownMenu.is(e.target) // if the target of the click isn't the container...
+		&& $dropdownMenu.has(e.target).length === 0) // ... nor a descendant of the container
+		{
+			$dropdownMenu.removeClass('dropdownMenu__active');
+		}
+	});
+
+	$('.catalog__link').on('click', (e) => {
+		$dropdownMenu.toggleClass('dropdownMenu__active');
+		e.preventDefault()
+	});
+
+
 	// gsap animation
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.config({
 		nullTargetWarn: false
 	})
 
-	function catalogButton() {
-		$catalogBtn = document.querySelector('.catalog__link')
-		$dropdown = document.querySelector('.dropdown')
-		$catalogBtn.addEventListener('click', function(e) {
-			this.classList.toggle('mainMenu__link-active')
-			$dropdown.classList.toggle('dropdown__active')
-			e.preventDefault()
-		})
-	}
 
 	function hamburgerMenu() {
 		$burgerBtn = document.querySelector('.hamburger')
 		$mobileMenu = document.querySelector('.mobileMenu')
 		$burgerBtn.addEventListener('click', function() {
-			this.classList.toggle('hamburger__active')
-			$mobileMenu.classList.toggle('mobileMenu-active')
+			if(this.classList.contains('hamburger__active')){
+				this.classList.remove('hamburger__active')
+				$mobileMenu.classList.remove('mobileMenu-active')
+				document.body.style.overflow = ''
+			} else {
+				this.classList.add('hamburger__active')
+				$mobileMenu.classList.add('mobileMenu-active')
+				document.body.style.overflow = 'hidden'
+			}
+			
+			
 		})
 	}
 
@@ -54,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		grabCursor: true,
 		loop: true,
 		autoplay: {
-			delay: 4000,
+			delay: 6000,
 			disableOnInteraction: true,
 		},
 		breakpoints: {
@@ -174,23 +194,16 @@ document.addEventListener("DOMContentLoaded", function() {
 			this.classList.toggle('active')
 		})
 	}
-
-	
-	function boxAnimation() {
-		const box = gsap.timeline({
-			repeat: -1
-		})
-		box.to('.box', { duration: 7, ease: Power0.easeOut, rotate: 360})
-	}
 	
 
 	function startAnimation() {
-		const tl = gsap.timeline()
-
+		const tl = gsap.timeline({
+			delay: 1
+		})
 		tl.from('.home .header', { duration: 1.5, y: -50, opacity: 0 })
 		tl.from('.home .intro__title', { duration: 1.5, x: -50, opacity: 0 }, '-=1.2')
 		tl.from('.home .intro__text', { duration: 1.5, x: -50, opacity: 0 }, '-=1.2')
-		tl.to('.home .intro__btn', { duration: 1.5, opacity: 1 }, '-=1.5')
+		tl.from('.home .intro__btn', { duration: 0.5, opacity: 0, y: 200 }, '-=1.7')
 		tl.from('.home .intro__image', { duration: 1.5, x: 150, opacity: 0 }, '-=1.7')
 	}
 
@@ -211,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		})
 		scrollAnim.from('.questions__title', { y: 100, opacity: 0, duration: 1 })
-		scrollAnim.from('.questions__accordion .accordion__item', { y: 100, opacity: 0, duration: 1.7, stagger: 0.7 })
+		scrollAnim.from('.questions__accordion .accordion__item', { y: 100, opacity: 0, duration: 1, stagger: 0.5 })
 	}
 
 	function complexApproachAnimation() {
@@ -257,18 +270,21 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 
-	catalogButton()
+	
 	hamburgerMenu()
 	accordion()
 	complexMoreBtn()
 	footerArrow()
-	boxAnimation()
-	startAnimation()
-	complexApproachAnimation()
-	assortmentAnimation()
-	questionsAnimation()
-	kassyAnimation()
-	aboutAnimation()
-	formAnimation()
+	
+
+	if(window.innerWidth > 992) {
+		startAnimation()
+		complexApproachAnimation()
+		assortmentAnimation()
+		questionsAnimation()
+		kassyAnimation()
+		aboutAnimation()
+		formAnimation()
+	}
 
 });

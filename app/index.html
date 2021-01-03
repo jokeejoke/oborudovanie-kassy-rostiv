@@ -4,7 +4,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Gulp 4 Starter</title>
+	<title>ЦТО Феникс - Автоматизация торговли</title>
 	<meta name="description" content="Gulp4 Starter">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" href="img/favicon.png">
@@ -14,6 +14,12 @@
 </head>
 
 <body class="home">
+
+	<!-- preloader -->
+	<div class="preloader">
+		<div class="lds-facebook"><div></div><div></div><div></div></div>
+	</div>
+	<!-- end preloader -->
 
 	<!-- Header -->
 	<header class="header home">
@@ -131,80 +137,82 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<nav class="mainMenu">
-							<a href="#" class="mainMenu__link catalog__link">
-								<svg viewBox="0 0 33 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H33V3H0V0ZM0 8H33V11H0V8ZM33 16H0V19H33V16Z" />
-								</svg>
-								Каталог
-							</a>
-							<a href="#" class="mainMenu__link">Автоматизация</a>
-							<a href="#" class="mainMenu__link">Услуги</a>
-							<a href="#" class="mainMenu__link">Программное обеспечение</a>
-							<a href="#" class="mainMenu__link">О компании</a>
-							<a href="#" class="mainMenu__link">Контакты</a>
-							<div class="dropdown">
-								<div class="dropdown__row">
-									<div class="container">
-										<div class="row">
-											<div class="col-lg-3 col-md-6">
-												<ul class="dropdown__list">
-													<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Кассовая
-															техника</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Фискальные накопители</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Сканеры</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Комплектующие</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Расходные материалы</a></li>
-												</ul>
-											</div>
-											<div class="col-lg-3 col-md-6">
-												<ul class="dropdown__list">
-													<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Торговое
-															оборудование</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Весы</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Принтеры этикеток</a></li>
-												</ul>
-											</div>
-											<div class="col-lg-3 col-md-6">
-												<ul class="dropdown__list">
-													<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Детекторы и
-															сканеры</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Детекторы</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Сканеры</a></li>
-												</ul>
-											</div>
-											<div class="col-lg-3 col-md-6">
-												<ul class="dropdown__list">
-													<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Счетчики
-															посетителей</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Кондор</a></li>
-												</ul>
-											</div>
-											<div class="col-lg-3 col-md-6">
-												<ul class="dropdown__list">
-													<li class="dropdown__item"><a href="#"
-															class="dropdown__link dropdown__link-title">Автоматизация</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Программы 1С</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Комплекты ПО</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">1С ИТС</a></li>
-												</ul>
-											</div>
-											<div class="col-lg-3 col-md-6">
-												<ul class="dropdown__list">
-													<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Программное
-															обеспечение</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Microsoft Windows</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Microsoft Office</a></li>
-													<li class="dropdown__item"><a href="#" class="dropdown__link">Мой склад</a></li>
-												</ul>
+							<div class="dropdownMenu">
+								<a href="#" class="mainMenu__link catalog__link">
+									<svg viewBox="0 0 33 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H33V3H0V0ZM0 8H33V11H0V8ZM33 16H0V19H33V16Z" />
+									</svg>
+									Каталог
+								</a>
+								<div class="dropdown">
+									<div class="dropdown__row">
+										<div class="container">
+											<div class="row">
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Кассовая
+																техника</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Фискальные накопители</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Сканеры</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Комплектующие</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Расходные материалы</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Торговое
+																оборудование</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Весы</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Принтеры этикеток</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Детекторы и
+																сканеры</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Детекторы</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Сканеры</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Счетчики
+																посетителей</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Кондор</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#"
+																class="dropdown__link dropdown__link-title">Автоматизация</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Программы 1С</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Комплекты ПО</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">1С ИТС</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Программное
+																обеспечение</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Microsoft Windows</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Microsoft Office</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Мой склад</a></li>
+													</ul>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							<a href="#" class="mainMenu__link">Автоматизация</a>
+							<a href="#" class="mainMenu__link">Услуги</a>
+							<a href="#" class="mainMenu__link">Программное обеспечение</a>
+							<a href="#" class="mainMenu__link">О компании</a>
+							<a href="#" class="mainMenu__link">Контакты</a>
 						</nav>
 					</div>
 				</div>
@@ -278,20 +286,20 @@
 							<div class="swiper-wrapper assortmentSlider__wrapper">
 								<div class="swiper-slide assortmentSlider__slide">
 									<picture>
-										<source srcset="images/dest/assortment/1.webp" type="image/webp">
-										<img src="images/dest/assortment/1.png" class="assortmentSlider__image" alt="alt">
-									</picture>
-									<a href="#" class="assortmentSlider__title">
-										<span>Кассовая техника</span>
-									</a>
-								</div>
-								<div class="swiper-slide assortmentSlider__slide">
-									<picture>
 										<source srcset="images/dest/assortment/2.webp" type="image/webp">
 										<img src="images/dest/assortment/2.png" class="assortmentSlider__image" alt="alt">
 									</picture>
 									<a href="#" class="assortmentSlider__title">
 										<span>ТОРГОВОЕ ОБОРУДОВАНИЕ</span>
+									</a>
+								</div>
+								<div class="swiper-slide assortmentSlider__slide">
+									<picture>
+										<source srcset="images/dest/assortment/1.webp" type="image/webp">
+										<img src="images/dest/assortment/1.png" class="assortmentSlider__image" alt="alt">
+									</picture>
+									<a href="#" class="assortmentSlider__title">
+										<span>Кассовая техника</span>
 									</a>
 								</div>
 								<div class="swiper-slide assortmentSlider__slide">
@@ -761,6 +769,59 @@
 		<div class="box big"><div class="box__inner"></div></div>
 	</section>
 
+	<div class="mobileFixedNav">
+		<nav class="iconMenu header__iconMenu">
+			<a href="#" class="iconMenu__link">
+				<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M14.1988 15.9986H2.86537C2.0199 15.9986 1.33203 15.3107 1.33203 14.4652V6.39784C1.33203 6.1033 1.5708 5.8645 1.86537 5.8645C2.15994 5.8645 2.3987 6.1033 2.3987 6.39784V14.4652C2.3987 14.7226 2.60804 14.9319 2.86537 14.9319H14.1988C14.4561 14.9319 14.6654 14.7226 14.6654 14.4652V6.39784C14.6654 6.1033 14.9042 5.8645 15.1988 5.8645C15.4934 5.8645 15.7321 6.1033 15.7321 6.39784V14.4652C15.7321 15.3107 15.0443 15.9986 14.1988 15.9986Z" fill="#7676A8"/>
+					<path d="M16.5334 8.26475C16.3969 8.26475 16.2605 8.21268 16.1563 8.10852L9.52332 1.47558C8.97748 0.929706 8.08931 0.929706 7.54344 1.47558L0.910464 8.10855C0.702196 8.31685 0.364494 8.31685 0.156226 8.10855C-0.0520753 7.90028 -0.0520753 7.56258 0.156226 7.35431L6.7892 0.721305C7.75094 -0.240435 9.31585 -0.240435 10.2776 0.721305L16.9105 7.35428C17.1188 7.56258 17.1188 7.90025 16.9105 8.10852C16.8064 8.21268 16.6699 8.26475 16.5334 8.26475Z" fill="#7676A8"/>
+					<path d="M10.6672 15.9991H6.40052C6.10596 15.9991 5.86719 15.7602 5.86719 15.4657V10.7324C5.86719 9.81335 6.61486 9.06567 7.53386 9.06567H9.53388C10.4529 9.06567 11.2006 9.81335 11.2006 10.7324V15.4657C11.2006 15.7602 10.9618 15.9991 10.6672 15.9991ZM6.93386 14.9324H10.1339V10.7324C10.1339 10.4015 9.86471 10.1323 9.53388 10.1323H7.53386C7.20303 10.1323 6.93386 10.4015 6.93386 10.7324V14.9324Z" fill="#7676A8"/>
+					</svg>					
+			</a>
+			<a href="#" class="iconMenu__link">
+				<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M13.6206 9.86147C13.292 9.52601 12.8956 9.34665 12.4754 9.34665C12.0587 9.34665 11.6589 9.52269 11.3168 9.85815L10.2462 10.9044C10.1581 10.8579 10.07 10.8147 9.98529 10.7715C9.86333 10.7118 9.74813 10.6553 9.64988 10.5955C8.64704 9.97108 7.73568 9.15733 6.86158 8.10445C6.43809 7.57966 6.1535 7.13791 5.94683 6.68952C6.22465 6.44042 6.48213 6.18135 6.73284 5.93224C6.8277 5.83924 6.92257 5.74292 7.01743 5.64992C7.7289 4.95242 7.7289 4.049 7.01743 3.3515L6.09252 2.44476C5.98749 2.34179 5.87907 2.23551 5.77743 2.12922C5.57416 1.9233 5.36071 1.71073 5.1405 1.51144C4.81186 1.19259 4.41886 1.02319 4.00553 1.02319C3.59219 1.02319 3.19241 1.19259 2.85362 1.51144C2.85023 1.51476 2.85023 1.51476 2.84684 1.51808L1.69493 2.65733C1.26127 3.08247 1.01395 3.60061 0.959742 4.20179C0.878431 5.17164 1.1698 6.07506 1.3934 6.66627C1.94225 8.11773 2.76214 9.4629 3.9852 10.9044C5.46913 12.6415 7.25459 14.0132 9.29415 14.9798C10.0734 15.3418 11.1135 15.7703 12.2756 15.8433C12.3467 15.8467 12.4212 15.85 12.489 15.85C13.2716 15.85 13.9289 15.5743 14.4439 15.0263C14.4472 15.0196 14.454 15.0163 14.4574 15.0097C14.6336 14.8004 14.8369 14.6111 15.0503 14.4085C15.196 14.2723 15.3451 14.1295 15.4907 13.98C15.8262 13.6379 16.0023 13.2394 16.0023 12.8308C16.0023 12.419 15.8228 12.0237 15.4806 11.6916L13.6206 9.86147ZM14.8335 13.3589C14.8301 13.3589 14.8301 13.3622 14.8335 13.3589C14.7013 13.4984 14.5658 13.6246 14.4201 13.7641C14.1999 13.9701 13.9763 14.186 13.7663 14.4284C13.4241 14.7871 13.0209 14.9565 12.4924 14.9565C12.4416 14.9565 12.3874 14.9565 12.3365 14.9532C11.3303 14.8901 10.3952 14.5048 9.69393 14.176C7.77634 13.2659 6.09252 11.9739 4.69328 10.3364C3.53799 8.97133 2.76553 7.7092 2.25395 6.35406C1.93887 5.52703 1.82367 4.88268 1.87449 4.27486C1.90837 3.88625 2.06083 3.56407 2.34203 3.2884L3.49733 2.1558C3.66334 2.00301 3.83952 1.91997 4.0123 1.91997C4.22574 1.91997 4.39853 2.04619 4.50695 2.15247C4.51033 2.1558 4.51372 2.15912 4.51711 2.16244C4.72378 2.35176 4.92028 2.54772 5.12694 2.75697C5.23197 2.86326 5.34039 2.96954 5.4488 3.07915L6.37372 3.98589C6.73284 4.33796 6.73284 4.66346 6.37372 5.01553C6.27547 5.11185 6.1806 5.20817 6.08235 5.30117C5.79776 5.58681 5.52672 5.85253 5.23197 6.1116C5.2252 6.11824 5.21842 6.12156 5.21503 6.1282C4.92367 6.41385 4.97787 6.69284 5.03886 6.88217C5.04224 6.89213 5.04563 6.90209 5.04902 6.91206C5.28957 7.48334 5.62836 8.02141 6.14333 8.66244L6.14672 8.66576C7.0818 9.79504 8.0677 10.6752 9.15524 11.3495C9.29415 11.4358 9.43644 11.5056 9.57196 11.572C9.69393 11.6318 9.80912 11.6883 9.90737 11.748C9.92092 11.7547 9.93447 11.7646 9.94802 11.7713C10.0632 11.8278 10.1716 11.8543 10.2834 11.8543C10.5646 11.8543 10.7408 11.6816 10.7984 11.6251L11.9571 10.4892C12.0723 10.3763 12.2552 10.2401 12.4687 10.2401C12.6787 10.2401 12.8515 10.3696 12.9565 10.4826C12.9599 10.4859 12.9599 10.4859 12.9633 10.4892L14.8301 12.3193C15.179 12.6581 15.179 13.0069 14.8335 13.3589Z" />
+					<path
+						d="M9.60939 3.85556C10.497 4.00171 11.3034 4.41356 11.9471 5.04463C12.5908 5.6757 13.0075 6.46619 13.16 7.3364C13.1972 7.55562 13.3904 7.7084 13.6106 7.7084C13.6377 7.7084 13.6614 7.70508 13.6885 7.70176C13.9392 7.6619 14.1052 7.4294 14.0646 7.18362C13.8816 6.13073 13.3734 5.17084 12.5976 4.41024C11.8217 3.64964 10.8426 3.15142 9.76862 2.97207C9.51791 2.93221 9.28414 3.09496 9.2401 3.33742C9.19606 3.57989 9.35868 3.81571 9.60939 3.85556Z" />
+					<path
+						d="M16.9676 7.05401C16.6661 5.32023 15.8327 3.74256 14.552 2.48706C13.2714 1.23157 11.6621 0.414502 9.89356 0.118897C9.64624 0.0757181 9.41247 0.241789 9.36842 0.484252C9.32777 0.730036 9.49378 0.959214 9.74449 1.00239C11.3233 1.26478 12.7632 1.99882 13.9083 3.11813C15.0534 4.24077 15.7988 5.65237 16.0664 7.20015C16.1037 7.41936 16.2968 7.57215 16.517 7.57215C16.5441 7.57215 16.5679 7.56883 16.595 7.5655C16.8423 7.52897 17.0117 7.29647 16.9676 7.05401Z" />
+				</svg>
+			</a>
+			<a href="#" class="iconMenu__link">
+				<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M16.3203 8.9017C16.1133 8.9017 15.9453 8.73513 15.9453 8.52989V1.97112C15.9453 1.35614 15.4406 0.855685 14.8204 0.855685H5.07073C4.4505 0.855685 3.94577 1.35614 3.94577 1.97112V8.52989C3.94577 8.73513 3.77778 8.9017 3.57079 8.9017C3.36379 8.9017 3.1958 8.73587 3.1958 8.52989V1.97112C3.1958 0.945664 4.03652 0.112061 5.07073 0.112061H14.8204C15.8546 0.112061 16.6953 0.945664 16.6953 1.97112V8.52989C16.6953 8.73587 16.5273 8.9017 16.3203 8.9017Z" />
+					<path
+						d="M9.94543 12.0056C9.64769 12.0056 9.34995 11.935 9.07846 11.7952L1.14752 7.69183C0.963772 7.59665 0.892525 7.37208 0.988522 7.18989C1.08452 7.0077 1.31176 6.93929 1.49475 7.03224L9.4257 11.1356C9.75118 11.3044 10.1404 11.3044 10.4659 11.1356L18.3968 7.03224C18.5798 6.93929 18.8078 7.00696 18.9031 7.18989C18.9991 7.37208 18.9278 7.59665 18.7441 7.69183L10.8131 11.7952C10.5409 11.935 10.2424 12.0056 9.94543 12.0056Z" />
+					<path
+						d="M17.4452 17.2156H2.44574C1.61852 17.2156 0.945801 16.5486 0.945801 15.7284V6.36615C0.945801 5.80992 1.25554 5.30426 1.75502 5.0477L3.39746 4.19997C3.5797 4.10702 3.80769 4.17469 3.90294 4.35837C3.99893 4.54055 3.92769 4.76513 3.74319 4.85957L2.10076 5.7073C1.85102 5.83595 1.69577 6.08804 1.69577 6.36615V15.7284C1.69577 16.1389 2.03176 16.472 2.44574 16.472H17.4452C17.8591 16.472 18.1951 16.1389 18.1951 15.7284V6.36615C18.1951 6.08804 18.0399 5.83595 17.7902 5.70656L16.1477 4.85882C15.964 4.76438 15.892 4.53981 15.988 4.35762C16.084 4.17469 16.3127 4.10702 16.4935 4.19923L18.1359 5.04696C18.6354 5.30426 18.9451 5.80992 18.9451 6.36615V15.7284C18.9451 16.5486 18.2724 17.2156 17.4452 17.2156Z" />
+					<path
+						d="M14.0705 8.34706C14.0367 8.34706 14.003 8.3426 13.9692 8.33294L5.71954 6.04703C5.55755 6.00242 5.4458 5.85667 5.4458 5.68935V4.2021C5.4458 4.03404 5.55905 3.88755 5.72179 3.84368L13.9715 1.6128C14.0862 1.58306 14.2055 1.60611 14.2985 1.67601C14.3915 1.74591 14.4455 1.85522 14.4455 1.97123V7.97525C14.4455 8.09126 14.3907 8.20131 14.2977 8.27121C14.231 8.32104 14.1515 8.34706 14.0705 8.34706ZM6.19577 5.40677L13.6955 7.4852V2.45756L6.19577 4.48617V5.40677Z" />
+					<path
+						d="M14.0708 8.66378C13.8638 8.66378 13.6958 8.49721 13.6958 8.29197V1.59935C13.6958 1.39411 13.8638 1.22754 14.0708 1.22754C14.2778 1.22754 14.4458 1.39411 14.4458 1.59935V8.29197C14.4458 8.49721 14.2778 8.66378 14.0708 8.66378Z" />
+					<path
+						d="M5.82079 6.43275C5.61379 6.43275 5.4458 6.26618 5.4458 6.06094V3.83006C5.4458 3.62482 5.61379 3.45825 5.82079 3.45825C6.02778 3.45825 6.19577 3.62482 6.19577 3.83006V6.06094C6.19577 6.26618 6.02778 6.43275 5.82079 6.43275Z" />
+					<path
+						d="M8.44574 8.70099C7.61852 8.70099 6.9458 8.03396 6.9458 7.21375C6.9458 6.67982 7.23229 6.19052 7.69352 5.9362C7.87351 5.83878 8.10301 5.90125 8.20425 6.08046C8.30475 6.26042 8.2395 6.48648 8.05876 6.58687C7.83152 6.7118 7.69577 6.9453 7.69577 7.21375C7.69577 7.62423 8.03176 7.95737 8.44574 7.95737C8.85973 7.95737 9.19571 7.62423 9.19571 7.21375C9.19571 7.08287 9.16797 6.97504 9.10947 6.88283C8.99997 6.70882 9.05397 6.47904 9.22946 6.37048C9.40346 6.26339 9.63595 6.31545 9.74619 6.48946C9.87819 6.69916 9.94568 6.94381 9.94568 7.21375C9.94568 8.03322 9.27296 8.70099 8.44574 8.70099Z" />
+				</svg>
+			</a>
+			<a href="#" class="iconMenu__link">
+				<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M14.6027 10.252C13.7313 9.3978 12.6942 8.76544 11.5626 8.38264C12.7746 7.56432 13.5708 6.19479 13.5708 4.6462C13.5708 2.14608 11.496 0.112061 8.9458 0.112061C6.39558 0.112061 4.3208 2.14608 4.3208 4.6462C4.3208 6.19479 5.11702 7.56432 6.32899 8.38264C5.19743 8.76544 4.1603 9.3978 3.28896 10.252C1.77796 11.7333 0.945801 13.7028 0.945801 15.7977H2.1958C2.1958 12.1489 5.22383 9.18034 8.9458 9.18034C12.6678 9.18034 15.6958 12.1489 15.6958 15.7977H16.9458C16.9458 13.7028 16.1136 11.7333 14.6027 10.252ZM8.9458 7.9549C7.08483 7.9549 5.5708 6.47064 5.5708 4.6462C5.5708 2.82176 7.08483 1.3375 8.9458 1.3375C10.8068 1.3375 12.3208 2.82176 12.3208 4.6462C12.3208 6.47064 10.8068 7.9549 8.9458 7.9549Z" />
+				</svg>
+			</a>
+			<a href="#" class="iconMenu__link">
+				<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M17.4803 2.17091C17.3892 2.05931 17.2513 1.99434 17.1055 1.99434H4.33068L3.97344 0.476805C3.92317 0.263304 3.72924 0.112061 3.50575 0.112061H1.42578C1.16072 0.112061 0.945801 0.322757 0.945801 0.582647C0.945801 0.842536 1.16072 1.0532 1.42578 1.0532H3.12391L5.54875 11.3545C5.599 11.568 5.79295 11.7193 6.01645 11.7193H15.6335C15.8986 11.7193 16.1135 11.5086 16.1135 11.2487C16.1135 10.9888 15.8986 10.7781 15.6335 10.7781H6.39832L6.02913 9.2096H15.6656C15.8901 9.2096 16.0846 9.05705 16.1338 8.84234L17.5738 2.56819C17.6058 2.4287 17.5714 2.28255 17.4803 2.17091ZM15.2815 8.26846H5.80758L4.55223 2.93545H16.5055L15.2815 8.26846ZM7.98702 12.347C7.01659 12.347 6.22705 13.121 6.22705 14.0724C6.22705 15.0238 7.01656 15.7978 7.98702 15.7978C8.95745 15.7978 9.74699 15.0238 9.74699 14.0724C9.74699 13.121 8.95749 12.347 7.98702 12.347ZM7.98702 14.8567C7.54591 14.8567 7.18705 14.5048 7.18705 14.0724C7.18705 13.6399 7.54591 13.2881 7.98702 13.2881C8.42814 13.2881 8.78699 13.6399 8.78699 14.0724C8.78699 14.5048 8.42814 14.8567 7.98702 14.8567ZM11.9849 14.0723C11.9849 13.1209 12.7744 12.3469 13.7448 12.3469C14.7153 12.3469 15.5048 13.1209 15.5048 14.0723C15.5048 15.0237 14.7153 15.7977 13.7448 15.7977C12.7744 15.7977 11.9849 15.0237 11.9849 14.0723ZM12.9449 14.0724C12.9449 14.5048 13.3037 14.8566 13.7448 14.8566C14.186 14.8566 14.5448 14.5048 14.5448 14.0724C14.5448 13.6399 14.186 13.2881 13.7448 13.2881C13.3037 13.2881 12.9449 13.6399 12.9449 14.0724Z" />
+				</svg>
+				<span class="count">3</span>
+			</a>
+		</nav>
+	</div>
+
 	<footer class="footer">
 		<div class="footer__top">
 			<div class="footer__nav">
@@ -848,7 +909,7 @@
 			</div>
 			<div class="footer__contacts">
 				<div class="container">
-					<div class="row d-flex flex-lg-row flex-md-column-reverse">
+					<div class="row d-flex flex-lg-row flex-column-reverse">
 						<div class="col-lg-4">
 							<div class="copyright">
 								<p>© 2020 ООО “ЦТО Феникс”, все права защищены</p>

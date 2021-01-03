@@ -39,6 +39,8 @@ $gutter: $grid-gutter-width
 @include font('Roboto', normal, 500, '../fonts/Roboto-Medium.woff2')
 @include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
 @include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+@include font('Roboto', normal, 900, '../fonts/Roboto-Medium.woff2')
+@include font('RobotoLight', normal, 300, '../fonts/Roboto-Light.woff2')
 @include font('HelveticaNeue', normal, 700, '../fonts/HelveticaNeueBoldCondensed.woff2')
 
 // GENERAL DOCUMENT STYLES
@@ -90,6 +92,10 @@ body
 	font-size: 43.5px
 	line-height: 53px
 	text-transform: uppercase
+	text-shadow: -1px 0px 1px rgba(0,0,0,.53)
+	-webkit-background-clip: text
+	-moz-background-clip: text
+	background-clip: text
 	+media-breakpoint-down(md)
 		font-size: 36px
 		line-height: 46px
@@ -177,6 +183,8 @@ body
 			font-size: 15px
 			line-height: 22px
 			margin: 0
+			+media-breakpoint-down(sm)
+				font-family: RobotoLight
 			+media-breakpoint-down(xs)
 				line-height: 25px
 	&__input
@@ -190,6 +198,8 @@ body
 			border-radius: 37px
 			border: none
 			padding: 6px 6px 6px 21px
+			+media-breakpoint-down(sm)
+				font-family: RobotoLight
 			+media-breakpoint-down(xs)
 				font-size: 15px
 		.submit
@@ -213,6 +223,8 @@ body
 		text-align: justify
 		color: rgba(0, 0, 0, 0.5)
 		margin: 0
+		+media-breakpoint-down(sm)
+			font-family: RobotoLight
 	&__right
 		position: relative
 		height: 100%
@@ -233,25 +245,36 @@ body
 
 .box
 	position: relative
-	width: 111px
-	height: 111px
+	width: 125px
+	height: 125px
 	border-radius: 50%
 	background: linear-gradient(270deg, rgba(62, 126, 234, 0.9) 0%, rgba(88, 185, 243, 0.9) 100%)
 	z-index: -1
 	+media-breakpoint-down(md)
 		display: none
 	.box__inner
-		width: 38px
-		height: 38px
+		width: 32px
+		height: 32px
 		background: rgba(255, 255, 255, 0.2)
 		border-radius: 50%
 		position: absolute
 		top: 15px
 		right: 15px
 	&.middle
-		width: 87px
-		height: 87px
+		width: 95px
+		height: 95px
 	&.small
 		width: 57px
 		height: 57px
+		.box__inner
+			width: 20px
+			right: 10px
+			top: 12px
+			height: 20px
+	&.big
+		.box__inner
+			width: 42px
+			height: 42px
+			top: 25px
+			right: 15px
 
