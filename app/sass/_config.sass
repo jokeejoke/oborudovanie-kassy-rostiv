@@ -22,6 +22,7 @@ $gutter: $grid-gutter-width
 @import 'node_modules/slick-carousel/slick/slick1'
 //@import 'node_modules/slick-carousel/slick/slickTheme1'
 @import 'node_modules/swiper/swiper-bundle.min'
+@import 'node_modules/magnific-popup/dist/magnific-popup'
 
 
 // FONTS LOAD SECTION
@@ -34,12 +35,10 @@ $gutter: $grid-gutter-width
 		font-display: swap // Uncomment to initially display system fonts
 		src: local($fname), url($furl) format('woff2')
 
-@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
-@include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+@include font('Roboto', normal, 400, '../fonts/Roboto-Regular.woff2')
 @include font('Roboto', normal, 500, '../fonts/Roboto-Medium.woff2')
-@include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
-@include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
-@include font('Roboto', normal, 900, '../fonts/Roboto-Medium.woff2')
+@include font('Roboto', normal, 700, '../fonts/Roboto-Bold.woff2')
+@include font('Roboto', normal, 900, '../fonts/Roboto-Black.woff2')
 @include font('RobotoLight', normal, 300, '../fonts/Roboto-Light.woff2')
 @include font('HelveticaNeue', normal, 700, '../fonts/HelveticaNeueBoldCondensed.woff2')
 
@@ -59,6 +58,8 @@ input, textarea
 	&:required:valid
 		border-color: green
 
+
+
 body
 	font-family: $roboto
 	font-size: $fontsize
@@ -68,6 +69,9 @@ body
 	overflow-x: hidden
 	color: $textcolor
 	background: $mainBgColor
+	-webkit-overflow-scrolling: touch
+	+media-breakpoint-down(sm)
+		padding-bottom: 100px
 	
 .container
 	padding-left: 0
@@ -92,10 +96,10 @@ body
 	font-size: 43.5px
 	line-height: 53px
 	text-transform: uppercase
-	text-shadow: -1px 0px 1px rgba(0,0,0,.53)
-	-webkit-background-clip: text
-	-moz-background-clip: text
-	background-clip: text
+	//text-shadow: -1px 0px 1px rgba(0,0,0,.53)
+	//-webkit-background-clip: text
+	//-moz-background-clip: text
+	//background-clip: text
 	+media-breakpoint-down(md)
 		font-size: 36px
 		line-height: 46px
@@ -156,7 +160,7 @@ body
 	background: $mainBgColor
 	box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
 	border-radius: 35px
-	max-width: 960px
+	max-width: 961px
 	&__left
 		position: relative
 		padding: 60px 0 57px
@@ -174,10 +178,14 @@ body
 		line-height: 38px
 		margin-bottom: 25px
 		+media-breakpoint-down(xs)
-			font-size: 26px
+			font-size: 24px
+			max-width: 90%
+			margin-bottom: 15px
 	&__text
 		position: relative
 		margin: 0 0 31px
+		+media-breakpoint-down(xs)
+			margin: 0 0 20px
 		p
 			font-weight: 300
 			font-size: 15px
@@ -191,6 +199,8 @@ body
 		position: relative
 		margin: 16px 0 0
 		max-width: 342px
+		+media-breakpoint-down(sm)
+			max-width: 100%
 		input
 			width: 100%
 			margin-bottom: 25px
@@ -202,6 +212,7 @@ body
 				font-family: RobotoLight
 			+media-breakpoint-down(xs)
 				font-size: 15px
+				margin-bottom: 20px
 		.submit
 			border: none
 			margin-top: 13px
@@ -209,22 +220,27 @@ body
 			font-size: 22px
 			padding: 19px 49px
 			border-radius: 38px
+			box-shadow: -7px -7px 6px #FFFFFF, 7px 7px 15px rgba(43, 43, 163, 0.31)
 			+media-breakpoint-down(md)
 				font-size: 16px
 				padding: 16px 60px
 			+media-breakpoint-down(xs)
 				font-size: 15px
+				margin-top: 0
+				width: 100%
 			&:focus,
 			&:active
 				outline: none
 	p.note
-		font-size: 12px
+		font-size: 11px
 		line-height: 17px
 		text-align: justify
 		color: rgba(0, 0, 0, 0.5)
 		margin: 0
 		+media-breakpoint-down(sm)
 			font-family: RobotoLight
+		a
+			color: rgba(0,0,0,.5)
 	&__right
 		position: relative
 		height: 100%
@@ -242,6 +258,243 @@ body
 			position: relative
 			top: 0
 			right: 68px
+	&__phone
+		color: $textcolor
+		font-size: 41px
+		line-height: 57px
+		font-weight: 500
+		display: inline-block
+		margin: 0 0 30px
+		+media-breakpoint-down(md)
+			font-size: 32px
+			line-height: 1.8
+			margin: 0 0 20px
+		+media-breakpoint-down(sm)
+			font-size: 24px
+		+media-breakpoint-down(xs)
+			margin: 0 0 15px
+
+		&:hover
+			color: $textcolor
+			text-decoration: none
+	&__close
+		position: absolute
+		top: 20px
+		right: 30px
+		cursor: pointer
+		+media-breakpoint-down(sm)
+			top: 15px
+			right: 20px
+		svg
+			stroke: #fff
+			+media-breakpoint-down(md)
+				stroke: $textcolor
+
+.success-popup
+	.themeForm
+		box-shadow: none
+		background: transparent
+		max-width: unset
+
+.formSuccess
+	position: relative
+	padding: 24px
+	background: $mainBgColor
+	border-radius: 15px
+	box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
+	+media-breakpoint-down(xs)
+		padding: 18px
+	&__wrapper
+		position: relative
+		background: linear-gradient(223.11deg, #4081EA 1.52%, rgba(87, 183, 242, 0) 85.2%)
+		border-radius: 15px
+		transform: rotate(-180deg)
+		padding: 7px
+	&__message
+		background: $mainBgColor
+		transform: rotate(-180deg)
+		border-radius: 15px
+		padding: 30px 40px 25px
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__icon
+		width: 82px
+		height: 82px
+		background: linear-gradient(270deg, #3E7EEA 0%, #58B9F3 100%)
+		border-radius: 50%
+		text-align: center
+		line-height: 82px
+		margin-bottom: 12px
+		+media-breakpoint-down(xs)
+			width: 70px
+			height: 70px
+			line-height: 70px
+		svg
+			width: 51px
+			height: 37px
+			+media-breakpoint-down(xs)
+				width: 41px
+				height: 27px
+	&__text
+		font-size: 20px
+		line-height: 28px
+		+media-breakpoint-down(sm)
+			font-size: 16px
+			text-align: center
+			line-height: 22px
+		+media-breakpoint-down(xs)
+			font-size: 15px
+	&__close
+		position: absolute
+		top: 15px
+		right: 27px
+		font-size: 14px
+		color: $textcolor
+		cursor: pointer
+		+media-breakpoint-down(xs)
+			top: 12px
+			right: 22px
+
+.user-popup
+	.themeForm
+		box-shadow: none
+		background: transparent
+		max-width: unset
+
+.signUp
+	background: $mainBgColor
+	border-radius: 15px
+	box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
+	padding: 33px 44px 54px
+	max-width: 460px
+	+media-breakpoint-down(xs)
+		padding: 25px 20px 54px
+		max-width: 100%
+	&__tabs
+		+media-breakpoint-down(xs)
+			display: flex
+			justify-content: space-between
+	&__tab
+		color: rgba(89, 90, 108, 0.5)
+		text-transform: uppercase
+		font-weight: 700
+		font-size: 29px
+		line-height: 37px
+		margin-right: 70px
+		position: relative
+		cursor: pointer
+		+media-breakpoint-down(xs)
+			font-size: 18px
+			flex: 1
+			text-align: center
+			margin-right: 0
+		&::after
+			content: ''
+			position: absolute
+			top: 50%
+			right: -45px
+			width: 12px
+			height: 12px
+			background: linear-gradient(90deg, #3C7BEA 0%, #57B9F3 100%)
+			box-shadow: -5px -5px 10px #FFFFFF
+			transform: rotate(180deg) translateY(50%)
+			border-radius: 50%
+			+media-breakpoint-down(xs)
+				display: none
+		&:last-child
+			margin-right: 0
+			&::after
+				display: none
+		&.active
+			color: $textcolor
+	&__item
+		position: relative
+		padding-top: 35px
+		+media-breakpoint-down(xs)
+			padding-top: 20px
+		.themeForm__input
+			max-width: 100%
+			width: 100%
+			input
+				width: 100%
+				margin-bottom: 20px
+				font-size: 21px
+				+media-breakpoint-down(xs)
+					font-size: 15px
+			button
+				width: 100%
+	&__pass
+		position: relative
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 30px
+		.forgot
+			color: rgba(0, 0, 0, 0.7)
+			position: relative
+			display: inline-block
+			height: fit-content
+			font-size: 21px
+			opacity: 0.8
+			+media-breakpoint-down(xs)
+				font-size: 15px
+			&:hover
+				text-decoration: none
+			&::after
+				content: ''
+				position: absolute
+				bottom: 3px
+				left: 0
+				width: 100%
+				height: 1px
+				background: rgba(0, 0, 0, 0.7)
+	&__remember
+		input
+			display: none
+			&:checked ~ label::after
+				left: 20px
+		label
+			font-size: 21px
+			color: rgba(0, 0, 0, 0.7)
+			padding-left: 51px
+			margin: 0
+			position: relative
+			cursor: pointer
+			opacity: 0.8
+			+media-breakpoint-down(xs)
+				font-size: 15px
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 0
+				width: 40px
+				height: 20px
+				box-shadow: inset -3px 2px 5px rgba(0, 0, 0, 0.25)
+				border-radius: 35px
+				background: $mainBgColor
+				transform: translateY(-50%)
+			&::after
+				content: ''
+				position: absolute
+				top: 50%
+				left: 0
+				width: 20px
+				height: 20px
+				background: linear-gradient(90deg, #3C7AEA 0%, #57B8F3 100%)
+				border-radius: 50%
+				transform: translateY(-50%)
+				transition: $trs
+	&__close
+		position: absolute
+		bottom: 32px
+		right: 37px
+		color: rgba(0, 0, 0, 0.5)
+		font-size: 15px
+		cursor: pointer
+		+media-breakpoint-down(xs)
+			right: 27px
 
 .box
 	position: relative

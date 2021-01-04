@@ -4,6 +4,25 @@ document.addEventListener("DOMContentLoaded", function() {
 		$(".preloader").delay(700).fadeOut("slow");
 	});
 
+	$('.popup').magnificPopup({
+		type:'inline',
+		midClick: true,
+		showCloseBtn: false,
+		removalDelay: 700,
+		mainClass: 'mfp-fade'
+	});
+
+
+	$('.themeForm__close').on('click', function() {
+		$.magnificPopup.close();
+	})
+	$('.formSuccess__close').on('click', function() {
+		$.magnificPopup.close();
+	})
+	$('.signUp__close').on('click', function() {
+		$.magnificPopup.close();
+	})
+
 	const $dropdownMenu = $('.dropdownMenu');
 
 	$(document).mouseup(e => {
@@ -19,12 +38,42 @@ document.addEventListener("DOMContentLoaded", function() {
 		e.preventDefault()
 	});
 
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > $(this).height()) {
+			$('.toTop').addClass('active')
+		} else {
+			$('.toTop').removeClass('active')
+		}
+	})
+
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > $(this).height() * 2) {
+			$('.cookie').addClass('active')
+		}
+	})
+
+	$('.cookie__btn').on('click', function() {
+		$('.cookie').css('opacity', '0')
+		$('.cookie').css('visibility', 'hidden')
+	})
+
+	$('.toTop').on('click', function() {
+		$('html, body').stop().animate({ scrollTop: 0}, 'slow', 'swing')
+	})
+
+	$(".signUp__item").not(":first").hide();
+	$(".signUp__wrapper .signUp__tab").click(function() {
+		$(".signUp__wrapper .signUp__tab").removeClass("active").eq($(this).index()).addClass("active");
+		$(".signUp__item").hide().eq($(this).index()).fadeIn()
+	}).eq(0).addClass("active");
+
 
 	// gsap animation
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.config({
 		nullTargetWarn: false
 	})
+
 
 
 	function hamburgerMenu() {
@@ -115,9 +164,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	})
 
 	function complexMoreBtn() {
-		$moreBtn = document.querySelector('.complexApproach__more')
+		
 		$textBlock = document.querySelectorAll('.complexApproach__text')
-		$moreBtn.addEventListener('click', function() {
+		
 
 			if(this.classList.contains('complexApproach__more-active')) {
 				$textBlock.forEach(item => {
@@ -132,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				item.classList.toggle('complexApproach__text-active')
 			})
 			}
-		})
+		
 	}
 
 	$('.kassySlider').slick({
@@ -266,15 +315,19 @@ document.addEventListener("DOMContentLoaded", function() {
 				trigger: '.form'
 			}
 		})
-		scrollAnim.from('.home .themeForm', { y: 100, opacity: 0, duration: 2 })
+		scrollAnim.from('.home .form .themeForm', { y: 100, opacity: 0, duration: 2 })
 	}
 
 
-	
+
 	hamburgerMenu()
 	accordion()
-	complexMoreBtn()
 	footerArrow()
+
+	$complexMoreBtn = document.querySelector('.complexApproach__more')
+	if($complexMoreBtn) {
+		$complexMoreBtn.addEventListener('click', complexMoreBtn, false)
+	}
 	
 
 	if(window.innerWidth > 992) {

@@ -724,19 +724,20 @@
     &.complexApproach__more-active
       &:hover
         .icon
-          transform: rotate(180deg)
+          svg
+            transform: rotate(180deg)
     .icon
       width: 47px
       height: 47px
       background: $buttonGradient
-      box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53), -10px -10px 27px #FFFFFF
+      //box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53), -10px -10px 27px #FFFFFF
       line-height: 47px
       text-align: center
       border-radius: 50%
       position: absolute
       top: 6px
       right: 8px
-      transition: $trs
+      transition: transform .7s ease
   &__item
     position: relative
     margin-right: 50px
@@ -755,8 +756,8 @@
       margin-right: 0
       margin-bottom: 35px
     +media-breakpoint-down(xs)
-      max-width: 80%
-      margin: 0 auto 24px auto
+      max-width: 90%
+      margin: 0 auto 36px auto
     &::after
       content: ''
       position: absolute
@@ -778,7 +779,7 @@
         +media-breakpoint-down(lg)
           display: none
   &__name
-    font-weight: 900
+    font-weight: 700
     font-size: 17px
     line-height: 18px
     margin: 0
@@ -944,6 +945,10 @@
       font-size: 16px !important
       padding: 9px 0 !important
       line-height: 1.8
+    &:active,
+    &:focus
+      outline: none
+      
   &__title
     font-weight: 700
     font-size: 38px
@@ -1130,7 +1135,7 @@
   &__logotype
     position: relative
     background: $mainBgColor
-    box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.25)
+    box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.25), -10px -10px 20px #FFFFFF
     max-width: 304px
     padding: 26px 43px
     border-radius: 35px
@@ -1141,6 +1146,9 @@
       margin: 0 auto 50px auto
     +media-breakpoint-down(xs)
       margin: 0 auto 30px auto
+    img
+      max-width: 218px
+      height: auto
   &__text
     position: relative
     p
@@ -1161,6 +1169,9 @@
     position: absolute
     left: 120px
     top: -120px
+  .themeForm
+    .row
+      margin-right: -16px
 
 .footer
   position: relative
@@ -1170,6 +1181,9 @@
     top: -25px
     left: 50%
     cursor: pointer
+    background: linear-gradient(90deg,#3c7aea 0,#59bcf4 100%)
+    box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53), -10px -10px 27px #FFFFFF
+    border-radius: 50%
     +media-breakpoint-down(md)
       display: none
     .icon
@@ -1177,9 +1191,6 @@
       height: 47px
       text-align: center
       line-height: 47px
-      background: linear-gradient(90deg,#3c7aea 0,#59bcf4 100%)
-      box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53), -10px -10px 27px #FFFFFF
-      border-radius: 50%
       transition: all .6s ease
     &.active
       .icon
@@ -1259,6 +1270,7 @@
           margin-bottom: 20px
           line-height: 18px
         +media-breakpoint-down(sm)
+          font-family: RobotoLight
           font-size: 15px
   &__contacts
     margin-top: 15px
@@ -1315,9 +1327,234 @@
     padding: 30px 15px
     justify-content: space-around
 
+.toTop
+  position: fixed
+  bottom: 85px
+  right: -100px
+  background: linear-gradient(270deg, rgba(62, 126, 234, 0.9) 0%, rgba(88, 185, 243, 0.9) 100%)
+  box-shadow: -10px -10px 27px #FFFFFF, 5px 5px 27px rgba(43, 43, 163, 0.53)
+  width: 81px
+  height: 81px
+  line-height: 81px
+  text-align: center
+  border-radius: 50%
+  cursor: pointer
+  z-index: 103
+  opacity: 0.6
+  transition: $trs
+  +media-breakpoint-down(lg)
+    width: 75px
+    height: 75px
+    line-height: 75px
+  +media-breakpoint-down(md)
+    width: 60px
+    height: 60px
+    line-height: 60px
+  +media-breakpoint-down(sm)
+    width: 55px
+    height: 55px
+    line-height: 55px
+    bottom: 120px
+  +media-breakpoint-down(xs)
+    width: 47px
+    height: 47px
+    line-height: 47px
+  &:hover
+    opacity: 1
+  &.active
+    right: 50px
+    +media-breakpoint-down(sm)
+      right: 30px
+    +media-breakpoint-down(xs)
+      right: 15px
+  svg
+    width: 39px
+    height: 46px
+    +media-breakpoint-down(md)
+      width: 30px
+      height: 37px
+    +media-breakpoint-down(sm)
+      width: 25px
+      height: 32px
+    +media-breakpoint-down(xs)
+      width: 22px
+      height: 29px
+
+.cookie
+  position: fixed
+  right: 0
+  background: $mainBgColor
+  box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.25)
+  max-width: 316px
+  height: auto
+  z-index: 102
+  text-align: center
+  padding: 22px 26px
+  border-radius: 25px
+  animation: cookieAnimateIn 2s linear forwards
+  animation-delay: 4s
+  transition: all 1s ease
+  &.active
+    visibility: hidden
+    opacity: 0
+  &__title
+    font-weight: 700
+    font-size: 19px
+    line-height: 26px
+    +media-breakpoint-down(xs)
+      font-size: 16px
+  &__text
+    position: relative
+    margin: 15px 0
+    +media-breakpoint-down(xs)
+      font-family: RobotoLight
+    p
+      font-size: 12px
+      line-height: 17px
+      margin: 0
+      a
+        font-weight: 700
+        color: $textcolor
+  &__btn
+    padding: 8px 0
+    width: 60%
+    box-shadow: -7px -7px 6px #FFFFFF, 7px 7px 15px rgba(43, 43, 163, 0.31)
+    border-radius: 24px
+
+@keyframes cookieAnimateIn
+  0%
+    bottom: -100%
+  100%
+    bottom: 0
+
+.mfp-bg
+  background: $mainBgColor
+  opacity: 1
+.mfp-fade.mfp-bg
+  opacity: 0
+  transition: all .7s ease-out
+.mfp-fade.mfp-bg.mfp-ready
+  opacity: 1
+.mfp-fade.mfp-bg.mfp-removing
+  opacity: 0
+.mfp-fade.mfp-wrap .mfp-content
+  opacity: 0
+  transition: all .7s ease-out
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+  opacity: 1
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+  opacity: 0
+
+.form-popup
+  .themeForm
+    box-shadow: -10px -10px 20px #FFFFFF, 15px 15px 40px rgba(43, 43, 163, 0.15)
+
 
 .slick-slide
   outline: none
+
+
+// Content Section
+.content
+  position: relative
+  padding-top: 43px
+  padding-bottom: 73px
+
+// Breadcrumb
+.breadcrumb
+  margin-bottom: 43px
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    li
+      font-family: $roboto
+      margin-right: 30px
+      font-size: 17px
+      color: #000000
+      line-height: 24px
+      position: relative
+      +media-breakpoint-down(sm)
+        font-size: 16px
+      &::after
+        content: ''
+        position: absolute
+        right: -22px
+        top: 56%
+        transform: translateY(-50%)
+        width: 11px
+        height: 9px
+        background-image: url(../images/dest/breadcrumb-arrow.svg)
+      &:last-child
+        &::after
+          display: none
+      a
+        color: #000
+        font-family: $roboto
+
+.textBlock
+  position: relative
+  padding: 50px 70px
+  background: $mainBgColor
+  box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
+  border-radius: 35px
+  margin-bottom: 30px
+  +media-breakpoint-down(md)
+    padding: 40px 60px
+  +media-breakpoint-down(sm)
+    padding: 40px
+    margin-bottom: 0
+  +media-breakpoint-down(xs)
+    padding: 30px 15px
+  &__title
+    text-align: center
+    margin-bottom: 50px
+    +media-breakpoint-down(sm)
+      margin-bottom: 40px
+  &__text
+    p
+      font-size: 24px
+      line-height: 34px
+      text-align: justify
+      margin-bottom: 25px
+      +media-breakpoint-down(md)
+        font-size: 20px
+      +media-breakpoint-down(sm)
+        font-family: RobotoLight
+        font-size: 16px
+        margin-bottom: 15px
+        line-height: 26px
+      +media-breakpoint-down(xs)
+        font-size: 15px
+      &:last-child
+        margin-bottom: 0
+  &__btns
+    position: relative
+    margin-top: 47px
+    +media-breakpoint-down(xs)
+      margin-top: 40px
+      display: flex
+      flex-direction: column
+  &__btn
+    padding: 8px 32px
+    font-size: 16px
+    font-weight: 500
+    box-shadow: -7px -7px 6px #FFFFFF, 7px 7px 15px rgba(43, 43, 163, 0.31)
+    border-radius: 38px
+    text-transform: none
+    +media-breakpoint-down(xs)
+      box-shadow: 7px 7px 15px rgba(43, 43, 163, 0.31)
+      margin-bottom: 15px
+    &.main
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      +media-breakpoint-down(xs)
+        position: relative
 
 
 @media screen and ( max-width: 1355px )
@@ -1357,3 +1594,9 @@
     height: 200px
   .assortmentSlider__slide
     height: 280px
+  .signUp__pass
+    flex-direction: column-reverse
+  .signUp__pass .forgot
+    margin-bottom: 20px
+  .signUp__tab
+    font-size: 16px
