@@ -16,6 +16,7 @@ let paths = {
 			'node_modules/gsap/dist/gsap.min.js',
 			'node_modules/gsap/dist/ScrollTrigger.min.js',
 			'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+			'node_modules/select2/dist/js/select2.min.js',
 			baseDir + '/js/app.js' // app.js. Always at the end
 		],
 		dest: baseDir + '/js',

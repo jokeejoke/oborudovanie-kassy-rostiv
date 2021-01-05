@@ -28,6 +28,7 @@
 		"gulp-webp-css": "^1.1.0",
 		"jquery": "^3.5.1",
 		"magnific-popup": "^1.1.0",
+		"select2": "^4.0.13",
 		"slick-carousel": "^1.8.1",
 		"swiper": "^6.4.5"
 	}

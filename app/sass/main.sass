@@ -1459,6 +1459,8 @@
   position: relative
   padding-top: 43px
   padding-bottom: 73px
+  +media-breakpoint-down(xs)
+    padding-bottom: 40px
 
 // Breadcrumb
 .breadcrumb
@@ -1474,7 +1476,7 @@
       font-family: $roboto
       margin-right: 30px
       font-size: 17px
-      color: #000000
+      color: $textcolor
       line-height: 24px
       position: relative
       +media-breakpoint-down(sm)
@@ -1492,7 +1494,7 @@
         &::after
           display: none
       a
-        color: #000
+        color: $textcolor
         font-family: $roboto
 
 .textBlock
@@ -1555,6 +1557,419 @@
       transform: translateX(-50%)
       +media-breakpoint-down(xs)
         position: relative
+
+// Catalog Block
+.catalog
+  position: relative
+  &__title
+    text-align: center
+    margin-bottom: 40px
+  &__filter
+    position: relative
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    margin-bottom: 10px
+    +media-breakpoint-down(md)
+      justify-content: space-between
+    +media-breakpoint-down(xs)
+      flex-direction: column
+      align-items: flex-start
+    .showKind
+      position: relative
+      display: flex
+      height: 100%
+      width: 74px
+      height: 37px
+      box-shadow: inset -3px 2px 5px rgba(0, 0, 0, 0.25)
+      background: #F0F0F8
+      border-radius: 35px
+      +media-breakpoint-down(xs)
+        margin-bottom: 40px
+      a
+        display: inline-block
+        flex: 1
+        text-align: center
+        height: 100%
+        line-height: 35px
+        border-radius: 35px
+        svg
+          fill: #595A6C
+        &.active
+          background: linear-gradient(90deg, #3C7AEA 0%, #57B8F3 100%)
+          svg
+            fill: #fff
+  &__sort
+    position: relative
+    margin-left: 50px
+    +media-breakpoint-down(xs)
+      margin-left: 0
+      width: 100%
+  &__items
+    position: relative
+  &__pagination
+    margin-top: 50px
+    margin-bottom: 30px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    +media-breakpoint-down(md)
+      flex-direction: column-reverse
+  
+
+.catalogItem
+  position: relative
+  background: $mainBgColor
+  box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
+  border-radius: 15px
+  padding: 34px 20px
+  margin: 30px 0 0
+  +media-breakpoint-down(lg)
+    padding: 25px 20px
+  &__image
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 196px
+    filter: drop-shadow(-8px 8px 15px rgba(43, 43, 163, 0.25))
+    +media-breakpoint-down(xs)
+      height: 230px
+    img
+      max-width: 100%
+      max-height: 196px
+      height: auto
+      object-fit: cover
+      +media-breakpoint-down(xs)
+        max-height: 230px
+  &__title
+    font-weight: 700
+    font-size: 14px
+    line-height: 15px
+    margin-top: 30px
+    margin-bottom: 15px
+    white-space: nowrap
+    +media-breakpoint-down(lg)
+      margin-top: 25px
+      font-size: 13px
+    +media-breakpoint-down(xs)
+      font-size: 18px
+      margin-bottom: 25px
+  &__foot
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &__btn
+    max-width: 106px
+    border: none
+    font-size: 14px
+    line-height: 20px
+    font-weight: 500
+    padding: 6px 20px
+    border-radius: 38px
+    box-shadow: -7px -7px 6px #FFFFFF, 7px 7px 15px rgba(43, 43, 163, 0.31)
+    text-transform: none
+    +media-breakpoint-down(xs)
+      max-width: 200px
+  &__price
+    font-weight: 700
+    line-height: 24px
+
+// Pagination
+.pagination
+  position: relative
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  align-items: center
+  +media-breakpoint-down(md)
+    width: 100%
+    justify-content: space-between
+  +media-breakpoint-down(xs)
+    flex-direction: column
+    flex-wrap: wrap
+  &__btn
+    font-size: 14px
+    line-height: 20px
+    text-transform: none
+    width: 112px
+    padding: 8px 0
+    text-align: center
+    font-weight: 700
+    border-radius: 38px
+    box-shadow: -7px -7px 6px #FFFFFF, 7px 7px 15px rgba(43, 43, 163, 0.31)
+    +media-breakpoint-down(xs)
+      background: $mainBgColor
+      color: $textcolor
+      box-shadow: inset 3px 2px 5px rgba(0,0,0,.25)
+  &__item
+    display: flex
+    align-items: center
+    +media-breakpoint-down(xs)
+      width: 100%
+  &__link
+    display: block
+    width: 39px
+    height: 39px
+    line-height: 39px
+    text-align: center
+    box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25)
+    border-radius: 50%
+    color: $textcolor
+    font-weight: 700
+    margin: 0 6px
+    +media-breakpoint-down(xs)
+      width: 100%
+      border-radius: 38px
+      margin: 0 0 15px
+    &.active
+      background: linear-gradient(270deg, rgba(62, 126, 234, 0.9) 0%, rgba(88, 185, 243, 0.9) 100%)
+      box-shadow: -7px -7px 12px #FFFFFF, 5px 5px 20px rgba(43, 43, 163, 0.5)
+      color: #ffffff
+      &:hover
+        color: #ffffff
+    &:hover
+      color: $textcolor
+      text-decoration: none
+  .to_start
+    display: inline-block
+    margin-right: 6px
+    +media-breakpoint-down(xs)
+      margin: 0 0 15px
+      width: 100%
+  .next
+    display: inline-block
+    margin-left: 6px
+    +media-breakpoint-down(xs)
+      margin: 0
+      width: 100%
+  &__text
+    font-size: 20px
+    font-weight: 400
+    line-height: 23px
+    margin: 0
+    +media-breakpoint-down(lg)
+      font-size: 18px
+      line-height: 21px
+    +media-breakpoint-down(md)
+      margin-bottom: 25px
+      font-size: 16px
+
+
+// Sort
+.sort
+  position: relative
+  .select2-container
+    +media-breakpoint-down(xs)
+      width: 100% !important
+
+.select2-container:active, .select2-container:focus,
+.selection:active, .selection:focus,
+.select2-container--default .select2-selection--single:focus
+  outline: none
+.select2-container--default .select2-selection--single
+  border: none
+  height: auto
+  background: #FFFFFF
+  box-shadow: -3px -4px 5px #FFFFFF, 2px 2px 4px rgba(43, 43, 163, 0.2)
+  border-radius: 24px
+.select2-container--default .select2-selection--single .select2-selection__rendered
+  padding: 6px 6px 6px 15px
+  font-weight: 500
+  color: #595A6C
+  font-size: 16px
+  line-height: 24px
+  +media-breakpoint-down(xs)
+    line-height: 20px
+    font-size: 15px
+.select2-container--default .select2-selection--single .select2-selection__arrow b, .select2-search--dropdown
+  display: none
+.select2-container--default .select2-selection--single .select2-selection__arrow
+  height: 100%
+  &::after
+    content: ''
+    position: absolute
+    width: 14px
+    height: 9px
+    top: 12px
+    right: 15px
+    background-image: url(../images/dest/sort-arrow.svg)
+.select2-results__option
+  color: #595A6C
+  font-size: 15px
+  line-height: 24px
+  padding: 6px 6px 6px 15px
+  +media-breakpoint-down(xs)
+    font-size: 14px
+    line-height: 22px
+  &:last-child
+    border-bottom-left-radius: 18px
+    border-bottom-right-radius: 18px
+.select2-dropdown
+  border: none
+  box-shadow: -3px -4px 5px #FFFFFF, 2px 2px 4px rgba(43, 43, 163, 0.2)
+.select2-container--open .select2-dropdown--below
+  border-bottom-left-radius: 18px
+  border-bottom-right-radius: 18px
+.select2-container--default .select2-results__option--highlighted[aria-selected]
+  background: $buttonGradient
+.select2-container--default .select2-results__option[aria-selected=true]
+  background-color: $accent
+  color: #ffffff
+
+.horizontItem
+  position: relative
+  display: flex
+  box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
+  border-radius: 15px
+  padding: 34px 50px 50px
+  margin-top: 30px
+  +media-breakpoint-down(md)
+    flex-direction: column
+  +media-breakpoint-down(xs)
+    padding: 25px 15px 40px
+  &__image
+    position: relative
+    padding-top: 10px
+    width: 234px
+    max-height: 160px
+    margin-right: 50px
+    display: flex
+    justify-content: center
+    align-items: center
+    +media-breakpoint-down(md)
+      width: 100%
+      max-height: 300px
+    +media-breakpoint-down(xs)
+      max-height: 230px
+    img
+      max-width: 100%
+      max-height: 160px
+      height: auto
+      object-fit: cover
+      +media-breakpoint-down(md)
+        max-height: 300px
+      +media-breakpoint-down(xs)
+        max-height: 230px
+  &__chars
+    position: relative
+    width: 80%
+    +media-breakpoint-down(md)
+      width: 100%
+      margin-top: 34px
+  &__title
+    font-size: 20px
+    font-weight: 700
+    line-height: 22px
+    margin-bottom: 16px
+    +media-breakpoint-down(xs)
+      font-size: 18px
+      line-height: 20px
+    a
+      color: $textcolor
+  &__bottom
+    margin-top: 20px
+    display: flex
+    align-items: center
+    +media-breakpoint-down(xs)
+      justify-content: space-between
+  &__right
+    position: relative
+    text-align: right
+    +media-breakpoint-down(md)
+      text-align: left
+      margin-top: 20px
+      display: flex
+      align-items: center
+      justify-content: space-between
+      flex-wrap: wrap
+    +media-breakpoint-down(xs)
+      flex-direction: column
+  &__price
+    font-size: 27px
+    line-height: 38px
+    font-weight: 700
+    margin-bottom: 20px
+    +media-breakpoint-down(md)
+      margin-bottom: 0
+    +media-breakpoint-down(xs)
+      margin-bottom: 15px
+  &__have
+    font-size: 17px
+    line-height: 24px
+    color: rgba(0, 0, 0, 0.75)
+    margin-bottom: 20px
+    +media-breakpoint-down(md)
+      margin-bottom: 0
+    +media-breakpoint-down(xs)
+      margin-bottom: 25px
+    svg
+      margin-left: 10px
+  &__btn
+    border: none
+    padding: 13px 0
+    font-weight: 700
+    width: 139px
+    margin-top: 70px
+    border-radius: 24px
+    box-shadow: -7px -7px 6px #FFFFFF, 7px 7px 15px rgba(43, 43, 163, 0.31)
+    +media-breakpoint-down(md)
+      margin-top: 0
+    +media-breakpoint-down(xs)
+      width: 100%
+
+.chars
+  margin: 0
+  padding: 0
+  list-style: none
+  li
+    font-size: 14px
+    line-height: 20px
+    margin-bottom: 5px
+    span
+      font-weight: 700
+
+.stars
+  position: relative
+  display: flex
+  margin-right: 30px
+  +media-breakpoint-down(xs)
+    margin-right: 0
+  .star
+    display: block
+    width: 20px
+    height: 20px
+    background-image: url(../images/dest/star.svg)
+    margin-right: 8px
+    &:last-child
+      margin-right: 0
+    &.empty
+      background-image: url(../images/dest/star-empty.svg)
+
+.addToFav
+  position: relative
+  display: flex
+  align-items: center
+  cursor: pointer
+  &__icon
+    width: 20px
+    height: 20px
+    line-height: 18px
+    background: #ffffff
+    text-align: center
+    border-radius: 50%
+    margin-right: 10px
+    +media-breakpoint-down(xs)
+      margin-right: 5px
+  span
+    display: inline-block
+    font-weight: 500
+    opacity: 0.8
+    +media-breakpoint-down(xs)
+      font-size: 14px
 
 
 @media screen and ( max-width: 1355px )

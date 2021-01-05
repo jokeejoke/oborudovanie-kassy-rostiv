@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		$(".signUp__item").hide().eq($(this).index()).fadeIn()
 	}).eq(0).addClass("active");
 
+	$('.theme-select').select2();
+
 
 	// gsap animation
 	gsap.registerPlugin(ScrollTrigger);
