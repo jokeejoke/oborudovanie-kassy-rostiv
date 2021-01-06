@@ -52,9 +52,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	})
 
-	$('.cookie__btn').on('click', function() {
+	$('.cookie__btn').on('click', function(e) {
 		$('.cookie').css('opacity', '0')
 		$('.cookie').css('visibility', 'hidden')
+		e.preventDefault()
+		return false
 	})
 
 	$('.toTop').on('click', function() {
@@ -320,11 +322,44 @@ document.addEventListener("DOMContentLoaded", function() {
 		scrollAnim.from('.home .form .themeForm', { y: 100, opacity: 0, duration: 2 })
 	}
 
+	function quantity() {
+		const $plusBtn = document.querySelectorAll('.quantity .plus')
+		const $minusBtn = document.querySelectorAll('.quantity .minus')
+
+		$plusBtn.forEach(plusItem => {
+			plusItem.addEventListener('click', function() {
+				plusItem.previousElementSibling.value++
+			})
+		})
+
+		$minusBtn.forEach(minusItem => {
+			minusItem.addEventListener('click', function() {
+				if(minusItem.nextElementSibling.value > 1){
+					minusItem.nextElementSibling.value--
+				}
+				
+			})
+		})
+
+	}
+
+	function repostIcon () {
+		$allShareBtn = document.querySelectorAll('.icon.share')
+		$allShareBtn.forEach(btn => {
+			btn.addEventListener('click', function() {
+				this.classList.toggle('active')
+				this.nextElementSibling.classList.toggle('show')
+			})
+		})
+	}
+
 
 
 	hamburgerMenu()
 	accordion()
 	footerArrow()
+	quantity()
+	repostIcon()
 
 	$complexMoreBtn = document.querySelector('.complexApproach__more')
 	if($complexMoreBtn) {
