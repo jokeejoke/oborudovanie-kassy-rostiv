@@ -12,6 +12,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		mainClass: 'mfp-fade'
 	});
 
+	$('.detail__image').magnificPopup({
+		type: 'image',
+		gallery:{
+			enabled:true
+		},
+		mainClass: 'mfp-fade',
+		removalDelay: 700
+	});
+
 
 	$('.themeForm__close').on('click', function() {
 		$.magnificPopup.close();
@@ -70,6 +79,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	}).eq(0).addClass("active");
 
 	$('.theme-select').select2();
+
+	$(".detail__item").not(":first").hide();
+	$(".detail__wrapper .detail__tab").click(function() {
+		$(".detail__wrapper .detail__tab").removeClass("active").eq($(this).index()).addClass("active");
+		$(".detail__item").hide().eq($(this).index()).fadeIn()
+	}).eq(0).addClass("active");
 
 
 	// gsap animation
@@ -235,6 +250,24 @@ document.addEventListener("DOMContentLoaded", function() {
 				}
 			}
 		]
+	});
+
+	$('.detail__gallery').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.detail__thumbs'
+	});
+
+	$('.detail__thumbs').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		asNavFor: '.detail__gallery',
+		arrows: false,
+		//dots: true,
+		//centerMode: true,
+		focusOnSelect: true
 	});
 
 	function footerArrow() {
