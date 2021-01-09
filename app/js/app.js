@@ -385,6 +385,45 @@ document.addEventListener("DOMContentLoaded", function() {
 			})
 		})
 	}
+/*
+	const loadFile = function(event) {
+    let output = document.querySelector('.user-data__outputImage');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+	}*/
+	
+	function loadFile () {
+		const $filename = document.querySelector('.filename')
+		if($filename) {
+			$filename.onchange = function(event) {
+				let reader = new FileReader();
+				reader.onload = function(){
+					let output = document.querySelector('.user-data__outputImage');
+					output.src = reader.result;
+				};
+				reader.readAsDataURL(event.target.files[0]);
+			}
+		}
+		
+	}
+
+	function deleteFile() {
+		const $deleteBtn = document.querySelector('.user-data__deleteImage')
+		if($deleteBtn) {
+			$deleteBtn.addEventListener('click', function() {
+				let output = document.querySelector('.user-data__outputImage');
+				output.src = 'images/dest/no-image.png';
+			})
+		}
+	}
+
+	$(".cabinet__tabItem").not(":first").hide();
+	$(".cabinet__wrapper .cabinet__tab").click(function() {
+		$(".cabinet__wrapper .cabinet__tab").removeClass("active").eq($(this).index()).addClass("active");
+		$(".cabinet__tabItem").hide().eq($(this).index()).fadeIn()
+	}).eq(0).addClass("active");
 
 
 
@@ -393,6 +432,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	footerArrow()
 	quantity()
 	repostIcon()
+	loadFile()
+	deleteFile()
 
 	$complexMoreBtn = document.querySelector('.complexApproach__more')
 	if($complexMoreBtn) {

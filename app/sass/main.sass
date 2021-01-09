@@ -2713,6 +2713,476 @@ img.mfp-img
     &:checked ~ .review-rating__label:hover
       color: $accent
 
+// Cabinet
+.cabinet
+  position: relative
+  &__title
+    text-align: center
+    margin-bottom: 50px
+    +media-breakpoint-down(xs)
+      margin-bottom: 40px
+  &__wrapper
+    position: relative
+    padding: 40px
+    box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
+    border-radius: 35px
+    height: 100%
+    +media-breakpoint-down(lg)
+      padding: 40px 30px
+    +media-breakpoint-down(md)
+      margin-top: 50px
+    +media-breakpoint-down(sm)
+      border-radius: 15px
+    +media-breakpoint-down(xs)
+      margin-top: 40px
+      padding: 25px 15px
+  &__tab, .out
+    display: block
+    box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25)
+    padding: 9px 9px 9px 20px
+    font-size: 20px
+    line-height: 22px
+    border-radius: 38px
+    margin-bottom: 25px
+    cursor: pointer
+    transition: $trs
+    font-weight: 500
+    +media-breakpoint-down(sm)
+      font-size: 18px
+      margin-bottom: 15px
+      font-size: 15px
+    &:last-child
+      margin-bottom: 0
+    &.active
+      background: linear-gradient(90deg, #3C7AEA 0%, #59BCF4 100%)
+      color: #fff
+    a
+      color: $textcolor
+      &:hover
+        text-decoration: none
+  &__tabContent
+    position: relative
+    padding: 50px 0
+  &__tabTitle
+    text-align: center
+    margin-bottom: 50px
+    &.mb-30
+      margin-bottom: 30px
+    span
+      font-weight: 700
+      font-size: 30px
+      line-height: 35px
+      text-transform: uppercase
+      text-align: center
+      display: inline-block
+      padding: 5px 20px
+      border-radius: 38px
+      box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25)
+      +media-breakpoint-down(md)
+        font-size: 24px
+        line-height: 33px
+  &__accordion
+    .accordion__item
+      margin-bottom: 30px
+      box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
+      +media-breakpoint-down(xs)
+        margin-bottom: 25px
+      &::after
+        display: none
+      .icons
+        display: flex
+        align-items: center
+        position: absolute
+        top: 17px
+        right: 72px
+        z-index: 99
+        +media-breakpoint-down(sm)
+          right: 64px
+        +media-breakpoint-down(xs)
+          //top: 10px
+          display: none
+        .icon
+          margin: 0 15px
+          cursor: pointer
+          +media-breakpoint-down(sm)
+            margin: 0 7px
+          &.important
+            background-repeat: no-repeat
+            background-size: auto
+            background-position: 11px 9px
+          &.repeat
+            &:hover
+              width: auto
+              border-radius: 38px
+              padding: 0 8px
+              span
+                display: inline-block
+      .icon
+        width: 39px
+        height: 39px
+        line-height: 39px
+        text-align: center
+        border-radius: 50%
+        box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25)
+        transition: $trs
+        span
+          display: none
+          transition: $trs
+          font-size: 14px
+          font-weight: 700
+        &.arrow
+          position: absolute
+          top: 17px
+          right: 18px
+          background: linear-gradient(270deg, #3E7EEA 0%, #58B9F3 100%)
+          box-shadow: -10px -10px 27px #FFFFFF, 5px 5px 27px rgba(43, 43, 163, 0.53)
+          +media-breakpoint-down(xs)
+            top: 18px
+            right: 15px
+          svg
+            transition: $trs
+    .accordion__header
+      padding: 17px 18px 17px 48px
+      display: flex
+      align-items: center
+      +media-breakpoint-down(xs)
+        padding: 15px
+        border-radius: 15px
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+      &:hover
+        .arrow
+          svg
+            transform: rotate(360deg)
+      &::after
+        display: none
+      &.accordion__header-active
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1)
+        +media-breakpoint-down(xs)
+          border-radius: 0
+        &:hover
+          .arrow
+            svg
+              transform: rotate(540deg)
+    .accordion__content
+      padding: 30px 67px 50px 28px
+      +media-breakpoint-down(md)
+        padding: 0 28px 50px 28px
+      +media-breakpoint-down(xs)
+        padding: 15px
+  &__orderList
+    position: relative
+    .table
+      width: 100%
+      border-collapse: separate
+      border-spacing: 20px
+      +media-breakpoint-down(sm)
+        border-spacing: 0
+      thead
+        th
+          text-align: center
+      tbody
+        th,
+        td
+          box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25)
+          border-radius: 38px
+          font-weight: 700
+          padding: 10px 33px
+          font-size: 17px
+          line-height: 18px
+          text-align: center
+          +media-breakpoint-down(md)
+            padding: 10px
+            font-family: RobotoLight
+            font-size: 15px
+            box-shadow: none
+            border-radius: 0
+        tr
+          th
+            max-width: 528px
+            text-align: left
+            +media-breakpoint-down(lg)
+              max-width: 350px
+            +media-breakpoint-down(md)
+              max-width: 270px
+            +media-breakpoint-down(sm)
+              max-width: 130px
+            +media-breakpoint-down(xs)
+              max-width: 50px
+            a
+              color: $textcolor
+  &__orderPrice
+    position: relative
+    text-align: right
+    padding-right: 20px
+    font-weight: 700
+    font-size: 24px
+    line-height: 26px
+    text-transform: uppercase
+    margin-top: 2px
+    +media-breakpoint-down(md)
+      font-size: 20px
+    +media-breakpoint-down(xs)
+      font-size: 15px
+    span
+      display: inline-block
+      box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25)
+      padding: 10px 24px
+      border-radius: 38px
+      margin-left: 5px
+      +media-breakpoint-down(xs)
+        padding: 5px 15px
+  &__mailing
+    position: relative
+    display: flex
+    justify-content: space-between
+    margin-top: 10px
+    +media-breakpoint-down(lg)
+      flex-direction: column
+      justify-content: center
+      align-items: center
+    p
+      margin: 0
+      max-width: 717px
+      font-size: 21px
+      line-height: 30px
+      +media-breakpoint-down(md)
+        font-size: 16px
+        text-align: center
+      +media-breakpoint-down(sm)
+        font-family: RobotoLight
+      +media-breakpoint-down(xs)
+        font-size: 15px
+        line-height: 24px
+  
+form.follow
+  position: relative
+  +media-breakpoint-down(lg)
+    margin-top: 25px
+  input
+    display: none
+    &:checked + label
+      &::after
+        left: -37%
+        opacity: 1
+        +media-breakpoint-down(lg)
+          left: 50%
+  label
+    position: relative
+    margin: 0
+    font-size: 30px
+    line-height: 35px
+    font-weight: 700
+    text-transform: uppercase
+    cursor: pointer
+    +media-breakpoint-down(md)
+      font-size: 24px
+    &::before
+      content: ''
+      position: absolute
+      width: 74px
+      height: 37px
+      top: 50%
+      left: -60%
+      box-shadow: inset -3px 2px 5px rgba(0,0,0,.25)
+      border-radius: 35px
+      transform: translateY(-50%)
+      +media-breakpoint-down(lg)
+        left: 50%
+        top: unset
+        bottom: -150%
+        transform: translateX(-50%)
+    &::after
+      content: ''
+      width: 37px
+      height: 37px
+      background: linear-gradient(90deg, #3C7AEA 0%, #57B8F3 100%)
+      border-radius: 50%
+      position: absolute
+      top: 50%
+      left: -60%
+      transform: translateY(-50%)
+      opacity: 0.5
+      transition: $trs
+      +media-breakpoint-down(lg)
+        left: 23%
+        top: unset
+        bottom: -150%
+        transform: none
+
+
+
+
+.user-data
+  position: relative
+  box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
+  border-radius: 35px
+  display: flex
+  +media-breakpoint-down(sm)
+    flex-direction: column
+    border-radius: 15px
+  &__image
+    position: relative
+    flex: 0 0 258px
+    background: linear-gradient(270deg, #58B9F3 0%,#3E7EEA 100%)
+    border-radius: 47px 300px 300px 47px
+    display: flex
+    justify-content: center
+    align-items: center
+    +media-breakpoint-down(lg)
+      flex: 0 0 200px
+    +media-breakpoint-down(sm)
+      flex: 0 0 100%
+      border-radius: 0
+      padding: 25px 0
+    img
+      width: 200px
+      height: 200px
+      border-radius: 50%
+      object-fit: cover
+      +media-breakpoint-down(lg)
+        width: 130px
+        height: 130px
+  &__imgBtn
+    border: none
+    background: $mainBgColor
+    box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25)
+    border-radius: 50%
+    width: 39px
+    height: 39px
+    line-height: 38px
+    transition: all .5s ease-in
+    margin: 0
+    text-align: center
+    cursor: pointer
+    &:active,
+    &:focus
+      outline: none
+    &:hover
+      width: auto
+      border-radius: 300px
+      padding: 0 9px
+      span
+        display: inline-block
+        margin-left: 5px
+        
+    span
+      display: none
+      font-size: 14px
+      transition: $trs
+  &__addImage
+    position: absolute
+    top: 20px
+    left: 20px
+    +media-breakpoint-down(lg)
+      top: 45px
+      left: 10px
+    +media-breakpoint-down(sm)
+      top: 10px
+  &__deleteImage
+    position: absolute
+    bottom: 20px
+    left: 20px
+    +media-breakpoint-down(lg)
+      bottom: 45px
+      left: 10px
+    +media-breakpoint-down(sm)
+      bottom: unset
+      left: unset
+      right: 10px
+      top: 10px
+  &__title
+    font-size: 26px
+    line-height: 30px
+    font-weight: 700
+    text-align: center
+    margin-bottom: 30px
+    +media-breakpoint-down(xs)
+      margin-bottom: 25px
+      font-size: 22px
+      line-height: 26px
+  &__input
+    position: relative
+    padding: 30px 50px 24px 24px
+    +media-breakpoint-down(lg)
+      padding: 30px 30px 24px 24px
+    +media-breakpoint-down(xs)
+      padding: 25px 15px
+    input
+      width: 100%
+      box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.2)
+      border-radius: 38px
+      border: none
+      padding: 6px 21px
+      font-size: 21px
+      line-height: 29px
+      color: rgba(0, 0, 0, 0.7)
+      opacity: 0.8
+      margin-bottom: 15px
+      +media-breakpoint-down(sm)
+        font-size: 18px
+      +media-breakpoint-down(xs)
+        font-size: 15px
+  &__btn
+    text-align: right
+    margin-top: 7px
+    button
+      text-transform: none
+      padding: 9px 28px
+      border: none
+      font-size: 14px
+      line-height: 20px
+      border-radius: 38px
+      box-shadow: -7px -7px 6px #FFFFFF, 7px 7px 15px rgba(43, 43, 163, 0.31)
+  .filename
+    display: none
+
+.order-number
+  font-size: 30px
+  font-weight: 700
+  line-height: 35px
+  text-transform: uppercase
+  +media-breakpoint-down(md)
+    font-size: 22px
+  +media-breakpoint-down(sm)
+    font-size: 18px
+  +media-breakpoint-down(xs)
+    font-size: 15px
+    line-height: 1.8
+.order-status
+  position: relative
+  font-size: 17px
+  line-height: 19px
+  display: flex
+  align-items: center
+  margin-left: 37px
+  +media-breakpoint-down(md)
+    font-size: 15px
+  +media-breakpoint-down(sm)
+    margin-left: 20px
+  +media-breakpoint-down(xs)
+    margin-left: 0
+    font-size: 12px
+  &__icon
+    display: inline-block
+    width: 25px
+    height: 25px
+    box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53), inset -10px -10px 27px #00AB11
+    border-radius: 50%
+    margin-right: 10px
+    +media-breakpoint-down(sm)
+      width: 20px
+      height: 20px
+    +media-breakpoint-down(xs)
+      width: 15px
+      height: 15px
+      margin-right: 5px
+    &.done
+      background: linear-gradient(270deg, #3E7EEA 0%, #58B9F3 100%)
+      box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53)
+    &.canceled
+      box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53), inset -10px -10px 27px #E82020
       
 
 

@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>ЦТО Феникс - Автоматизация торговли</title>
+	<meta name="description" content="Gulp4 Starter">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="img/favicon.png">
+	<meta property="og:image" content="img/dest/preview.jpg">
+	<link rel="stylesheet" href="css/app.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header class="header home">
+		<div class="header__top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-lg-2">
+						<a href="#" class="logotype">
+							<picture>
+								<source srcset="images/dest/logo_big.webp" type="image/webp">
+								<img src="images/dest/logo_big.png" alt="alt">
+							</picture>
+						</a>
+						<div class="hamburger">
+							<div class="hamburger__menu"></div>
+						</div>
+					</div>
+					<div class="col-md-5 col-lg-7 d-flex justify-content-center">
+						<div class="search header__search">
+							<input type="text" placeholder="Поиск">
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3">
+						<nav class="iconMenu header__iconMenu">
+							<a href="#" class="iconMenu__link">
+								<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M13.6206 9.86147C13.292 9.52601 12.8956 9.34665 12.4754 9.34665C12.0587 9.34665 11.6589 9.52269 11.3168 9.85815L10.2462 10.9044C10.1581 10.8579 10.07 10.8147 9.98529 10.7715C9.86333 10.7118 9.74813 10.6553 9.64988 10.5955C8.64704 9.97108 7.73568 9.15733 6.86158 8.10445C6.43809 7.57966 6.1535 7.13791 5.94683 6.68952C6.22465 6.44042 6.48213 6.18135 6.73284 5.93224C6.8277 5.83924 6.92257 5.74292 7.01743 5.64992C7.7289 4.95242 7.7289 4.049 7.01743 3.3515L6.09252 2.44476C5.98749 2.34179 5.87907 2.23551 5.77743 2.12922C5.57416 1.9233 5.36071 1.71073 5.1405 1.51144C4.81186 1.19259 4.41886 1.02319 4.00553 1.02319C3.59219 1.02319 3.19241 1.19259 2.85362 1.51144C2.85023 1.51476 2.85023 1.51476 2.84684 1.51808L1.69493 2.65733C1.26127 3.08247 1.01395 3.60061 0.959742 4.20179C0.878431 5.17164 1.1698 6.07506 1.3934 6.66627C1.94225 8.11773 2.76214 9.4629 3.9852 10.9044C5.46913 12.6415 7.25459 14.0132 9.29415 14.9798C10.0734 15.3418 11.1135 15.7703 12.2756 15.8433C12.3467 15.8467 12.4212 15.85 12.489 15.85C13.2716 15.85 13.9289 15.5743 14.4439 15.0263C14.4472 15.0196 14.454 15.0163 14.4574 15.0097C14.6336 14.8004 14.8369 14.6111 15.0503 14.4085C15.196 14.2723 15.3451 14.1295 15.4907 13.98C15.8262 13.6379 16.0023 13.2394 16.0023 12.8308C16.0023 12.419 15.8228 12.0237 15.4806 11.6916L13.6206 9.86147ZM14.8335 13.3589C14.8301 13.3589 14.8301 13.3622 14.8335 13.3589C14.7013 13.4984 14.5658 13.6246 14.4201 13.7641C14.1999 13.9701 13.9763 14.186 13.7663 14.4284C13.4241 14.7871 13.0209 14.9565 12.4924 14.9565C12.4416 14.9565 12.3874 14.9565 12.3365 14.9532C11.3303 14.8901 10.3952 14.5048 9.69393 14.176C7.77634 13.2659 6.09252 11.9739 4.69328 10.3364C3.53799 8.97133 2.76553 7.7092 2.25395 6.35406C1.93887 5.52703 1.82367 4.88268 1.87449 4.27486C1.90837 3.88625 2.06083 3.56407 2.34203 3.2884L3.49733 2.1558C3.66334 2.00301 3.83952 1.91997 4.0123 1.91997C4.22574 1.91997 4.39853 2.04619 4.50695 2.15247C4.51033 2.1558 4.51372 2.15912 4.51711 2.16244C4.72378 2.35176 4.92028 2.54772 5.12694 2.75697C5.23197 2.86326 5.34039 2.96954 5.4488 3.07915L6.37372 3.98589C6.73284 4.33796 6.73284 4.66346 6.37372 5.01553C6.27547 5.11185 6.1806 5.20817 6.08235 5.30117C5.79776 5.58681 5.52672 5.85253 5.23197 6.1116C5.2252 6.11824 5.21842 6.12156 5.21503 6.1282C4.92367 6.41385 4.97787 6.69284 5.03886 6.88217C5.04224 6.89213 5.04563 6.90209 5.04902 6.91206C5.28957 7.48334 5.62836 8.02141 6.14333 8.66244L6.14672 8.66576C7.0818 9.79504 8.0677 10.6752 9.15524 11.3495C9.29415 11.4358 9.43644 11.5056 9.57196 11.572C9.69393 11.6318 9.80912 11.6883 9.90737 11.748C9.92092 11.7547 9.93447 11.7646 9.94802 11.7713C10.0632 11.8278 10.1716 11.8543 10.2834 11.8543C10.5646 11.8543 10.7408 11.6816 10.7984 11.6251L11.9571 10.4892C12.0723 10.3763 12.2552 10.2401 12.4687 10.2401C12.6787 10.2401 12.8515 10.3696 12.9565 10.4826C12.9599 10.4859 12.9599 10.4859 12.9633 10.4892L14.8301 12.3193C15.179 12.6581 15.179 13.0069 14.8335 13.3589Z" />
+									<path
+										d="M9.60939 3.85556C10.497 4.00171 11.3034 4.41356 11.9471 5.04463C12.5908 5.6757 13.0075 6.46619 13.16 7.3364C13.1972 7.55562 13.3904 7.7084 13.6106 7.7084C13.6377 7.7084 13.6614 7.70508 13.6885 7.70176C13.9392 7.6619 14.1052 7.4294 14.0646 7.18362C13.8816 6.13073 13.3734 5.17084 12.5976 4.41024C11.8217 3.64964 10.8426 3.15142 9.76862 2.97207C9.51791 2.93221 9.28414 3.09496 9.2401 3.33742C9.19606 3.57989 9.35868 3.81571 9.60939 3.85556Z" />
+									<path
+										d="M16.9676 7.05401C16.6661 5.32023 15.8327 3.74256 14.552 2.48706C13.2714 1.23157 11.6621 0.414502 9.89356 0.118897C9.64624 0.0757181 9.41247 0.241789 9.36842 0.484252C9.32777 0.730036 9.49378 0.959214 9.74449 1.00239C11.3233 1.26478 12.7632 1.99882 13.9083 3.11813C15.0534 4.24077 15.7988 5.65237 16.0664 7.20015C16.1037 7.41936 16.2968 7.57215 16.517 7.57215C16.5441 7.57215 16.5679 7.56883 16.595 7.5655C16.8423 7.52897 17.0117 7.29647 16.9676 7.05401Z" />
+								</svg>
+							</a>
+							<a href="#" class="iconMenu__link">
+								<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M16.3203 8.9017C16.1133 8.9017 15.9453 8.73513 15.9453 8.52989V1.97112C15.9453 1.35614 15.4406 0.855685 14.8204 0.855685H5.07073C4.4505 0.855685 3.94577 1.35614 3.94577 1.97112V8.52989C3.94577 8.73513 3.77778 8.9017 3.57079 8.9017C3.36379 8.9017 3.1958 8.73587 3.1958 8.52989V1.97112C3.1958 0.945664 4.03652 0.112061 5.07073 0.112061H14.8204C15.8546 0.112061 16.6953 0.945664 16.6953 1.97112V8.52989C16.6953 8.73587 16.5273 8.9017 16.3203 8.9017Z" />
+									<path
+										d="M9.94543 12.0056C9.64769 12.0056 9.34995 11.935 9.07846 11.7952L1.14752 7.69183C0.963772 7.59665 0.892525 7.37208 0.988522 7.18989C1.08452 7.0077 1.31176 6.93929 1.49475 7.03224L9.4257 11.1356C9.75118 11.3044 10.1404 11.3044 10.4659 11.1356L18.3968 7.03224C18.5798 6.93929 18.8078 7.00696 18.9031 7.18989C18.9991 7.37208 18.9278 7.59665 18.7441 7.69183L10.8131 11.7952C10.5409 11.935 10.2424 12.0056 9.94543 12.0056Z" />
+									<path
+										d="M17.4452 17.2156H2.44574C1.61852 17.2156 0.945801 16.5486 0.945801 15.7284V6.36615C0.945801 5.80992 1.25554 5.30426 1.75502 5.0477L3.39746 4.19997C3.5797 4.10702 3.80769 4.17469 3.90294 4.35837C3.99893 4.54055 3.92769 4.76513 3.74319 4.85957L2.10076 5.7073C1.85102 5.83595 1.69577 6.08804 1.69577 6.36615V15.7284C1.69577 16.1389 2.03176 16.472 2.44574 16.472H17.4452C17.8591 16.472 18.1951 16.1389 18.1951 15.7284V6.36615C18.1951 6.08804 18.0399 5.83595 17.7902 5.70656L16.1477 4.85882C15.964 4.76438 15.892 4.53981 15.988 4.35762C16.084 4.17469 16.3127 4.10702 16.4935 4.19923L18.1359 5.04696C18.6354 5.30426 18.9451 5.80992 18.9451 6.36615V15.7284C18.9451 16.5486 18.2724 17.2156 17.4452 17.2156Z" />
+									<path
+										d="M14.0705 8.34706C14.0367 8.34706 14.003 8.3426 13.9692 8.33294L5.71954 6.04703C5.55755 6.00242 5.4458 5.85667 5.4458 5.68935V4.2021C5.4458 4.03404 5.55905 3.88755 5.72179 3.84368L13.9715 1.6128C14.0862 1.58306 14.2055 1.60611 14.2985 1.67601C14.3915 1.74591 14.4455 1.85522 14.4455 1.97123V7.97525C14.4455 8.09126 14.3907 8.20131 14.2977 8.27121C14.231 8.32104 14.1515 8.34706 14.0705 8.34706ZM6.19577 5.40677L13.6955 7.4852V2.45756L6.19577 4.48617V5.40677Z" />
+									<path
+										d="M14.0708 8.66378C13.8638 8.66378 13.6958 8.49721 13.6958 8.29197V1.59935C13.6958 1.39411 13.8638 1.22754 14.0708 1.22754C14.2778 1.22754 14.4458 1.39411 14.4458 1.59935V8.29197C14.4458 8.49721 14.2778 8.66378 14.0708 8.66378Z" />
+									<path
+										d="M5.82079 6.43275C5.61379 6.43275 5.4458 6.26618 5.4458 6.06094V3.83006C5.4458 3.62482 5.61379 3.45825 5.82079 3.45825C6.02778 3.45825 6.19577 3.62482 6.19577 3.83006V6.06094C6.19577 6.26618 6.02778 6.43275 5.82079 6.43275Z" />
+									<path
+										d="M8.44574 8.70099C7.61852 8.70099 6.9458 8.03396 6.9458 7.21375C6.9458 6.67982 7.23229 6.19052 7.69352 5.9362C7.87351 5.83878 8.10301 5.90125 8.20425 6.08046C8.30475 6.26042 8.2395 6.48648 8.05876 6.58687C7.83152 6.7118 7.69577 6.9453 7.69577 7.21375C7.69577 7.62423 8.03176 7.95737 8.44574 7.95737C8.85973 7.95737 9.19571 7.62423 9.19571 7.21375C9.19571 7.08287 9.16797 6.97504 9.10947 6.88283C8.99997 6.70882 9.05397 6.47904 9.22946 6.37048C9.40346 6.26339 9.63595 6.31545 9.74619 6.48946C9.87819 6.69916 9.94568 6.94381 9.94568 7.21375C9.94568 8.03322 9.27296 8.70099 8.44574 8.70099Z" />
+								</svg>
+							</a>
+							<a href="#" class="iconMenu__link">
+								<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M14.6027 10.252C13.7313 9.3978 12.6942 8.76544 11.5626 8.38264C12.7746 7.56432 13.5708 6.19479 13.5708 4.6462C13.5708 2.14608 11.496 0.112061 8.9458 0.112061C6.39558 0.112061 4.3208 2.14608 4.3208 4.6462C4.3208 6.19479 5.11702 7.56432 6.32899 8.38264C5.19743 8.76544 4.1603 9.3978 3.28896 10.252C1.77796 11.7333 0.945801 13.7028 0.945801 15.7977H2.1958C2.1958 12.1489 5.22383 9.18034 8.9458 9.18034C12.6678 9.18034 15.6958 12.1489 15.6958 15.7977H16.9458C16.9458 13.7028 16.1136 11.7333 14.6027 10.252ZM8.9458 7.9549C7.08483 7.9549 5.5708 6.47064 5.5708 4.6462C5.5708 2.82176 7.08483 1.3375 8.9458 1.3375C10.8068 1.3375 12.3208 2.82176 12.3208 4.6462C12.3208 6.47064 10.8068 7.9549 8.9458 7.9549Z" />
+								</svg>
+							</a>
+							<a href="#" class="iconMenu__link">
+								<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M17.4803 2.17091C17.3892 2.05931 17.2513 1.99434 17.1055 1.99434H4.33068L3.97344 0.476805C3.92317 0.263304 3.72924 0.112061 3.50575 0.112061H1.42578C1.16072 0.112061 0.945801 0.322757 0.945801 0.582647C0.945801 0.842536 1.16072 1.0532 1.42578 1.0532H3.12391L5.54875 11.3545C5.599 11.568 5.79295 11.7193 6.01645 11.7193H15.6335C15.8986 11.7193 16.1135 11.5086 16.1135 11.2487C16.1135 10.9888 15.8986 10.7781 15.6335 10.7781H6.39832L6.02913 9.2096H15.6656C15.8901 9.2096 16.0846 9.05705 16.1338 8.84234L17.5738 2.56819C17.6058 2.4287 17.5714 2.28255 17.4803 2.17091ZM15.2815 8.26846H5.80758L4.55223 2.93545H16.5055L15.2815 8.26846ZM7.98702 12.347C7.01659 12.347 6.22705 13.121 6.22705 14.0724C6.22705 15.0238 7.01656 15.7978 7.98702 15.7978C8.95745 15.7978 9.74699 15.0238 9.74699 14.0724C9.74699 13.121 8.95749 12.347 7.98702 12.347ZM7.98702 14.8567C7.54591 14.8567 7.18705 14.5048 7.18705 14.0724C7.18705 13.6399 7.54591 13.2881 7.98702 13.2881C8.42814 13.2881 8.78699 13.6399 8.78699 14.0724C8.78699 14.5048 8.42814 14.8567 7.98702 14.8567ZM11.9849 14.0723C11.9849 13.1209 12.7744 12.3469 13.7448 12.3469C14.7153 12.3469 15.5048 13.1209 15.5048 14.0723C15.5048 15.0237 14.7153 15.7977 13.7448 15.7977C12.7744 15.7977 11.9849 15.0237 11.9849 14.0723ZM12.9449 14.0724C12.9449 14.5048 13.3037 14.8566 13.7448 14.8566C14.186 14.8566 14.5448 14.5048 14.5448 14.0724C14.5448 13.6399 14.186 13.2881 13.7448 13.2881C13.3037 13.2881 12.9449 13.6399 12.9449 14.0724Z" />
+								</svg>
+								<span class="count">3</span>
+							</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<nav class="mainMenu">
+							<div class="dropdownMenu">
+								<a href="#" class="mainMenu__link catalog__link">
+									<svg viewBox="0 0 33 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H33V3H0V0ZM0 8H33V11H0V8ZM33 16H0V19H33V16Z" />
+									</svg>
+									Каталог
+								</a>
+								<div class="dropdown">
+									<div class="dropdown__row">
+										<div class="container">
+											<div class="row">
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Кассовая
+																техника</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Фискальные накопители</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Сканеры</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Комплектующие</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Расходные материалы</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Торговое
+																оборудование</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Весы</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Принтеры этикеток</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Детекторы
+																и
+																сканеры</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Детекторы</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Сканеры</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#" class="dropdown__link dropdown__link-title">Счетчики
+																посетителей</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Производители</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Кондор</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#"
+																class="dropdown__link dropdown__link-title">Автоматизация</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Программы 1С</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Комплекты ПО</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">1С ИТС</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3 col-md-6">
+													<ul class="dropdown__list">
+														<li class="dropdown__item"><a href="#"
+																class="dropdown__link dropdown__link-title">Программное
+																обеспечение</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Microsoft Windows</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Microsoft Office</a></li>
+														<li class="dropdown__item"><a href="#" class="dropdown__link">Мой склад</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a href="#" class="mainMenu__link">Автоматизация</a>
+							<a href="#" class="mainMenu__link">Услуги</a>
+							<a href="#" class="mainMenu__link">Программное обеспечение</a>
+							<a href="#" class="mainMenu__link">О компании</a>
+							<a href="#" class="mainMenu__link">Контакты</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mobileMenu">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="mobileMenu__nav">
+							<a href="#" class="mobileMenu__link mobileMenu__link-active">Главная страница</a>
+							<a href="#" class="mobileMenu__link">Кассовая техника</a>
+							<a href="#" class="mobileMenu__link">Торговое оборудование</a>
+							<a href="#" class="mobileMenu__link">Детекторы и сканеры</a>
+							<a href="#" class="mobileMenu__link">Счетчики посетителей</a>
+							<a href="#" class="mobileMenu__link">Автоматизация</a>
+							<a href="#" class="mobileMenu__link">Программное обеспечение</a>
+							<a href="#" class="mobileMenu__link">Услуги</a>
+							<a href="#" class="mobileMenu__link">О компании</a>
+							<a href="#" class="mobileMenu__link">Контакты</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- End Header -->
+
+	<!-- Content Section -->
+	<section class="content">
+		<div class="container">
+
+			<!-- Content -->
+
+			<nav class="breadcrumb">
+				<ul>
+					<li class="breadcrumb-item"><a href="#">Главная</a></li>
+					<li class="breadcrumb-item active">Личный кабинет</li>
+				</ul>
+			</nav>
+
+			<div class="cabinet">
+				<h1 class="cabinet__title section-title">Личный кабинет</h1>
+				<div class="row d-flex flex-column-reverse flex-lg-row">
+					<div class="col-lg-4">
+						<div class="cabinet__wrapper">
+							<div class="cabinet__tabs">
+								<div class="cabinet__tab">Мои данные</div>
+								<div class="cabinet__tab">Мои заказы</div>
+								<div class="cabinet__tab">Избранное</div>
+								<div class="cabinet__tab">Рассылка</div>
+								<div class="out"><a href="/">Выход</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						<form class="user-data">
+							<div class="user-data__image">
+								<label for="myFile" class="user-data__imgBtn user-data__addImage">
+									<svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M11.5 23.0132C5.15865 23.0132 0 17.8545 0 11.5132C0 5.17183 5.15865 0.0131836 11.5 0.0131836C17.8414 0.0131836 23 5.17183 23 11.5132C23 17.8545 17.8414 23.0132 11.5 23.0132ZM11.5 1.45068C5.95127 1.45068 1.4375 5.96445 1.4375 11.5132C1.4375 17.0619 5.95127 21.5757 11.5 21.5757C17.0487 21.5757 21.5625 17.0619 21.5625 11.5132C21.5625 5.96445 17.0487 1.45068 11.5 1.45068ZM6.46875 12.2319C6.072 12.2319 5.75 11.9099 5.75 11.5132C5.75 11.1164 6.072 10.7944 6.46875 10.7944H10.7812V6.48193C10.7812 6.08518 11.1032 5.76318 11.5 5.76318C11.8968 5.76318 12.2188 6.08518 12.2188 6.48193V10.7944H16.5312C16.928 10.7944 17.25 11.1164 17.25 11.5132C17.25 11.9099 16.928 12.2319 16.5312 12.2319H12.2188V16.5444C12.2188 16.9412 11.8968 17.2632 11.5 17.2632C11.1032 17.2632 10.7812 16.9412 10.7812 16.5444V12.2319H6.46875Z"
+											fill="#7676A8" />
+									</svg>
+									<span>Загрузить</span>
+								</label>
+								<input type="file" id="myFile" name="filename" class="filename" accept="image/*">
+
+								<label class="user-data__imgBtn user-data__deleteImage">
+									<svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0)">
+											<path
+												d="M14.6715 8.34619C14.3739 8.34619 14.1328 8.58732 14.1328 8.88483V19.0652C14.1328 19.3625 14.3739 19.6038 14.6715 19.6038C14.969 19.6038 15.2101 19.3625 15.2101 19.0652V8.88483C15.2101 8.58732 14.969 8.34619 14.6715 8.34619Z"
+												fill="#7676A8" />
+											<path
+												d="M8.31598 8.34619C8.01847 8.34619 7.77734 8.58732 7.77734 8.88483V19.0652C7.77734 19.3625 8.01847 19.6038 8.31598 19.6038C8.6135 19.6038 8.85463 19.3625 8.85463 19.0652V8.88483C8.85463 8.58732 8.6135 8.34619 8.31598 8.34619Z"
+												fill="#7676A8" />
+											<path
+												d="M3.68412 6.86051V20.1315C3.68412 20.9159 3.97175 21.6525 4.4742 22.181C4.97433 22.711 5.67036 23.0119 6.39878 23.0132H16.59C17.3187 23.0119 18.0147 22.711 18.5146 22.181C19.0171 21.6525 19.3047 20.9159 19.3047 20.1315V6.86051C20.3035 6.59539 20.9507 5.63047 20.8171 4.60558C20.6833 3.5809 19.8103 2.81439 18.7768 2.81418H16.019V2.14088C16.0221 1.57468 15.7983 1.03099 15.3974 0.631007C14.9966 0.231235 14.4521 0.00862543 13.8859 0.0132544H9.10293C8.53672 0.00862543 7.99219 0.231235 7.59137 0.631007C7.19054 1.03099 6.96667 1.57468 6.96983 2.14088V2.81418H4.21203C3.17852 2.81439 2.30554 3.5809 2.17172 4.60558C2.03811 5.63047 2.68532 6.59539 3.68412 6.86051ZM16.59 21.9359H6.39878C5.47784 21.9359 4.7614 21.1448 4.7614 20.1315V6.90785H18.2274V20.1315C18.2274 21.1448 17.511 21.9359 16.59 21.9359ZM8.04711 2.14088C8.04353 1.86041 8.15378 1.59046 8.35283 1.39247C8.55166 1.19448 8.82224 1.0857 9.10293 1.09053H13.8859C14.1666 1.0857 14.4371 1.19448 14.636 1.39247C14.835 1.59025 14.9453 1.86041 14.9417 2.14088V2.81418H8.04711V2.14088ZM4.21203 3.89146H18.7768C19.3123 3.89146 19.7463 4.32553 19.7463 4.86101C19.7463 5.3965 19.3123 5.83057 18.7768 5.83057H4.21203C3.67655 5.83057 3.24248 5.3965 3.24248 4.86101C3.24248 4.32553 3.67655 3.89146 4.21203 3.89146Z"
+												fill="#7676A8" />
+											<path
+												d="M11.4937 8.34619C11.1962 8.34619 10.9551 8.58732 10.9551 8.88483V19.0652C10.9551 19.3625 11.1962 19.6038 11.4937 19.6038C11.7912 19.6038 12.0324 19.3625 12.0324 19.0652V8.88483C12.0324 8.58732 11.7912 8.34619 11.4937 8.34619Z"
+												fill="#7676A8" />
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<rect width="23" height="23" fill="white" transform="translate(0 0.0131836)" />
+											</clipPath>
+										</defs>
+									</svg>
+									<span>Удалить</span>
+								</label>
+								<picture>
+									<img src="images/dest/no-image.png" alt="alt" class="user-data__outputImage">
+								</picture>
+							</div>
+							<div class="user-data__input">
+								<div class="user-data__title">Мои данные</div>
+								<input type="text" name="name" value="Кондратьев Алексей Сергеевич">
+								<input type="text" name="company_name" value="ООО “Аверс”">
+								<input type="text" name="phone" value="+7 (988) 855 97 07">
+								<input type="text" name="email" value="8559707@gmail.com">
+								<div class="user-data__btn">
+									<button type="submit" class="theme-btn">Сохранить</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="cabinet__tabContent">
+
+							<div class="cabinet__tabItem">
+								<div class="cabinet__tabTitle mb-30"><span>Последний заказ</span></div>
+								<div class="catalog__items">
+									<div class="row">
+										<div class="col-lg-3 col-md-4 col-sm-6">
+											<div class="catalogItem">
+												<div class="catalogItem__image">
+													<picture>
+														<source srcset="images/dest/catalog/kassa1.webp" type="image/webp">
+														<img src="images/dest/catalog/kassa1.png" alt="alt">
+													</picture>
+												</div>
+												<h4 class="catalogItem__title"><a href="#">Смарт-терминал ЭВОТОР 10</a></h4>
+												<div class="catalogItem__foot">
+													<div class="catalogItem__price">11 500 ₽</div>
+													<button type="button" class="catalogItem__btn theme-btn">В корзину</button>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-4 col-sm-6">
+											<div class="catalogItem">
+												<div class="catalogItem__image">
+													<picture>
+														<source srcset="images/dest/catalog/2.webp" type="image/webp">
+														<img src="images/dest/catalog/2.png" alt="alt">
+													</picture>
+												</div>
+												<h4 class="catalogItem__title">Смарт-терминал Касатка 10</h4>
+												<div class="catalogItem__foot">
+													<div class="catalogItem__price">11 500 ₽</div>
+													<button type="button" class="catalogItem__btn theme-btn">В корзину</button>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-4 col-sm-6">
+											<div class="catalogItem">
+												<div class="catalogItem__image">
+													<picture>
+														<source srcset="images/dest/catalog/3.webp" type="image/webp">
+														<img src="images/dest/catalog/3.png" alt="alt">
+													</picture>
+												</div>
+												<h4 class="catalogItem__title">Атол Сигма 8</h4>
+												<div class="catalogItem__foot">
+													<div class="catalogItem__price">11 500 ₽</div>
+													<button type="button" class="catalogItem__btn theme-btn">В корзину</button>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-4 col-sm-6">
+											<div class="catalogItem">
+												<div class="catalogItem__image">
+													<picture>
+														<source srcset="images/dest/catalog/4.webp" type="image/webp">
+														<img src="images/dest/catalog/4.png" alt="alt">
+													</picture>
+												</div>
+												<h4 class="catalogItem__title">Сканер Штрихкодов</h4>
+												<div class="catalogItem__foot">
+													<div class="catalogItem__price">11 500 ₽</div>
+													<button type="button" class="catalogItem__btn theme-btn">В корзину</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cabinet__tabItem">
+								<div class="cabinet__tabTitle mb-30"><span>Мои заказы</span></div>
+								<div class="accordion cabinet__accordion">
+
+									<div class="accordion__item">
+										<div class="icons">
+											<div class="icon repeat">
+												<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 23C5.15865 23 0 17.8414 0 11.5C0 5.15865 5.15865 0 11.5 0C17.8414 0 23 5.15865 23 11.5C23 17.8414 17.8414 23 11.5 23ZM11.5 1.4375C5.95127 1.4375 1.4375 5.95127 1.4375 11.5C1.4375 17.0487 5.95127 21.5625 11.5 21.5625C17.0487 21.5625 21.5625 17.0487 21.5625 11.5C21.5625 5.95127 17.0487 1.4375 11.5 1.4375ZM6.46875 12.2188C6.072 12.2188 5.75 11.8968 5.75 11.5C5.75 11.1032 6.072 10.7812 6.46875 10.7812H10.7812V6.46875C10.7812 6.072 11.1032 5.75 11.5 5.75C11.8968 5.75 12.2188 6.072 12.2188 6.46875V10.7812H16.5312C16.928 10.7812 17.25 11.1032 17.25 11.5C17.25 11.8968 16.928 12.2188 16.5312 12.2188H12.2188V16.5312C12.2188 16.928 11.8968 17.25 11.5 17.25C11.1032 17.25 10.7812 16.928 10.7812 16.5312V12.2188H6.46875Z" fill="#7676A8"/>
+												</svg>
+												<span>Повторить заказ</span>													
+											</div>
+											<div class="icon important" style="background-image: url(images/dest/important-active.svg);"></div>								
+										</div>
+										<div class="accordion__header">
+
+											<span class="order-number">Заказ № 655</span>
+											<div class="order-status">
+												<span class="order-status__icon"></span>
+												В обработке
+											</div>
+											<div class="icon arrow">
+												<svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M2.02148 1.95752L10.0153 9.72295L18.0091 1.95752" stroke="white" stroke-width="5"/>
+													</svg>										
+											</div>
+											
+										</div>
+										<div class="accordion__body">
+											<div class="accordion__content">
+												<div class="cabinet__orderList">
+													<table class="table">
+														<thead>
+															<tr>
+																<th scope="col">Название</th>
+																<th scope="col">Количество</th>
+																<th scope="col">Цена</th>
+																<th scope="col">Сумма</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<th scope="row"><a href="#">1. Смарт-терминал Эвотор 7.2 ФН 36 месяцев, 54ФЗ</a></th>
+																<td>1 шт.</td>
+																<td>10 590 ₽</td>
+																<td>105 900 ₽</td>
+															</tr>
+															<tr>
+																<th scope="row"><a href="#">2. Счетчик банкнот Cassida 5550 UV DL рубли</a></th>
+																<td>10 шт.</td>
+																<td>10 590 ₽</td>
+																<td>105 900 ₽</td>
+															</tr>
+															<tr>
+																<th scope="row"><a href="#">3. Сканер штрих-кода Datalogic QD2430 (QD2430-BKK1)</a></th>
+																<td>10 шт.</td>
+																<td>10 590 ₽</td>
+																<td>105 900 ₽</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<div class="cabinet__orderPrice">
+													Итого <span>423 600 ₽</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="accordion__item">
+										<div class="icons">
+											<div class="icon repeat">
+												<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 23C5.15865 23 0 17.8414 0 11.5C0 5.15865 5.15865 0 11.5 0C17.8414 0 23 5.15865 23 11.5C23 17.8414 17.8414 23 11.5 23ZM11.5 1.4375C5.95127 1.4375 1.4375 5.95127 1.4375 11.5C1.4375 17.0487 5.95127 21.5625 11.5 21.5625C17.0487 21.5625 21.5625 17.0487 21.5625 11.5C21.5625 5.95127 17.0487 1.4375 11.5 1.4375ZM6.46875 12.2188C6.072 12.2188 5.75 11.8968 5.75 11.5C5.75 11.1032 6.072 10.7812 6.46875 10.7812H10.7812V6.46875C10.7812 6.072 11.1032 5.75 11.5 5.75C11.8968 5.75 12.2188 6.072 12.2188 6.46875V10.7812H16.5312C16.928 10.7812 17.25 11.1032 17.25 11.5C17.25 11.8968 16.928 12.2188 16.5312 12.2188H12.2188V16.5312C12.2188 16.928 11.8968 17.25 11.5 17.25C11.1032 17.25 10.7812 16.928 10.7812 16.5312V12.2188H6.46875Z" fill="#7676A8"/>
+												</svg>
+												<span>Повторить заказ</span>													
+											</div>
+											<div class="icon important" style="background-image: url(images/dest/important.svg);"></div>								
+										</div>
+										<div class="accordion__header">
+
+											<span class="order-number">Заказ № 656</span>
+											<div class="order-status">
+												<span class="order-status__icon done"></span>
+												Завершен
+											</div>
+											<div class="icon arrow">
+												<svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M2.02148 1.95752L10.0153 9.72295L18.0091 1.95752" stroke="white" stroke-width="5"/>
+													</svg>										
+											</div>
+											
+										</div>
+										<div class="accordion__body">
+											<div class="accordion__content">
+												<div class="cabinet__orderList">
+													<table class="table">
+														<thead>
+															<tr>
+																<th scope="col">Название</th>
+																<th scope="col">Количество</th>
+																<th scope="col">Цена</th>
+																<th scope="col">Сумма</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<th scope="row"><a href="#">1. Смарт-терминал Эвотор 7.2 ФН 36 месяцев, 54ФЗ</a></th>
+																<td>1 шт.</td>
+																<td>10 590 ₽</td>
+																<td>105 900 ₽</td>
+															</tr>
+															<tr>
+																<th scope="row"><a href="#">2. Счетчик банкнот Cassida 5550 UV DL рубли</a></th>
+																<td>10 шт.</td>
+																<td>10 590 ₽</td>
+																<td>105 900 ₽</td>
+															</tr>
+															<tr>
+																<th scope="row"><a href="#">3. Сканер штрих-кода Datalogic QD2430 (QD2430-BKK1)</a></th>
+																<td>10 шт.</td>
+																<td>10 590 ₽</td>
+																<td>105 900 ₽</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<div class="cabinet__orderPrice">
+													Итого <span>423 600 ₽</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="accordion__item">
+										<div class="icons">
+											<div class="icon repeat">
+												<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 23C5.15865 23 0 17.8414 0 11.5C0 5.15865 5.15865 0 11.5 0C17.8414 0 23 5.15865 23 11.5C23 17.8414 17.8414 23 11.5 23ZM11.5 1.4375C5.95127 1.4375 1.4375 5.95127 1.4375 11.5C1.4375 17.0487 5.95127 21.5625 11.5 21.5625C17.0487 21.5625 21.5625 17.0487 21.5625 11.5C21.5625 5.95127 17.0487 1.4375 11.5 1.4375ZM6.46875 12.2188C6.072 12.2188 5.75 11.8968 5.75 11.5C5.75 11.1032 6.072 10.7812 6.46875 10.7812H10.7812V6.46875C10.7812 6.072 11.1032 5.75 11.5 5.75C11.8968 5.75 12.2188 6.072 12.2188 6.46875V10.7812H16.5312C16.928 10.7812 17.25 11.1032 17.25 11.5C17.25 11.8968 16.928 12.2188 16.5312 12.2188H12.2188V16.5312C12.2188 16.928 11.8968 17.25 11.5 17.25C11.1032 17.25 10.7812 16.928 10.7812 16.5312V12.2188H6.46875Z" fill="#7676A8"/>
+												</svg>
+												<span>Повторить заказ</span>													
+											</div>
+											<div class="icon important" style="background-image: url(images/dest/important.svg);"></div>								
+										</div>
+										<div class="accordion__header">
+
+											<span class="order-number">Заказ № 657</span>
+											<div class="order-status">
+												<span class="order-status__icon canceled"></span>
+												Отменен
+											</div>
+											<div class="icon arrow">
+												<svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M2.02148 1.95752L10.0153 9.72295L18.0091 1.95752" stroke="white" stroke-width="5"/>
+													</svg>										
+											</div>
+											
+										</div>
+										<div class="accordion__body">
+											<div class="accordion__content">
+												<div class="cabinet__orderList">
+													<table class="table">
+														<thead>
+															<tr>
+																<th scope="col">Название</th>
+																<th scope="col">Количество</th>
+																<th scope="col">Цена</th>
+																<th scope="col">Сумма</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<th scope="row"><a href="#">1. Смарт-терминал Эвотор 7.2 ФН 36 месяцев, 54ФЗ</a></th>
+																<td>1 шт.</td>
+																<td>10 590 ₽</td>
+																<td>105 900 ₽</td>
+															</tr>
+															<tr>
+																<th scope="row"><a href="#">2. Счетчик банкнот Cassida 5550 UV DL рубли</a></th>
+																<td>10 шт.</td>
+																<td>10 590 ₽</td>
+																<td>105 900 ₽</td>
+															</tr>
+															<tr>
+																<th scope="row"><a href="#">3. Сканер штрих-кода Datalogic QD2430 (QD2430-BKK1)</a></th>
+																<td>10 шт.</td>
+																<td>10 590 ₽</td>
+																<td>105 900 ₽</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<div class="cabinet__orderPrice">
+													Итого <span>423 600 ₽</span>
+												</div>
+											</div>
+										</div>
+									</div>
+		
+									
+								</div>
+							</div>
+							<div class="cabinet__tabItem">
+								<div class="cabinet__tabTitle mb-30"><span>Избранное</span></div>
+								<div class="catalog__items">
+									<div class="row">
+
+										<div class="col-lg-12">
+											<div class="horizontItem">
+												<div class="horizontItem__image">
+													<picture>
+														<source srcset="images/dest/catalog/kassa1.webp" type="image/webp">
+														<img src="images/dest/catalog/kassa1.png" alt="alt">
+													</picture>
+												</div>
+												<div class="horizontItem__chars">
+													<h4 class="horizontItem__title"><a href="#">Смарт-терминал ЭВОТОР 10</a></h4>
+													<ul class="chars">
+														<li><span>Гарантия:</span> 12 мес. со дня первой активации смарт-терминала</li>
+														<li><span>Беспроводная связь:</span> GSM 2G</li>
+														<li><span>Тип SIM-карты:</span> Mini-SIM</li>
+														<li><span>Экран:</span> 7”, ёмкостный тип, разрешение 1024х600</li>
+														<li><span>Размеры, мм:</span> 247х112х115</li>
+													</ul>
+													<div class="horizontItem__bottom">
+														<div class="stars">
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star empty"></span>
+														</div>
+														<div class="addToFav">
+																<div class="addToFav__icon">
+																	<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M6.99999 11.3324C6.82915 11.3324 6.66445 11.2705 6.53609 11.1581C6.05132 10.7342 5.58395 10.3358 5.17159 9.98447L5.16949 9.98264C3.96054 8.95239 2.91656 8.06268 2.19018 7.18625C1.3782 6.20645 1 5.27747 1 4.2626C1 3.27658 1.3381 2.36691 1.95196 1.70105C2.57315 1.02731 3.4255 0.65625 4.35229 0.65625C5.04498 0.65625 5.67934 0.875244 6.23772 1.3071C6.51952 1.52509 6.77495 1.79187 6.99999 2.10306C7.22512 1.79187 7.48046 1.52509 7.76235 1.3071C8.32073 0.875244 8.95509 0.65625 9.64778 0.65625C10.5745 0.65625 11.4269 1.02731 12.0481 1.70105C12.662 2.36691 13 3.27658 13 4.2626C13 5.27747 12.6219 6.20645 11.8099 7.18616C11.0835 8.06268 10.0396 8.9523 8.83086 9.98245C8.41777 10.3344 7.94966 10.7334 7.46379 11.1583C7.33553 11.2705 7.17073 11.3324 6.99999 11.3324ZM4.35229 1.35919C3.62417 1.35919 2.95529 1.64978 2.46869 2.17749C1.97485 2.71317 1.70285 3.45364 1.70285 4.2626C1.70285 5.11615 2.02008 5.87952 2.73135 6.73773C3.41882 7.56729 4.44137 8.43869 5.62533 9.44769L5.62752 9.44952C6.04143 9.80228 6.51064 10.2022 6.99898 10.6292C7.49025 10.2014 7.96019 9.80081 8.37493 9.44751C9.55879 8.43851 10.5813 7.56729 11.2687 6.73773C11.9799 5.87952 12.2971 5.11615 12.2971 4.2626C12.2971 3.45364 12.0251 2.71317 11.5313 2.17749C11.0448 1.64978 10.3758 1.35919 9.64778 1.35919C9.1144 1.35919 8.62468 1.52875 8.19228 1.8631C7.80693 2.16119 7.5385 2.53802 7.38112 2.8017C7.30019 2.93729 7.15773 3.01822 6.99999 3.01822C6.84224 3.01822 6.69979 2.93729 6.61886 2.8017C6.46157 2.53802 6.19314 2.16119 5.8077 1.8631C5.3753 1.52875 4.88558 1.35919 4.35229 1.35919Z" fill="#595A6C" stroke="#595A6C" stroke-width="0.2"/>
+																		</svg>															
+																</div>
+																<span>В избранное</span>
+														</div>
+													</div>
+												</div>
+												<div class="horizontItem__right">
+													<div class="horizontItem__price">11 500 ₽</div>
+													<div class="horizontItem__have">Наличие:
+														<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0.250808 7.9206C0.0697691 8.13009 -0.0183227 8.39678 0.00318006 8.67243C0.0246828 8.94807 0.152312 9.19891 0.363871 9.37808L5.49886 13.7512C5.68961 13.9132 5.92614 14 6.17446 14C6.20498 14 6.23619 13.9986 6.26741 13.9959C6.54833 13.9711 6.80151 13.8381 6.98047 13.6224L15.7633 3.00236C15.9395 2.78873 16.022 2.51998 15.995 2.24502C15.9672 1.97006 15.8347 1.72198 15.6197 1.54625L14.0119 0.234172C13.5686 -0.126926 12.9124 -0.0635275 12.5476 0.376819L5.78811 8.55045L3.07183 6.23846C2.63622 5.86909 1.97866 5.91802 1.60479 6.35079L0.250808 7.9206Z" fill="#009F23"/>
+														</svg>
+														</div>
+													<button type="button" class="horizontItem__btn theme-btn">В корзину</button>
+												</div>
+												
+											</div>
+										</div>
+
+										<div class="col-lg-12">
+											<div class="horizontItem">
+												<div class="horizontItem__image">
+													<picture>
+														<source srcset="images/dest/catalog/2.webp" type="image/webp">
+														<img src="images/dest/catalog/2.png" alt="alt">
+													</picture>
+												</div>
+												<div class="horizontItem__chars">
+													<h4 class="horizontItem__title"><a href="#">Смарт-терминал ЭВОТОР 10</a></h4>
+													<ul class="chars">
+														<li><span>Гарантия:</span> 12 мес. со дня первой активации смарт-терминала</li>
+														<li><span>Беспроводная связь:</span> GSM 2G</li>
+														<li><span>Тип SIM-карты:</span> Mini-SIM</li>
+														<li><span>Экран:</span> 7”, ёмкостный тип, разрешение 1024х600</li>
+														<li><span>Размеры, мм:</span> 247х112х115</li>
+													</ul>
+													<div class="horizontItem__bottom">
+														<div class="stars">
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star empty"></span>
+														</div>
+														<div class="addToFav">
+																<div class="addToFav__icon added">
+																	<svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M7.48396 0.618652C6.93515 0.618652 6.43198 0.792562 5.98848 1.13556C5.56328 1.4644 5.2802 1.88323 5.11354 2.18779C4.94688 1.88321 4.66379 1.4644 4.2386 1.13556C3.79509 0.792562 3.29193 0.618652 2.74312 0.618652C1.21159 0.618652 0.0566406 1.87136 0.0566406 3.53257C0.0566406 5.32726 1.49752 6.55515 3.67882 8.41402C4.04924 8.7297 4.4691 9.08751 4.90549 9.46913C4.96302 9.5195 5.03689 9.54724 5.11354 9.54724C5.19018 9.54724 5.26406 9.5195 5.32158 9.46915C5.75802 9.08747 6.17786 8.72968 6.54849 8.41382C8.72955 6.55515 10.1704 5.32726 10.1704 3.53257C10.1704 1.87136 9.01549 0.618652 7.48396 0.618652Z" fill="#3E7EEA"/>
+																	</svg>																											
+																</div>
+																<span>В избранном</span>
+														</div>
+													</div>
+												</div>
+												<div class="horizontItem__right">
+													<div class="horizontItem__price">11 500 ₽</div>
+													<div class="horizontItem__have">Наличие:
+														<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0.250808 7.9206C0.0697691 8.13009 -0.0183227 8.39678 0.00318006 8.67243C0.0246828 8.94807 0.152312 9.19891 0.363871 9.37808L5.49886 13.7512C5.68961 13.9132 5.92614 14 6.17446 14C6.20498 14 6.23619 13.9986 6.26741 13.9959C6.54833 13.9711 6.80151 13.8381 6.98047 13.6224L15.7633 3.00236C15.9395 2.78873 16.022 2.51998 15.995 2.24502C15.9672 1.97006 15.8347 1.72198 15.6197 1.54625L14.0119 0.234172C13.5686 -0.126926 12.9124 -0.0635275 12.5476 0.376819L5.78811 8.55045L3.07183 6.23846C2.63622 5.86909 1.97866 5.91802 1.60479 6.35079L0.250808 7.9206Z" fill="#009F23"/>
+														</svg>
+														</div>
+													<button type="button" class="horizontItem__btn theme-btn">В корзину</button>
+												</div>
+												
+											</div>
+										</div>
+			
+										<div class="col-lg-12">
+											<div class="horizontItem">
+												<div class="horizontItem__image">
+													<picture>
+														<source srcset="images/dest/catalog/5.webp" type="image/webp">
+														<img src="images/dest/catalog/5.png" alt="alt">
+													</picture>
+												</div>
+												<div class="horizontItem__chars">
+													<h4 class="horizontItem__title"><a href="#">Смарт-терминал ЭВОТОР 10</a></h4>
+													<ul class="chars">
+														<li><span>Гарантия:</span> 12 мес. со дня первой активации смарт-терминала</li>
+														<li><span>Беспроводная связь:</span> GSM 2G</li>
+														<li><span>Тип SIM-карты:</span> Mini-SIM</li>
+														<li><span>Экран:</span> 7”, ёмкостный тип, разрешение 1024х600</li>
+														<li><span>Размеры, мм:</span> 247х112х115</li>
+													</ul>
+													<div class="horizontItem__bottom">
+														<div class="stars">
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star empty"></span>
+														</div>
+														<div class="addToFav">
+																<div class="addToFav__icon added">
+																	<svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M7.48396 0.618652C6.93515 0.618652 6.43198 0.792562 5.98848 1.13556C5.56328 1.4644 5.2802 1.88323 5.11354 2.18779C4.94688 1.88321 4.66379 1.4644 4.2386 1.13556C3.79509 0.792562 3.29193 0.618652 2.74312 0.618652C1.21159 0.618652 0.0566406 1.87136 0.0566406 3.53257C0.0566406 5.32726 1.49752 6.55515 3.67882 8.41402C4.04924 8.7297 4.4691 9.08751 4.90549 9.46913C4.96302 9.5195 5.03689 9.54724 5.11354 9.54724C5.19018 9.54724 5.26406 9.5195 5.32158 9.46915C5.75802 9.08747 6.17786 8.72968 6.54849 8.41382C8.72955 6.55515 10.1704 5.32726 10.1704 3.53257C10.1704 1.87136 9.01549 0.618652 7.48396 0.618652Z" fill="#3E7EEA"/>
+																	</svg>																											
+																</div>
+																<span>В избранном</span>
+														</div>
+													</div>
+												</div>
+												<div class="horizontItem__right">
+													<div class="horizontItem__price">11 500 ₽</div>
+													<div class="horizontItem__have">Наличие:
+														<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M14 14L2 2.06893M2 13.9311L14 2" stroke="#FF553E" stroke-width="4"/>
+															</svg>												
+														</div>
+													<button type="button" class="horizontItem__btn theme-btn">В корзину</button>
+												</div>
+												
+											</div>
+										</div>
+			
+										<div class="col-lg-12">
+											<div class="horizontItem">
+												<div class="horizontItem__image">
+													<picture>
+														<source srcset="images/dest/catalog/9.webp" type="image/webp">
+														<img src="images/dest/catalog/9.png" alt="alt">
+													</picture>
+												</div>
+												<div class="horizontItem__chars">
+													<h4 class="horizontItem__title"><a href="#">Смарт-терминал ЭВОТОР 10</a></h4>
+													<ul class="chars">
+														<li><span>Гарантия:</span> 12 мес. со дня первой активации смарт-терминала</li>
+														<li><span>Беспроводная связь:</span> GSM 2G</li>
+														<li><span>Тип SIM-карты:</span> Mini-SIM</li>
+														<li><span>Экран:</span> 7”, ёмкостный тип, разрешение 1024х600</li>
+														<li><span>Размеры, мм:</span> 247х112х115</li>
+													</ul>
+													<div class="horizontItem__bottom">
+														<div class="stars">
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star"></span>
+															<span class="star empty"></span>
+														</div>
+														<div class="addToFav">
+																<div class="addToFav__icon added">
+																	<svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M7.48396 0.618652C6.93515 0.618652 6.43198 0.792562 5.98848 1.13556C5.56328 1.4644 5.2802 1.88323 5.11354 2.18779C4.94688 1.88321 4.66379 1.4644 4.2386 1.13556C3.79509 0.792562 3.29193 0.618652 2.74312 0.618652C1.21159 0.618652 0.0566406 1.87136 0.0566406 3.53257C0.0566406 5.32726 1.49752 6.55515 3.67882 8.41402C4.04924 8.7297 4.4691 9.08751 4.90549 9.46913C4.96302 9.5195 5.03689 9.54724 5.11354 9.54724C5.19018 9.54724 5.26406 9.5195 5.32158 9.46915C5.75802 9.08747 6.17786 8.72968 6.54849 8.41382C8.72955 6.55515 10.1704 5.32726 10.1704 3.53257C10.1704 1.87136 9.01549 0.618652 7.48396 0.618652Z" fill="#3E7EEA"/>
+																	</svg>																											
+																</div>
+																<span>В избранном</span>
+														</div>
+													</div>
+												</div>
+												<div class="horizontItem__right">
+													<div class="horizontItem__price">11 500 ₽</div>
+													<div class="horizontItem__have">Наличие:
+														<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0.250808 7.9206C0.0697691 8.13009 -0.0183227 8.39678 0.00318006 8.67243C0.0246828 8.94807 0.152312 9.19891 0.363871 9.37808L5.49886 13.7512C5.68961 13.9132 5.92614 14 6.17446 14C6.20498 14 6.23619 13.9986 6.26741 13.9959C6.54833 13.9711 6.80151 13.8381 6.98047 13.6224L15.7633 3.00236C15.9395 2.78873 16.022 2.51998 15.995 2.24502C15.9672 1.97006 15.8347 1.72198 15.6197 1.54625L14.0119 0.234172C13.5686 -0.126926 12.9124 -0.0635275 12.5476 0.376819L5.78811 8.55045L3.07183 6.23846C2.63622 5.86909 1.97866 5.91802 1.60479 6.35079L0.250808 7.9206Z" fill="#009F23"/>
+														</svg>
+														</div>
+													<button type="button" class="horizontItem__btn theme-btn">В корзину</button>
+												</div>
+												
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="cabinet__tabItem">
+								<div class="cabinet__tabTitle mb-30"><span>Рассылка</span></div>
+								<div class="cabinet__mailing">
+									<p>
+										Подпишитесь на email рассылку, чтобы получать последние новости по ФЗ 54, продуктам нашего сайта, акциям и актуальным предложениям.
+									</p>
+									<form class="follow">
+										<input type="checkbox" name="isFollow" id="isFollow">
+										<label for="isFollow">Подписка</label>
+									</form>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- End Content -->
+
+		</div>
+	</section>
+	<!-- End Content Section -->
+
+
+
+	<div class="mobileFixedNav">
+		<nav class="iconMenu header__iconMenu">
+			<a href="#" class="iconMenu__link">
+				<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M14.1988 15.9986H2.86537C2.0199 15.9986 1.33203 15.3107 1.33203 14.4652V6.39784C1.33203 6.1033 1.5708 5.8645 1.86537 5.8645C2.15994 5.8645 2.3987 6.1033 2.3987 6.39784V14.4652C2.3987 14.7226 2.60804 14.9319 2.86537 14.9319H14.1988C14.4561 14.9319 14.6654 14.7226 14.6654 14.4652V6.39784C14.6654 6.1033 14.9042 5.8645 15.1988 5.8645C15.4934 5.8645 15.7321 6.1033 15.7321 6.39784V14.4652C15.7321 15.3107 15.0443 15.9986 14.1988 15.9986Z"
+						fill="#7676A8" />
+					<path
+						d="M16.5334 8.26475C16.3969 8.26475 16.2605 8.21268 16.1563 8.10852L9.52332 1.47558C8.97748 0.929706 8.08931 0.929706 7.54344 1.47558L0.910464 8.10855C0.702196 8.31685 0.364494 8.31685 0.156226 8.10855C-0.0520753 7.90028 -0.0520753 7.56258 0.156226 7.35431L6.7892 0.721305C7.75094 -0.240435 9.31585 -0.240435 10.2776 0.721305L16.9105 7.35428C17.1188 7.56258 17.1188 7.90025 16.9105 8.10852C16.8064 8.21268 16.6699 8.26475 16.5334 8.26475Z"
+						fill="#7676A8" />
+					<path
+						d="M10.6672 15.9991H6.40052C6.10596 15.9991 5.86719 15.7602 5.86719 15.4657V10.7324C5.86719 9.81335 6.61486 9.06567 7.53386 9.06567H9.53388C10.4529 9.06567 11.2006 9.81335 11.2006 10.7324V15.4657C11.2006 15.7602 10.9618 15.9991 10.6672 15.9991ZM6.93386 14.9324H10.1339V10.7324C10.1339 10.4015 9.86471 10.1323 9.53388 10.1323H7.53386C7.20303 10.1323 6.93386 10.4015 6.93386 10.7324V14.9324Z"
+						fill="#7676A8" />
+				</svg>
+			</a>
+			<a href="#" class="iconMenu__link">
+				<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M13.6206 9.86147C13.292 9.52601 12.8956 9.34665 12.4754 9.34665C12.0587 9.34665 11.6589 9.52269 11.3168 9.85815L10.2462 10.9044C10.1581 10.8579 10.07 10.8147 9.98529 10.7715C9.86333 10.7118 9.74813 10.6553 9.64988 10.5955C8.64704 9.97108 7.73568 9.15733 6.86158 8.10445C6.43809 7.57966 6.1535 7.13791 5.94683 6.68952C6.22465 6.44042 6.48213 6.18135 6.73284 5.93224C6.8277 5.83924 6.92257 5.74292 7.01743 5.64992C7.7289 4.95242 7.7289 4.049 7.01743 3.3515L6.09252 2.44476C5.98749 2.34179 5.87907 2.23551 5.77743 2.12922C5.57416 1.9233 5.36071 1.71073 5.1405 1.51144C4.81186 1.19259 4.41886 1.02319 4.00553 1.02319C3.59219 1.02319 3.19241 1.19259 2.85362 1.51144C2.85023 1.51476 2.85023 1.51476 2.84684 1.51808L1.69493 2.65733C1.26127 3.08247 1.01395 3.60061 0.959742 4.20179C0.878431 5.17164 1.1698 6.07506 1.3934 6.66627C1.94225 8.11773 2.76214 9.4629 3.9852 10.9044C5.46913 12.6415 7.25459 14.0132 9.29415 14.9798C10.0734 15.3418 11.1135 15.7703 12.2756 15.8433C12.3467 15.8467 12.4212 15.85 12.489 15.85C13.2716 15.85 13.9289 15.5743 14.4439 15.0263C14.4472 15.0196 14.454 15.0163 14.4574 15.0097C14.6336 14.8004 14.8369 14.6111 15.0503 14.4085C15.196 14.2723 15.3451 14.1295 15.4907 13.98C15.8262 13.6379 16.0023 13.2394 16.0023 12.8308C16.0023 12.419 15.8228 12.0237 15.4806 11.6916L13.6206 9.86147ZM14.8335 13.3589C14.8301 13.3589 14.8301 13.3622 14.8335 13.3589C14.7013 13.4984 14.5658 13.6246 14.4201 13.7641C14.1999 13.9701 13.9763 14.186 13.7663 14.4284C13.4241 14.7871 13.0209 14.9565 12.4924 14.9565C12.4416 14.9565 12.3874 14.9565 12.3365 14.9532C11.3303 14.8901 10.3952 14.5048 9.69393 14.176C7.77634 13.2659 6.09252 11.9739 4.69328 10.3364C3.53799 8.97133 2.76553 7.7092 2.25395 6.35406C1.93887 5.52703 1.82367 4.88268 1.87449 4.27486C1.90837 3.88625 2.06083 3.56407 2.34203 3.2884L3.49733 2.1558C3.66334 2.00301 3.83952 1.91997 4.0123 1.91997C4.22574 1.91997 4.39853 2.04619 4.50695 2.15247C4.51033 2.1558 4.51372 2.15912 4.51711 2.16244C4.72378 2.35176 4.92028 2.54772 5.12694 2.75697C5.23197 2.86326 5.34039 2.96954 5.4488 3.07915L6.37372 3.98589C6.73284 4.33796 6.73284 4.66346 6.37372 5.01553C6.27547 5.11185 6.1806 5.20817 6.08235 5.30117C5.79776 5.58681 5.52672 5.85253 5.23197 6.1116C5.2252 6.11824 5.21842 6.12156 5.21503 6.1282C4.92367 6.41385 4.97787 6.69284 5.03886 6.88217C5.04224 6.89213 5.04563 6.90209 5.04902 6.91206C5.28957 7.48334 5.62836 8.02141 6.14333 8.66244L6.14672 8.66576C7.0818 9.79504 8.0677 10.6752 9.15524 11.3495C9.29415 11.4358 9.43644 11.5056 9.57196 11.572C9.69393 11.6318 9.80912 11.6883 9.90737 11.748C9.92092 11.7547 9.93447 11.7646 9.94802 11.7713C10.0632 11.8278 10.1716 11.8543 10.2834 11.8543C10.5646 11.8543 10.7408 11.6816 10.7984 11.6251L11.9571 10.4892C12.0723 10.3763 12.2552 10.2401 12.4687 10.2401C12.6787 10.2401 12.8515 10.3696 12.9565 10.4826C12.9599 10.4859 12.9599 10.4859 12.9633 10.4892L14.8301 12.3193C15.179 12.6581 15.179 13.0069 14.8335 13.3589Z" />
+					<path
+						d="M9.60939 3.85556C10.497 4.00171 11.3034 4.41356 11.9471 5.04463C12.5908 5.6757 13.0075 6.46619 13.16 7.3364C13.1972 7.55562 13.3904 7.7084 13.6106 7.7084C13.6377 7.7084 13.6614 7.70508 13.6885 7.70176C13.9392 7.6619 14.1052 7.4294 14.0646 7.18362C13.8816 6.13073 13.3734 5.17084 12.5976 4.41024C11.8217 3.64964 10.8426 3.15142 9.76862 2.97207C9.51791 2.93221 9.28414 3.09496 9.2401 3.33742C9.19606 3.57989 9.35868 3.81571 9.60939 3.85556Z" />
+					<path
+						d="M16.9676 7.05401C16.6661 5.32023 15.8327 3.74256 14.552 2.48706C13.2714 1.23157 11.6621 0.414502 9.89356 0.118897C9.64624 0.0757181 9.41247 0.241789 9.36842 0.484252C9.32777 0.730036 9.49378 0.959214 9.74449 1.00239C11.3233 1.26478 12.7632 1.99882 13.9083 3.11813C15.0534 4.24077 15.7988 5.65237 16.0664 7.20015C16.1037 7.41936 16.2968 7.57215 16.517 7.57215C16.5441 7.57215 16.5679 7.56883 16.595 7.5655C16.8423 7.52897 17.0117 7.29647 16.9676 7.05401Z" />
+				</svg>
+			</a>
+			<a href="#" class="iconMenu__link">
+				<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M16.3203 8.9017C16.1133 8.9017 15.9453 8.73513 15.9453 8.52989V1.97112C15.9453 1.35614 15.4406 0.855685 14.8204 0.855685H5.07073C4.4505 0.855685 3.94577 1.35614 3.94577 1.97112V8.52989C3.94577 8.73513 3.77778 8.9017 3.57079 8.9017C3.36379 8.9017 3.1958 8.73587 3.1958 8.52989V1.97112C3.1958 0.945664 4.03652 0.112061 5.07073 0.112061H14.8204C15.8546 0.112061 16.6953 0.945664 16.6953 1.97112V8.52989C16.6953 8.73587 16.5273 8.9017 16.3203 8.9017Z" />
+					<path
+						d="M9.94543 12.0056C9.64769 12.0056 9.34995 11.935 9.07846 11.7952L1.14752 7.69183C0.963772 7.59665 0.892525 7.37208 0.988522 7.18989C1.08452 7.0077 1.31176 6.93929 1.49475 7.03224L9.4257 11.1356C9.75118 11.3044 10.1404 11.3044 10.4659 11.1356L18.3968 7.03224C18.5798 6.93929 18.8078 7.00696 18.9031 7.18989C18.9991 7.37208 18.9278 7.59665 18.7441 7.69183L10.8131 11.7952C10.5409 11.935 10.2424 12.0056 9.94543 12.0056Z" />
+					<path
+						d="M17.4452 17.2156H2.44574C1.61852 17.2156 0.945801 16.5486 0.945801 15.7284V6.36615C0.945801 5.80992 1.25554 5.30426 1.75502 5.0477L3.39746 4.19997C3.5797 4.10702 3.80769 4.17469 3.90294 4.35837C3.99893 4.54055 3.92769 4.76513 3.74319 4.85957L2.10076 5.7073C1.85102 5.83595 1.69577 6.08804 1.69577 6.36615V15.7284C1.69577 16.1389 2.03176 16.472 2.44574 16.472H17.4452C17.8591 16.472 18.1951 16.1389 18.1951 15.7284V6.36615C18.1951 6.08804 18.0399 5.83595 17.7902 5.70656L16.1477 4.85882C15.964 4.76438 15.892 4.53981 15.988 4.35762C16.084 4.17469 16.3127 4.10702 16.4935 4.19923L18.1359 5.04696C18.6354 5.30426 18.9451 5.80992 18.9451 6.36615V15.7284C18.9451 16.5486 18.2724 17.2156 17.4452 17.2156Z" />
+					<path
+						d="M14.0705 8.34706C14.0367 8.34706 14.003 8.3426 13.9692 8.33294L5.71954 6.04703C5.55755 6.00242 5.4458 5.85667 5.4458 5.68935V4.2021C5.4458 4.03404 5.55905 3.88755 5.72179 3.84368L13.9715 1.6128C14.0862 1.58306 14.2055 1.60611 14.2985 1.67601C14.3915 1.74591 14.4455 1.85522 14.4455 1.97123V7.97525C14.4455 8.09126 14.3907 8.20131 14.2977 8.27121C14.231 8.32104 14.1515 8.34706 14.0705 8.34706ZM6.19577 5.40677L13.6955 7.4852V2.45756L6.19577 4.48617V5.40677Z" />
+					<path
+						d="M14.0708 8.66378C13.8638 8.66378 13.6958 8.49721 13.6958 8.29197V1.59935C13.6958 1.39411 13.8638 1.22754 14.0708 1.22754C14.2778 1.22754 14.4458 1.39411 14.4458 1.59935V8.29197C14.4458 8.49721 14.2778 8.66378 14.0708 8.66378Z" />
+					<path
+						d="M5.82079 6.43275C5.61379 6.43275 5.4458 6.26618 5.4458 6.06094V3.83006C5.4458 3.62482 5.61379 3.45825 5.82079 3.45825C6.02778 3.45825 6.19577 3.62482 6.19577 3.83006V6.06094C6.19577 6.26618 6.02778 6.43275 5.82079 6.43275Z" />
+					<path
+						d="M8.44574 8.70099C7.61852 8.70099 6.9458 8.03396 6.9458 7.21375C6.9458 6.67982 7.23229 6.19052 7.69352 5.9362C7.87351 5.83878 8.10301 5.90125 8.20425 6.08046C8.30475 6.26042 8.2395 6.48648 8.05876 6.58687C7.83152 6.7118 7.69577 6.9453 7.69577 7.21375C7.69577 7.62423 8.03176 7.95737 8.44574 7.95737C8.85973 7.95737 9.19571 7.62423 9.19571 7.21375C9.19571 7.08287 9.16797 6.97504 9.10947 6.88283C8.99997 6.70882 9.05397 6.47904 9.22946 6.37048C9.40346 6.26339 9.63595 6.31545 9.74619 6.48946C9.87819 6.69916 9.94568 6.94381 9.94568 7.21375C9.94568 8.03322 9.27296 8.70099 8.44574 8.70099Z" />
+				</svg>
+			</a>
+			<a href="#" class="iconMenu__link">
+				<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M14.6027 10.252C13.7313 9.3978 12.6942 8.76544 11.5626 8.38264C12.7746 7.56432 13.5708 6.19479 13.5708 4.6462C13.5708 2.14608 11.496 0.112061 8.9458 0.112061C6.39558 0.112061 4.3208 2.14608 4.3208 4.6462C4.3208 6.19479 5.11702 7.56432 6.32899 8.38264C5.19743 8.76544 4.1603 9.3978 3.28896 10.252C1.77796 11.7333 0.945801 13.7028 0.945801 15.7977H2.1958C2.1958 12.1489 5.22383 9.18034 8.9458 9.18034C12.6678 9.18034 15.6958 12.1489 15.6958 15.7977H16.9458C16.9458 13.7028 16.1136 11.7333 14.6027 10.252ZM8.9458 7.9549C7.08483 7.9549 5.5708 6.47064 5.5708 4.6462C5.5708 2.82176 7.08483 1.3375 8.9458 1.3375C10.8068 1.3375 12.3208 2.82176 12.3208 4.6462C12.3208 6.47064 10.8068 7.9549 8.9458 7.9549Z" />
+				</svg>
+			</a>
+			<a href="#" class="iconMenu__link">
+				<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M17.4803 2.17091C17.3892 2.05931 17.2513 1.99434 17.1055 1.99434H4.33068L3.97344 0.476805C3.92317 0.263304 3.72924 0.112061 3.50575 0.112061H1.42578C1.16072 0.112061 0.945801 0.322757 0.945801 0.582647C0.945801 0.842536 1.16072 1.0532 1.42578 1.0532H3.12391L5.54875 11.3545C5.599 11.568 5.79295 11.7193 6.01645 11.7193H15.6335C15.8986 11.7193 16.1135 11.5086 16.1135 11.2487C16.1135 10.9888 15.8986 10.7781 15.6335 10.7781H6.39832L6.02913 9.2096H15.6656C15.8901 9.2096 16.0846 9.05705 16.1338 8.84234L17.5738 2.56819C17.6058 2.4287 17.5714 2.28255 17.4803 2.17091ZM15.2815 8.26846H5.80758L4.55223 2.93545H16.5055L15.2815 8.26846ZM7.98702 12.347C7.01659 12.347 6.22705 13.121 6.22705 14.0724C6.22705 15.0238 7.01656 15.7978 7.98702 15.7978C8.95745 15.7978 9.74699 15.0238 9.74699 14.0724C9.74699 13.121 8.95749 12.347 7.98702 12.347ZM7.98702 14.8567C7.54591 14.8567 7.18705 14.5048 7.18705 14.0724C7.18705 13.6399 7.54591 13.2881 7.98702 13.2881C8.42814 13.2881 8.78699 13.6399 8.78699 14.0724C8.78699 14.5048 8.42814 14.8567 7.98702 14.8567ZM11.9849 14.0723C11.9849 13.1209 12.7744 12.3469 13.7448 12.3469C14.7153 12.3469 15.5048 13.1209 15.5048 14.0723C15.5048 15.0237 14.7153 15.7977 13.7448 15.7977C12.7744 15.7977 11.9849 15.0237 11.9849 14.0723ZM12.9449 14.0724C12.9449 14.5048 13.3037 14.8566 13.7448 14.8566C14.186 14.8566 14.5448 14.5048 14.5448 14.0724C14.5448 13.6399 14.186 13.2881 13.7448 13.2881C13.3037 13.2881 12.9449 13.6399 12.9449 14.0724Z" />
+				</svg>
+				<span class="count">3</span>
+			</a>
+		</nav>
+	</div>
+
+	<footer class="footer">
+		<div class="footer__top">
+			<div class="footer__nav">
+				<div class="container">
+					<div class="row d-flex">
+						<div class="col-lg-3">
+							<a href="#" class="logotype">
+								<picture>
+									<source srcset="images/dest/logo_big.webp" type="image/webp">
+									<img src="images/dest/logo_big.png" alt="alt">
+								</picture>
+							</a>
+							<a href="tel:88632198449" class="footer__phone">8 863 219 84 49</a>
+						</div>
+						<div class="col-lg-9">
+							<nav class="nav">
+								<div class="row">
+									<div class="col-lg-3 col-md-4">
+										<a href="#">Торговое оборудование</a>
+										<a href="#">Детекторы и сканеры</a>
+										<a href="#">Кассовая техника</a>
+									</div>
+									<div class="col-lg-3 col-md-4">
+										<a href="#">Программное обеспечение</a>
+										<a href="#">Счетчики посетителей</a>
+										<a href="#">Автоматизация</a>
+									</div>
+									<div class="col-lg-2 col-md-4">
+										<a href="#">О компании</a>
+										<a href="#">Отзывы</a>
+										<a href="#">Контакты</a>
+									</div>
+									<div class="col-lg-4 col-md-4">
+										<a href="#">Конфиденциальность и файлы cookie</a>
+										<a href="#">Схема проезда</a>
+										<a href="#">Сделано в GEEK</a>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__contacts">
+				<div class="container">
+					<div class="row d-flex flex-lg-row flex-column-reverse">
+						<div class="col-lg-4">
+							<div class="copyright">
+								<p>© 2020 ООО “ЦТО Феникс”, все права защищены</p>
+							</div>
+						</div>
+						<div class="col-lg-5">
+							<div class="address">
+								<p>Адрес: 344064, г. Ростов-на-Дону, Немировича-Данченко 78/6, 2 этаж</p>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="workingTime">
+								<p>Время работы с 09:00 до 17:00</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer__bottom">
+			<div class="container">
+				<div class="row d-flex justify-content-md-between">
+					<div class="col-md-3">
+						<a href="#" class="logotype">
+							<picture>
+								<source srcset="images/dest/logo_big.webp" type="image/webp">
+								<img src="images/dest/logo_big.png" alt="alt">
+							</picture>
+						</a>
+					</div>
+					<div class="col-md-6">
+						<nav class="iconMenu header__iconMenu">
+							<a href="#" class="iconMenu__link">
+								<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M12.6748 9.94392C12.3461 9.60173 11.9498 9.41878 11.5296 9.41878C11.1129 9.41878 10.7131 9.59834 10.371 9.94053L9.30036 11.0077C9.21228 10.9603 9.12419 10.9163 9.03949 10.8722C8.91752 10.8112 8.80233 10.7536 8.70408 10.6927C7.70124 10.0557 6.78988 9.22567 5.91578 8.15168C5.49229 7.61638 5.2077 7.16578 5.00103 6.7084C5.27885 6.45431 5.53633 6.19004 5.78704 5.93595C5.8819 5.84108 5.97677 5.74283 6.07163 5.64797C6.7831 4.9365 6.7831 4.01497 6.07163 3.30349L5.14671 2.37858C5.04169 2.27355 4.93327 2.16514 4.83163 2.05672C4.62836 1.84667 4.41491 1.62984 4.19469 1.42656C3.86606 1.10131 3.47306 0.928528 3.05973 0.928528C2.64639 0.928528 2.24661 1.10131 1.90782 1.42656C1.90443 1.42995 1.90443 1.42995 1.90104 1.43334L0.74913 2.59541C0.31547 3.02907 0.0681485 3.55759 0.013941 4.17082C-0.0673703 5.1601 0.223995 6.08163 0.447601 6.68469C0.996452 8.16523 1.81634 9.53736 3.0394 11.0077C4.52333 12.7796 6.30879 14.1789 8.34835 15.1648C9.12758 15.5341 10.1677 15.9711 11.3298 16.0456C11.4009 16.049 11.4754 16.0524 11.5432 16.0524C12.3258 16.0524 12.9831 15.7712 13.4981 15.2122C13.5014 15.2054 13.5082 15.202 13.5116 15.1953C13.6878 14.9818 13.8911 14.7887 14.1045 14.582C14.2502 14.4431 14.3993 14.2975 14.5449 14.145C14.8804 13.796 15.0565 13.3895 15.0565 12.9728C15.0565 12.5527 14.877 12.1495 14.5348 11.8107L12.6748 9.94392ZM13.8877 13.5114C13.8843 13.5114 13.8843 13.5148 13.8877 13.5114C13.7555 13.6537 13.62 13.7825 13.4743 13.9248C13.2541 14.1348 13.0305 14.3551 12.8205 14.6024C12.4783 14.9683 12.0751 15.1411 11.5466 15.1411C11.4958 15.1411 11.4416 15.1411 11.3907 15.1377C10.3845 15.0733 9.44944 14.6803 8.74813 14.3449C6.83054 13.4166 5.14671 12.0987 3.74748 10.4284C2.59219 9.03594 1.81973 7.74851 1.30815 6.36622C0.993064 5.52262 0.877873 4.86535 0.928693 4.24535C0.962572 3.84896 1.11503 3.52033 1.39623 3.23912L2.55153 2.08383C2.71754 1.92798 2.89372 1.84328 3.0665 1.84328C3.27994 1.84328 3.45273 1.97202 3.56115 2.08044C3.56453 2.08383 3.56792 2.08721 3.57131 2.0906C3.77797 2.28372 3.97448 2.48361 4.18114 2.69705C4.28617 2.80546 4.39459 2.91388 4.503 3.02568L5.42792 3.9506C5.78704 4.30972 5.78704 4.64174 5.42792 5.00087C5.32967 5.09912 5.2348 5.19737 5.13655 5.29223C4.85196 5.5836 4.58092 5.85464 4.28617 6.1189C4.27939 6.12567 4.27262 6.12906 4.26923 6.13584C3.97787 6.4272 4.03207 6.71179 4.09306 6.90491C4.09644 6.91507 4.09983 6.92523 4.10322 6.9354C4.34377 7.51813 4.68256 8.06698 5.19753 8.72086L5.20092 8.72425C6.136 9.87616 7.1219 10.774 8.20944 11.4617C8.34835 11.5498 8.49064 11.621 8.62616 11.6887C8.74813 11.7497 8.86332 11.8073 8.96157 11.8683C8.97512 11.8751 8.98867 11.8852 9.00222 11.892C9.11741 11.9496 9.22583 11.9767 9.33763 11.9767C9.61883 11.9767 9.79501 11.8005 9.8526 11.7429L11.0113 10.5842C11.1265 10.4691 11.3094 10.3301 11.5229 10.3301C11.7329 10.3301 11.9057 10.4623 12.0107 10.5775C12.0141 10.5809 12.0141 10.5809 12.0175 10.5842L13.8843 12.451C14.2332 12.7966 14.2332 13.1523 13.8877 13.5114Z" />
+									<path
+										d="M8.6631 3.81846C9.55075 3.96753 10.3571 4.38763 11.0008 5.03135C11.6445 5.67506 12.0612 6.4814 12.2137 7.36905C12.251 7.59265 12.4441 7.7485 12.6643 7.7485C12.6914 7.7485 12.7151 7.74511 12.7422 7.74172C12.9929 7.70107 13.1589 7.46391 13.1183 7.2132C12.9353 6.13922 12.4271 5.16009 11.6513 4.38425C10.8754 3.6084 9.89632 3.10021 8.82233 2.91726C8.57162 2.8766 8.33785 3.04261 8.29381 3.28993C8.24977 3.53725 8.41239 3.7778 8.6631 3.81846Z" />
+									<path
+										d="M16.0218 7.08105C15.7203 5.31253 14.8869 3.70325 13.6062 2.4226C12.3256 1.14194 10.7163 0.308502 8.94776 0.00697294C8.70044 -0.0370707 8.46667 0.132328 8.42262 0.37965C8.38197 0.630359 8.54798 0.864129 8.79869 0.908173C10.3775 1.17582 11.8174 1.92456 12.9625 3.06631C14.1076 4.21144 14.853 5.65133 15.1206 7.23013C15.1579 7.45373 15.351 7.60958 15.5712 7.60958C15.5983 7.60958 15.6221 7.60619 15.6492 7.6028C15.8965 7.56553 16.0659 7.32838 16.0218 7.08105Z" />
+								</svg>
+							</a>
+							<a href="#" class="iconMenu__link">
+								<svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M6.50926 9.20197C8.4556 9.20197 10.039 7.6185 10.039 5.67216C10.039 4.87861 9.78177 4.12902 9.2951 3.50441C9.16514 3.33761 8.9245 3.30778 8.75769 3.43771C8.59085 3.56771 8.56098 3.80835 8.69099 3.97515C9.07185 4.46397 9.27316 5.05078 9.27316 5.67216C9.27316 7.1962 8.0333 8.4361 6.50926 8.4361C4.98522 8.4361 3.74536 7.1962 3.74536 5.67216C3.74536 4.14813 4.98522 2.90826 6.50926 2.90826C6.72075 2.90826 6.89219 2.73678 6.89219 2.52533C6.89219 2.31387 6.72075 2.1424 6.50926 2.1424C4.56292 2.1424 2.97949 3.72586 2.97949 5.67216C2.97945 7.6185 4.56292 9.20197 6.50926 9.20197Z" />
+									<path
+										d="M7.91223 3.23795C8.09455 3.23795 8.25079 3.11082 8.28751 2.93008C8.3286 2.72429 8.19622 2.52221 7.98691 2.47975C7.75542 2.43295 7.5293 2.61025 7.5293 2.8554C7.5293 3.06598 7.69963 3.23795 7.91223 3.23795Z" />
+									<path
+										d="M12.4375 12.7275C12.3789 12.1762 12.0301 11.7222 11.5521 11.5105C11.1571 11.3357 10.8643 11.3879 10.3525 11.3819H9.75972L11.4041 8.63902C12.7526 6.38962 12.3992 3.5234 10.5447 1.66889C8.3195 -0.556298 4.69871 -0.556298 2.47348 1.66889C0.619013 3.5234 0.265603 6.38959 1.61414 8.63902L3.2585 11.3819H1.98563C1.20318 11.3819 0.559045 11.9695 0.487283 12.7486C-0.0344641 18.4124 -0.000612608 18.0002 0.00095742 18.1182C0.0111818 18.8799 0.588378 19.5149 1.3482 19.5952C1.49719 19.611 0.874392 19.6006 11.4953 19.6035C12.3253 19.6035 12.9998 18.9297 13 18.0985C12.9999 17.948 13.0171 18.2087 12.4375 12.7275ZM10.9412 12.1478C11.32 12.1478 11.6359 12.4318 11.6759 12.8085L11.7546 13.5491C11.6116 13.6311 11.4488 13.675 11.282 13.675C10.4892 13.675 10.0537 12.7634 10.5231 12.1478H10.9412ZM6.50907 0.765475C10.3531 0.765475 12.7146 4.96335 10.7472 8.24521L7.40705 13.8168C7.00057 14.4948 6.01788 14.4953 5.61109 13.8168L2.27095 8.24521C0.30202 4.96094 2.66733 0.765475 6.50907 0.765475ZM1.98555 12.1478H3.71752L4.95417 14.2106C5.65792 15.3845 7.35949 15.3855 8.06386 14.2106L9.3005 12.1478H9.66222C9.26673 13.2641 10.0974 14.4408 11.282 14.4408C11.4732 14.4408 11.6614 14.4085 11.8395 14.3473L12.0761 16.5734L11.0232 15.8674C10.505 15.5199 9.84576 15.4953 9.30296 15.8029L7.46568 16.8442C7.25035 16.691 5.19718 15.2305 4.90274 15.021C4.266 14.568 3.42477 14.5403 2.75957 14.9503L0.950786 16.0653L1.24986 12.8187C1.28509 12.4363 1.60139 12.1478 1.98555 12.1478ZM11.6507 18.8216C11.5062 18.852 12.1289 18.8319 1.50543 18.8377C1.06919 18.8377 0.729833 18.4638 0.769735 18.0311L0.862941 17.0192L3.16146 15.6024C3.56419 15.3542 4.07342 15.371 4.4588 15.6451C4.80253 15.8896 7.82652 18.0408 8.22377 18.3234C8.39579 18.4458 8.63493 18.406 8.75777 18.2333C8.88039 18.061 8.84003 17.8219 8.66771 17.6993L8.15442 17.3342L9.68057 16.4692C9.96964 16.3054 10.3207 16.3185 10.5967 16.5036L12.1816 17.5662C12.2288 18.0218 12.234 18.0315 12.2342 18.0994C12.2352 18.4549 11.9803 18.7521 11.6507 18.8216Z" />
+								</svg>
+							</a>
+							<a href="https://geekllc.ru/" class="iconMenu__link geek"></a>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>© 2020 ООО “ЦТО Феникс”, все права защищены</p>
+				<p><a href="#">Конфиденциальность и файлы cookie</a></p>
+			</div>
+		</div>
+		<div class="footer__arrow">
+			<div class="icon">
+				<svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1.99902 2L12.1533 11.8642L22.3077 2" stroke="white" stroke-width="5"></path>
+				</svg>
+			</div>
+		</div>
+	</footer>
+
+	<div id="form-popup" class="form-popup mfp-hide">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 d-flex justify-content-center">
+					<form class="themeForm">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-lg-5 offset-lg-1">
+									<div class="themeForm__left">
+										<div class="themeForm__title">Свяжитесь с нами!</div>
+										<a href="#" class="themeForm__phone">+7 (863) 219-84-49</a>
+										<div class="themeForm__text">
+											<p>Или оставьте заявку и мы позвоним Вам!</p>
+										</div>
+										<div class="themeForm__input">
+											<input type="text" name="name" placeholder="Ваше имя">
+											<input type="text" name="phone" placeholder="Ваш номер телефона">
+
+											<button class="theme-btn submit" type="submit">Оставить заявку</button>
+										</div>
+										<p class="note">
+											Нажимая кнопку «Отправить»,
+											Вы даете согласие на обработку <a href="#">персональных данных</a> и принимаете <a
+												href="#">политику конфиденциальности</a>.
+										</p>
+									</div>
+								</div>
+								<div class="col-md-0 col-lg-6">
+									<div class="themeForm__right">
+										<picture>
+											<source srcset="images/dest/kassa6.webp" type="image/webp">
+											<img src="images/dest/kassa6.png" alt="alt">
+										</picture>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="themeForm__close">
+							<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M19.3662 19.366L2.00018 2.09975M2.00018 19.2663L19.3662 2" stroke-width="3" />
+							</svg>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script src="js/app.min.js"></script>
+
+</body>
+
+</html>
