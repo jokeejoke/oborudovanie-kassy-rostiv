@@ -9,7 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		midClick: true,
 		showCloseBtn: false,
 		removalDelay: 700,
-		mainClass: 'mfp-fade'
+		mainClass: 'mfp-fade',
+		autoFocusLast: false,
+		fixedBgPos: true,
+		fixedContentPos: true
 	});
 
 	$('.detail__image').magnificPopup({
@@ -117,12 +120,12 @@ document.addEventListener("DOMContentLoaded", function() {
 		const $acc = document.querySelectorAll('.accordion__header')
 		$acc.forEach(item => {
 			item.addEventListener('click', function () {
-				const $currentlyActuveAccHeader = document.querySelector('.accordion__header.accordion__header-active')
+				/*const $currentlyActuveAccHeader = document.querySelector('.accordion__header.accordion__header-active')
 				if ($currentlyActuveAccHeader && $currentlyActuveAccHeader !== item) {
 					$currentlyActuveAccHeader.classList.toggle('accordion__header-active')
 					$currentlyActuveAccHeader.parentNode.classList.toggle('active')
 					$currentlyActuveAccHeader.nextElementSibling.style.maxHeight = 0
-				}
+				}*/
 
 				this.classList.toggle('accordion__header-active')
 				this.parentNode.classList.toggle('active')
@@ -139,12 +142,17 @@ document.addEventListener("DOMContentLoaded", function() {
 	const assortmentSlider = new Swiper('.assortmentSlider__container', {
 		slidesPerView: 1,
 		spaceBetween: 15,
-		grabCursor: true,
-		loop: true,
-		autoplay: {
-			delay: 6000,
-			disableOnInteraction: true,
+		pagination: {
+			el: '.assortmentSlider__pagination',
+			clickable: true
 		},
+		loop: true,
+		speed: 2000,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: true
+		},
+		centeredSlides: true,
 		breakpoints: {
 			1200: {
 				spaceBetween: 49,
@@ -156,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			},
 			768: {
 				spaceBetween: 20,
-				slidesPerView: 3
+				slidesPerView: 2
 			},
 			576: {
 				spaceBetween: 30,
@@ -172,6 +180,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		}
 	});
+
+	
+
 	// Stop Slider on Hover
 	document.querySelectorAll('.assortmentSlider__container .assortmentSlider__slide').forEach(assortmentItem => {
 		assortmentItem.onmouseenter = function() {
@@ -278,6 +289,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			$footerTop.classList.toggle('active')
 			$footerBottom.classList.toggle('active')
 			this.classList.toggle('active')
+			window.scrollTo(0,document.body.scrollHeight)
 		})
 	}
 	
@@ -310,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		})
 		scrollAnim.from('.questions__title', { y: 100, opacity: 0, duration: 1 })
-		scrollAnim.from('.questions__accordion .accordion__item', { y: 100, opacity: 0, duration: 1, stagger: 0.5 })
+		scrollAnim.from('.questions__accordion .accordion__item', { y: 100, opacity: 0, duration: 1, stagger: 0.3 })
 	}
 
 	function complexApproachAnimation() {
@@ -320,8 +332,10 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		})
 		scrollAnim.from('.complexApproach__title', { y: 100, opacity: 0, duration: 1 })
-		scrollAnim.from('.complexApproach__item', { x: -100, opacity: 0, duration: 1.3, stagger: 0.5 })
+		scrollAnim.from('.complexApproach__item', { scale: 0, opacity: 0, duration: 1.3})
 		scrollAnim.from('.complexApproach__more', { opacity: 0, duration: 1, scale: 0 })
+		scrollAnim.set('.complexApproach__line', { opacity: 1})
+		scrollAnim.to('.complexApproach__line', { width: '100%', duration: 3}, '-=0.1')
 	}
 
 	function kassyAnimation() {
@@ -385,14 +399,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			})
 		})
 	}
-/*
-	const loadFile = function(event) {
-    let output = document.querySelector('.user-data__outputImage');
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function() {
-      URL.revokeObjectURL(output.src) // free memory
-    }
-	}*/
 	
 	function loadFile () {
 		const $filename = document.querySelector('.filename')
@@ -418,6 +424,15 @@ document.addEventListener("DOMContentLoaded", function() {
 			})
 		}
 	}
+
+	document.addEventListener('mousemove', function(e) {
+		this.querySelectorAll('.box').forEach(boxItem => {
+			const x = e.pageX / -15
+			const y = e.pageY / -15
+			boxItem.style.transform = 'translateX(' + x + 'px)'
+
+		})
+	})
 
 	$(".cabinet__tabItem").not(":first").hide();
 	$(".cabinet__wrapper .cabinet__tab").click(function() {

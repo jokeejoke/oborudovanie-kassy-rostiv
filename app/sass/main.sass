@@ -145,7 +145,7 @@
     width: 100%
     display: flex
     flex-direction: column
-    padding: 35px 0 250px
+    padding: 35px 0 300px
   &__link
     display: block
     margin-bottom: 20px
@@ -197,7 +197,7 @@
 // Icon menu block
 .iconMenu
   position: relative
-  +media-breakpoint-down(sm)
+  +media-breakpoint-down(md)
     display: none
   &__link
     position: relative
@@ -360,13 +360,16 @@
 .dropdownMenu
   font-size: 0
   &__active
+    box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -8px 8px 8px #FFFFFF
+    border-top-left-radius: 35px
+    border-top-right-radius: 35px
     .catalog__link
       color: $textcolor
       background: $mainBgColor
-      box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -8px 8px 8px #FFFFFF
-      border-bottom-left-radius: unset
-      border-bottom-right-radius: unset
-      z-index: 2
+      z-index: 99
+      box-shadow: none
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0
       &:hover
         color: $textcolor
         background: $mainBgColor
@@ -462,7 +465,7 @@
 .assortmentSlider
   position: relative
   &__container
-    padding-bottom: 50px
+    padding-bottom: 70px
     padding-top: 50px
     +media-breakpoint-down(xs)
       padding-top: 40px
@@ -503,7 +506,7 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
     transition: $trs
     +media-breakpoint-down(lg)
-      height: 250px
+      height: 270px
     +media-breakpoint-down(sm)
       height: 270px
     +media-breakpoint-down(xs)
@@ -539,6 +542,25 @@
       padding-bottom: 32px
       +media-breakpoint-down(lg)
         font-size: 14px
+  &__pagination
+    .swiper-pagination-bullet
+      width: 20px
+      height: 20px
+      background: transparent
+      box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25)
+      border-radius: 50%
+      transform: rotate(180deg)
+      &.swiper-pagination-bullet-active
+        background: linear-gradient(270deg, rgba(62, 126, 234, 0.9) 0%, rgba(88, 185, 243, 0.9) 100%)
+        box-shadow: -7px -7px 12px #FFFFFF
+      &:active,
+      &:focus
+        outline: none
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction
+  bottom: -5px
+  +media-breakpoint-down(md)
+    bottom: 10px
 
 .questions
   position: relative
@@ -632,7 +654,6 @@
       height: 51px
       line-height: 51px
       background: $themeGradient
-      box-shadow: -7px -7px 7px #FFFFFF
       color: #ffffff
       display: block
       font-size: 46px
@@ -658,9 +679,6 @@
         font-size: 32px
     &.accordion__header-active::after
       transform: translateY(-50%) rotate(-45deg)
-    &:not(.accordion__header-active):hover
-      &::after
-        transform: translateY(-50%) rotate(180deg)
     &.accordion__header-active
       border-bottom-left-radius: 0
       border-bottom-right-radius: 0
@@ -694,6 +712,17 @@
     top: -60px
     right: 70px
     opacity: 0.9
+  &__line
+    position: absolute
+    top: 50%
+    left: 0
+    width: 50px
+    height: 9px
+    background: $buttonGradient
+    z-index: -1
+    opacity: 0
+    +media-breakpoint-down(lg)
+      display: none
   &__title
     text-align: center
   &__list
@@ -723,26 +752,23 @@
       right: 25px
     +media-breakpoint-down(sm)
       display: none
-    &:hover
-      .icon
-        transform: rotate(360deg)
     &.complexApproach__more-active
-      &:hover
-        .icon
-          svg
-            transform: rotate(180deg)
+      .icon
+        svg
+          transform: rotate(180deg)
+          margin-bottom: 5px
     .icon
       width: 47px
       height: 47px
-      background: $buttonGradient
-      //box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53), -10px -10px 27px #FFFFFF
+      background: linear-gradient(270deg, #58B9F3 0%, #3E7EEA 100%)
       line-height: 47px
       text-align: center
       border-radius: 50%
       position: absolute
       top: 6px
-      right: 8px
-      transition: transform .7s ease
+      right: 6px
+      svg
+        transition: $trs
   &__item
     position: relative
     margin-right: 50px
@@ -763,20 +789,12 @@
     +media-breakpoint-down(xs)
       max-width: 90%
       margin: 0 auto 36px auto
-    &::after
-      content: ''
-      position: absolute
-      right: -50px
-      top: 50%
-      width: 50px
-      height: 9px
-      background: $buttonGradient
-      +media-breakpoint-down(sm)
-        display: none
     &:last-child
       margin-right: 0
       +media-breakpoint-down(xs)
         margin-right: auto
+      .complexApproach__line
+        display: none
       &::after
         display: none
     &:nth-child(3)
@@ -812,8 +830,16 @@
         margin: 0
   &__icon
     position: relative
+    width: 80px
     height: 80px
-    margin-bottom: 11px
+    display: flex
+    justify-content: center
+    margin: 0 auto 11px auto
+    img
+      max-width: 100%
+      height: auto
+      max-height: 80px
+      object-fit: cover
 
 // Слайдер Кассы
 .kassy
@@ -1129,9 +1155,7 @@
     position: absolute
     right: 135px
     top: -60px
-    opacity: 0.44
-    &__inner
-      display: none
+    opacity: 0.74
   &__title
     text-align: center
     margin-bottom: 50px
@@ -1161,6 +1185,7 @@
       font-size: 17px
       line-height: 24px
       text-align: justify
+      margin: 0
       +media-breakpoint-down(md)
         font-size: 16px
       +media-breakpoint-down(sm)
@@ -1181,6 +1206,8 @@
 .footer
   position: relative
   padding: 25px 0 30px
+  +media-breakpoint-down(md)
+    padding: 50px 0 40px
   &__arrow
     position: absolute
     top: -25px
@@ -1189,8 +1216,9 @@
     background: linear-gradient(90deg,#3c7aea 0,#59bcf4 100%)
     box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53), -10px -10px 27px #FFFFFF
     border-radius: 50%
+    transform: translateX(-50%)
     +media-breakpoint-down(md)
-      display: none
+      top: -15px
     .icon
       width: 47px
       height: 47px
@@ -1200,16 +1228,10 @@
     &.active
       .icon
         transform: rotate(180deg)
-    &:hover
-      .icon
-        transform: rotate(360deg)
-    &.active:hover
-      .icon
-        transform: rotate(540deg)
   &__bottom
     position: relative
     +media-breakpoint-down(md)
-      display: none
+      text-align: center
     &.active
       display: none
     .copyright
@@ -1225,19 +1247,19 @@
         top: 0
         left: 0
         transform: unset
+        padding-top: 20px
   &__top
     position: relative
     padding-top: 15px
     display: none
-    +media-breakpoint-down(md)
-      display: block
-      padding-top: 0
     &.active
       display: block
       .footer__nav
         opacity: 1
     .copyright
       justify-content: flex-start
+      +media-breakpoint-down(md)
+        justify-content: center
       p
         margin: 0
   &__phone
@@ -1256,6 +1278,7 @@
     opacity: 0
     transition: opacity 1s ease
     +media-breakpoint-down(md)
+      text-align: center
       opacity: 1
     .nav
       display: flex
@@ -1279,6 +1302,8 @@
           font-size: 15px
   &__contacts
     margin-top: 15px
+    +media-breakpoint-down(md)
+      text-align: center
 
 .copyright
   position: relative
@@ -1331,6 +1356,8 @@
   .iconMenu
     padding: 30px 15px
     justify-content: space-around
+    +media-breakpoint-down(xs)
+      padding: 15px
 
 .toTop
   position: fixed
@@ -1399,6 +1426,10 @@
   animation: cookieAnimateIn 2s linear forwards
   animation-delay: 4s
   transition: all 1s ease
+  +media-breakpoint-down(xs)
+    max-width: 100%
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
   &.active
     visibility: hidden
     opacity: 0
@@ -1522,6 +1553,11 @@
     +media-breakpoint-down(sm)
       margin-bottom: 40px
   &__text
+    +media-breakpoint-down(sm)
+      font-family: RobotoLight
+      font-size: 16px
+    +media-breakpoint-down(xs)
+      font-size: 15px
     p
       font-size: 24px
       line-height: 34px
@@ -1538,6 +1574,10 @@
         font-size: 15px
       &:last-child
         margin-bottom: 0
+    ul
+      margin: 0 0 15px 0
+      padding: 0
+      list-style: none
   &__btns
     position: relative
     margin-top: 47px
@@ -1555,6 +1595,7 @@
     +media-breakpoint-down(xs)
       box-shadow: 7px 7px 15px rgba(43, 43, 163, 0.31)
       margin-bottom: 15px
+      text-align: center
     &.main
       position: absolute
       top: 0
@@ -1773,6 +1814,9 @@
     +media-breakpoint-down(xs)
       width: 100% !important
 
+.select2-container
+  width: 294px !important
+
 .select2-container:active, .select2-container:focus,
 .selection:active, .selection:focus,
 .select2-container--default .select2-selection--single:focus
@@ -1784,7 +1828,7 @@
   box-shadow: -3px -4px 5px #FFFFFF, 2px 2px 4px rgba(43, 43, 163, 0.2)
   border-radius: 24px
 .select2-container--default .select2-selection--single .select2-selection__rendered
-  padding: 6px 6px 6px 15px
+  padding: 6px 16px 6px 15px
   font-weight: 500
   color: #595A6C
   font-size: 16px
@@ -1830,9 +1874,10 @@
 .horizontItem
   position: relative
   display: flex
+  align-items: center
   box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
   border-radius: 15px
-  padding: 34px 50px 50px
+  padding: 42px 50px
   margin-top: 30px
   +media-breakpoint-down(md)
     flex-direction: column
@@ -1840,9 +1885,8 @@
     padding: 25px 15px 40px
   &__image
     position: relative
-    padding-top: 10px
-    width: 234px
-    max-height: 160px
+    flex: 0 0 234px
+    max-height: 197px
     margin-right: 50px
     display: flex
     justify-content: center
@@ -1850,11 +1894,12 @@
     +media-breakpoint-down(md)
       width: 100%
       max-height: 300px
+      margin-right: 0
     +media-breakpoint-down(xs)
       max-height: 230px
     img
       max-width: 100%
-      max-height: 160px
+      max-height: 197px
       height: auto
       object-fit: cover
       +media-breakpoint-down(md)
@@ -1887,6 +1932,7 @@
     position: relative
     text-align: right
     +media-breakpoint-down(md)
+      width: 100%
       text-align: left
       margin-top: 20px
       display: flex
@@ -1953,12 +1999,13 @@
     display: block
     width: 20px
     height: 20px
-    background-image: url(../images/dest/star.svg)
+    background-image: url(../images/dest/star.png)
+    background-size: contain
     margin-right: 8px
     &:last-child
       margin-right: 0
     &.empty
-      background-image: url(../images/dest/star-empty.svg)
+      background-image: url(../images/dest/star-empty.png)
 
 .addToFav
   position: relative
@@ -1979,7 +2026,8 @@
       fill: $textcolor
     &.added
       svg
-        fill: #3E7EEA 
+        fill: #3E7EEA
+        margin-left: 1px
   span
     display: inline-block
     font-weight: 500
@@ -2000,6 +2048,7 @@
   &__btn
     width: 39px
     height: 39px
+    line-height: 37px
     text-align: center
     border: none
     background: linear-gradient(270deg, rgba(62, 126, 234, 0.9) 0%, rgba(88, 185, 243, 0.9) 100%)
@@ -2188,6 +2237,7 @@
       list-style: none
   &__accordion
     .accordion__item
+      box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
       &::after
         display: none
       .icon
@@ -2225,15 +2275,12 @@
               fill: #ffffff
     .accordion__header
       padding: 20px
-      box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
       +media-breakpoint-down(xs)
         padding: 15px
-      &.accordion__header-active
-        box-shadow: none
-        &:hover
-          .icon.arrow
-            svg
-              transform: rotate(540deg)
+        .icon.arrow
+          svg
+            transform: rotate(180deg)
+            margin-bottom: 5px
         span
           background: linear-gradient(90deg, #3C7AEA 0%, #59BCF4 100%)
           color: #ffffff
@@ -2266,10 +2313,7 @@
           padding: 5px 40px 5px 15px
       &::after
         display: none
-      &:hover
-        .icon.arrow
-          svg
-            transform: rotate(360deg)
+      
       
               
     .accordion__content
@@ -2340,7 +2384,7 @@
     cursor: pointer
     margin-right: 38px
     padding: 21px 14px
-    box-shadow: 18px 20px 23px rgba(43,43,163,.15)
+    box-shadow: 7px 10px 11px rgba(43,43,163,.15)
     border-radius: 15px
     +media-breakpoint-down(sm)
       margin-right: 0
@@ -2560,6 +2604,10 @@ img.mfp-img
       th
         padding: 10px 0
         text-align: center
+        +media-breakpoint-down(md)
+          text-align: left
+          font-weight: 700
+          font-family: $roboto
 
 .reviews
   position: relative
@@ -2671,23 +2719,13 @@ img.mfp-img
 .review-rating
   position: relative
   display: inline-block
-  font-size: 40px
-  height: 40px
   +media-breakpoint-down(xs)
     height: 25px
     font-size: 34px
   &__items
-    position: absolute
-    width: 100%
-    height: 100%
-    top: 0
-    left: 0
+    position: relative
     display: flex
     flex-direction: row-reverse
-    overflow: hidden
-  &::before
-    content: '★★★★★'
-    display: block
   &__item
     position: absolute
     width: 0
@@ -2697,21 +2735,41 @@ img.mfp-img
     top: 0
     left: 0
     &:checked,
-    &:checked ~ .review-rating__label,
-      color: $accent
+    &:checked ~ .review-rating__label::after,
+      opacity: 1
   &__label
-    flex: 0 0 20%
     height: 100%
     cursor: pointer
-    margin-bottom: 0
+    position: relative
+    width: 30px
+    height: 30px
+    margin: 0 5px
+    z-index: 5
     &::before
-      content: '★'
+      content: ''
       display: block
+      width: 30px
+      height: 30px
+      background-image: url(../images/dest/star-empty.png)
+      background-size: contain
+      background-repeat: no-repeat
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+    &::after
+      content: ''
+      display: block
+      width: 30px
+      height: 30px
+      background-image: url(../images/dest/star.png)
+      background-size: contain
+      background-repeat: no-repeat
+      position: absolute
+      top: 0
+      left: 0
+      opacity: 0
       transition: $trs
-    &:hover,
-    &:hover ~ .review-rating__label,
-    &:checked ~ .review-rating__label:hover
-      color: $accent
 
 // Cabinet
 .cabinet
@@ -2758,6 +2816,7 @@ img.mfp-img
       color: #fff
     a
       color: $textcolor
+      display: block
       &:hover
         text-decoration: none
   &__tabContent
@@ -2816,7 +2875,8 @@ img.mfp-img
               border-radius: 38px
               padding: 0 8px
               span
-                display: inline-block
+                visibility: visible
+                opacity: 1
       .icon
         width: 39px
         height: 39px
@@ -2824,9 +2884,10 @@ img.mfp-img
         text-align: center
         border-radius: 50%
         box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25)
-        transition: $trs
+        overflow: hidden
         span
-          display: none
+          visibility: hidden
+          opacity: 0
           transition: $trs
           font-size: 14px
           font-weight: 700
@@ -2851,20 +2912,16 @@ img.mfp-img
         flex-direction: column
         align-items: flex-start
         justify-content: center
-      &:hover
-        .arrow
-          svg
-            transform: rotate(360deg)
       &::after
         display: none
       &.accordion__header-active
         border-bottom: 2px solid rgba(0, 0, 0, 0.1)
         +media-breakpoint-down(xs)
           border-radius: 0
-        &:hover
-          .arrow
-            svg
-              transform: rotate(540deg)
+        .arrow
+          svg
+            transform: rotate(180deg)
+            margin-bottom: 4px
     .accordion__content
       padding: 30px 67px 50px 28px
       +media-breakpoint-down(md)
@@ -3034,7 +3091,10 @@ form.follow
       flex: 0 0 200px
     +media-breakpoint-down(sm)
       flex: 0 0 100%
-      border-radius: 0
+      border-top-left-radius: 15px
+      border-top-right-radius: 15px
+      border-bottom-right-radius: 0
+      border-bottom-left-radius: 0
       padding: 25px 0
     img
       width: 200px
@@ -3052,10 +3112,10 @@ form.follow
     width: 39px
     height: 39px
     line-height: 38px
-    transition: all .5s ease-in
     margin: 0
     text-align: center
     cursor: pointer
+    overflow: hidden
     &:active,
     &:focus
       outline: none
@@ -3064,11 +3124,13 @@ form.follow
       border-radius: 300px
       padding: 0 9px
       span
-        display: inline-block
+        visibility: visible
+        opacity: 1
         margin-left: 5px
         
     span
-      display: none
+      visibility: hidden
+      opacity: 0
       font-size: 14px
       transition: $trs
   &__addImage
@@ -3183,7 +3245,130 @@ form.follow
       box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53)
     &.canceled
       box-shadow: 5px 5px 27px rgba(43, 43, 163, 0.53), inset -10px -10px 27px #E82020
+
+.relatedItems
+  position: relative
+  margin-top: 100px
+  margin-bottom: 40px
+  &__title
+    text-align: center
+    margin-bottom: 20px
       
+.map
+  position: relative
+  margin: 15px 0
+  iframe
+    width: 100%
+    height: 470px
+    +media-breakpoint-down(sm)
+      height: 400px
+    +media-breakpoint-down(xs)
+      height: 250px
+
+.showInfo
+  position: relative
+  display: flex
+  padding: 120px 0 200px 70px
+  +media-breakpoint-down(lg)
+    padding: 10px 0 30px
+  +media-breakpoint-down(md)
+    padding: 0 0 30px
+  &__animate
+    position: relative
+    +media-breakpoint-down(lg)
+      display: none
+  &__circle
+    width: 448px
+    height: 448px
+    border-radius: 50%
+    box-shadow: inset 10px 10px 101px rgba(0, 0, 0, 0.25)
+  &__text
+    position: relative
+    width: 100%
+    text-align: center
+    h1
+      font-weight: 700
+      font-size: 205px
+      line-height: 240px
+      margin: 25px 0 0
+      +media-breakpoint-down(md)
+        font-size: 160px
+        line-height: 195px
+      +media-breakpoint-down(xs)
+        font-size: 90px
+        line-height: 125px
+    h3
+      font-weight: 700
+      font-size: 42px
+      line-height: 49px
+      +media-breakpoint-down(md)
+        font-size: 34px
+        line-height: 41px
+      +media-breakpoint-down(xs)
+        font-size: 24px
+        line-height: 31px
+    p
+      font-family: RobotoLight
+      font-size: 29px
+      line-height: 34px
+      margin-top: 20px
+      margin-bottom: 42px
+      +media-breakpoint-down(md)
+        font-size: 22px
+        line-height: 27px
+      +media-breakpoint-down(xs)
+        font-size: 16px
+        line-height: 21px
+  &__btn
+    text-transform: none
+    background: linear-gradient(180deg, #3D7CEA 0%, #57B9F3 100%)
+    box-shadow: 0px 10px 20px rgba(77, 73, 245, 0.27), -8px -8px 8px #FFFFFF
+    border-radius: 40px
+    padding: 19px 44px
+    font-size: 20px
+    line-height: 25px
+    +media-breakpoint-down(xs)
+      font-size: 16px
+      line-height: 21px
+      padding: 14px 40px
+
+.rozetka_top
+  position: absolute
+  top: -15%
+  left: 50%
+  transform: translateX(-15%)
+  animation: rozetkaTop 3s infinite
+.rozetka_bottom
+  position: absolute
+  bottom: -33%
+  left: 0
+  transform: translateX(-26%)
+  animation: rozetkaBottom 3s infinite
+  z-index: -1
+
+@keyframes rozetkaTop
+  0%
+    top: -15%
+  25%
+    top: -9%
+  50%
+    top: -15%
+  75%
+    top: -9%
+  100%
+    top: -15%
+
+@keyframes rozetkaBottom
+  0%
+    bottom: -33%
+  25%
+    bottom: -15%
+  50%
+    bottom: -33%
+  75%
+    bottom: -15%
+  100%
+    bottom: -33%
 
 
 @media screen and ( max-width: 1355px )

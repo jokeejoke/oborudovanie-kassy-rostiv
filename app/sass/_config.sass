@@ -159,7 +159,7 @@ body
 .themeForm
 	position: relative
 	background: $mainBgColor
-	box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15)
+	box-shadow: 15px 15px 40px rgba(43, 43, 163, 0.15), -10px -10px 20px #FFFFFF
 	border-radius: 35px
 	max-width: 961px
 	&__left
@@ -170,7 +170,7 @@ body
 		+media-breakpoint-down(sm)
 			padding: 40px
 		+media-breakpoint-down(xs)
-			padding: 40px 10px
+			padding: 30px 0 40px
 	&__title
 		text-transform: uppercase
 		font-family: HelveticaNeue
@@ -179,14 +179,14 @@ body
 		line-height: 38px
 		margin-bottom: 25px
 		+media-breakpoint-down(xs)
-			font-size: 24px
+			font-size: 20px
 			max-width: 90%
 			margin-bottom: 15px
 	&__text
 		position: relative
 		margin: 0 0 31px
 		+media-breakpoint-down(xs)
-			margin: 0 0 20px
+			margin: 0 0 15px
 		p
 			font-weight: 300
 			font-size: 15px
@@ -213,7 +213,7 @@ body
 				font-family: RobotoLight
 			+media-breakpoint-down(xs)
 				font-size: 15px
-				margin-bottom: 20px
+				margin-bottom: 15px
 		.submit
 			border: none
 			margin-top: 13px
@@ -285,7 +285,7 @@ body
 		right: 30px
 		cursor: pointer
 		+media-breakpoint-down(sm)
-			top: 15px
+			top: 10px
 			right: 20px
 		svg
 			stroke: #fff
@@ -504,7 +504,8 @@ body
 	height: 125px
 	border-radius: 50%
 	background: linear-gradient(270deg, rgba(62, 126, 234, 0.9) 0%, rgba(88, 185, 243, 0.9) 100%)
-	z-index: -1
+	z-index: 10
+	transition: all 1s linear
 	+media-breakpoint-down(md)
 		display: none
 	.box__inner
@@ -533,6 +534,12 @@ body
 			top: 25px
 			right: 15px
 
+button
+	&:hover,
+	&:active,
+	&:focus
+		outline: none
+
 
 // scroll
 ::-webkit-scrollbar-track
@@ -542,4 +549,13 @@ body
 ::-webkit-scrollbar-thumb
 	background: linear-gradient(90deg, #3D7DEA 0%, #54B2F2 100%)
 	border-radius: 15px
+
+
+// input arrow
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	-webkit-appearance: none
+	margin: 0
+input[type=number]
+	-moz-appearance: textfield
 	
