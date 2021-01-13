@@ -6,6 +6,8 @@
   position: relative
   padding-top: 29px
   z-index: 99
+  +media-breakpoint-down(md)
+    padding-bottom: 15px
   &__search
     margin-left: 17px
     +media-breakpoint-down(sm)
@@ -388,7 +390,7 @@
   position: relative
   padding-top: 55px
   +media-breakpoint-down(sm)
-    padding-top: 35px
+    padding-top: 20px
   &__title
     margin-top: 43px
     +media-breakpoint-down(md)
@@ -503,7 +505,6 @@
     object-fit: cover
     z-index: 2
     transform: translateX(-50%)
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
     transition: $trs
     +media-breakpoint-down(lg)
       height: 270px
@@ -830,7 +831,7 @@
         margin: 0
   &__icon
     position: relative
-    width: 80px
+    width: 100%
     height: 80px
     display: flex
     justify-content: center
@@ -838,8 +839,6 @@
     img
       max-width: 100%
       height: auto
-      max-height: 80px
-      object-fit: cover
 
 // Слайдер Кассы
 .kassy
@@ -1495,8 +1494,9 @@
   position: relative
   padding-top: 43px
   padding-bottom: 73px
-  +media-breakpoint-down(xs)
+  +media-breakpoint-down(md)
     padding-bottom: 40px
+    padding-top: 25px
 
 // Breadcrumb
 .breadcrumb
@@ -1926,6 +1926,8 @@
     margin-top: 20px
     display: flex
     align-items: center
+    +media-breakpoint-down(md)
+      flex-direction: column
     +media-breakpoint-down(xs)
       justify-content: space-between
   &__right
@@ -1993,25 +1995,29 @@
   position: relative
   display: flex
   margin-right: 30px
+  +media-breakpoint-down(md)
+    margin-right: 0
   +media-breakpoint-down(xs)
     margin-right: 0
   .star
     display: block
     width: 20px
     height: 20px
-    background-image: url(../images/dest/star.png)
+    background-image: url(../images/dest/star-middle.svg)
     background-size: contain
     margin-right: 8px
     &:last-child
       margin-right: 0
     &.empty
-      background-image: url(../images/dest/star-empty.png)
+      background-image: url(../images/dest/star-middle-empty.svg)
 
 .addToFav
   position: relative
   display: flex
   align-items: center
   cursor: pointer
+  +media-breakpoint-down(md)
+    margin: 20px 0 0
   &__icon
     width: 20px
     height: 20px
@@ -2021,7 +2027,7 @@
     border-radius: 50%
     margin-right: 10px
     +media-breakpoint-down(xs)
-      margin-right: 5px
+      margin-right: 7px
     svg
       fill: $textcolor
     &.added
@@ -2031,9 +2037,8 @@
   span
     display: inline-block
     font-weight: 500
-    opacity: 0.8
     +media-breakpoint-down(xs)
-      font-size: 14px
+      font-size: 15px
 
 .cart__title
   margin-bottom: 10px
@@ -2277,6 +2282,7 @@
       padding: 20px
       +media-breakpoint-down(xs)
         padding: 15px
+      &.accordion__header-active
         .icon.arrow
           svg
             transform: rotate(180deg)
@@ -2449,7 +2455,7 @@ img.mfp-img
       height: 30px
       background-image: url(../images/dest/star-middle.svg)
       &.empty
-        background-image: url(../images/dest/star-empty-middle.svg)
+        background-image: url(../images/dest/star-middle-empty.svg)
   .addToFav
     &__icon
       width: 36px
@@ -2613,7 +2619,7 @@ img.mfp-img
   position: relative
   &__item
     position: relative
-    box-shadow: 18px 20px 23px rgba(43,43,163,.15)
+    box-shadow: 18px 20px 23px rgba(43,43,163,.15), -10px -10px 20px #fff
     border-radius: 15px
     display: flex
     padding: 25px
@@ -2750,7 +2756,7 @@ img.mfp-img
       display: block
       width: 30px
       height: 30px
-      background-image: url(../images/dest/star-empty.png)
+      background-image: url(../images/dest/star-middle-empty.svg)
       background-size: contain
       background-repeat: no-repeat
       position: absolute
@@ -2762,7 +2768,7 @@ img.mfp-img
       display: block
       width: 30px
       height: 30px
-      background-image: url(../images/dest/star.png)
+      background-image: url(../images/dest/star-middle.svg)
       background-size: contain
       background-repeat: no-repeat
       position: absolute
@@ -3337,14 +3343,59 @@ form.follow
   top: -15%
   left: 50%
   transform: translateX(-15%)
-  animation: rozetkaTop 3s infinite
+  animation: rozetkaTop 6s infinite
 .rozetka_bottom
   position: absolute
   bottom: -33%
   left: 0
   transform: translateX(-26%)
-  animation: rozetkaBottom 3s infinite
+  animation: rozetkaBottom 6s infinite
   z-index: -1
+
+.delete-item
+  display: inline-block
+  margin-left: 34px
+  color: $textcolor
+  +media-breakpoint-down(md)
+    margin-left: 0
+    margin-top: 20px
+  +media-breakpoint-down(xs)
+    font-size: 15px
+  &:hover
+    color: $textcolor
+    text-decoration: none
+
+.formText
+  padding: 40px
+  text-align: center
+  max-width: 500px
+  p
+    font-size: 18px
+    text-align: center
+    margin: 0 auto
+    +media-breakpoint-down(xs)
+      font-family: RobotoLight
+      font-size: 18px
+    a
+      font-weight: 700
+      color: $textcolor
+      +media-breakpoint-down(xs)
+        font-family: $roboto
+      &:hover
+        color: $textcolor
+        text-decoration: none
+  &__btns
+    margin-top: 25px
+  &__btn
+    border: none
+    padding: 15px 44px
+    margin: 0 10px
+    font-size: 20px
+    +media-breakpoint-down(xs)
+      margin-bottom: 15px
+      font-size: 16px
+      padding: 12px 0
+      width: 100px
 
 @keyframes rozetkaTop
   0%
@@ -3362,11 +3413,11 @@ form.follow
   0%
     bottom: -33%
   25%
-    bottom: -15%
+    bottom: -14.5%
   50%
     bottom: -33%
   75%
-    bottom: -15%
+    bottom: -14.5%
   100%
     bottom: -33%
 

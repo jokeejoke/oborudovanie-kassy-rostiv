@@ -34,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	$('.signUp__close').on('click', function() {
 		$.magnificPopup.close();
 	})
+	$('.form-close').on('click', function() {
+		$.magnificPopup.close();
+	})
 
 	const $dropdownMenu = $('.dropdownMenu');
 
