@@ -428,6 +428,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 
+	function goBack() {
+		$backBtn = document.querySelector('.textBlock__btns .back')
+		if($backBtn) {
+			$backBtn.addEventListener('click', function() {
+				window.history.back();
+			})
+		}
+	}
+
 	document.addEventListener('mousemove', function(e) {
 		this.querySelectorAll('.box').forEach(boxItem => {
 			const x = e.pageX / -15
@@ -452,6 +461,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	repostIcon()
 	loadFile()
 	deleteFile()
+	goBack()
 
 	$complexMoreBtn = document.querySelector('.complexApproach__more')
 	if($complexMoreBtn) {
