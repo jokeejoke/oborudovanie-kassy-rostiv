@@ -76,7 +76,7 @@
     top: 24px
     height: 32px
 
-.catalog-preloader
+.ajax-preloader
   position: fixed
   top: 0
   left: 0
@@ -263,10 +263,9 @@
     display: inline-block
     background: $themeGradient
     box-shadow: 0px 10px 20px rgba(77, 73, 245, 0.27), -8px -8px 8px #FFFFFF
-    font-family: HelveticaNeue
     font-weight: 700
     color: #ffffff
-    font-size: 20px
+    font-size: 18px
     line-height: 25px
     padding: 19px 26px
     border-radius: 40px
@@ -274,11 +273,11 @@
     z-index: 1
     transition: $trs
     +media-breakpoint-down(lg)
-      font-size: 18px
-      padding: 16px 24px
+      font-size: 15px
+      padding: 14px 22px
     +media-breakpoint-down(md)
       padding: 10px
-      font-size: 16px
+      font-size: 13px
     &:hover
       text-decoration: none
       color: #ffffff
@@ -1587,6 +1586,17 @@
       margin: 0 0 15px 0
       padding: 0
       list-style: none
+    &.contacts
+      p
+        font-size: 17px
+        margin-bottom: 5px
+        +media-breakpoint-down(sm)
+          font-family: RobotoLight
+          font-size: 16px
+          margin-bottom: 15px
+          line-height: 26px
+        +media-breakpoint-down(xs)
+          font-size: 15px
   &__btns
     position: relative
     margin-top: 47px
@@ -1721,7 +1731,7 @@
   &__btn
     max-width: 106px
     border: none
-    font-size: 14px
+    font-size: 13px
     line-height: 20px
     font-weight: 500
     padding: 6px 20px
@@ -1733,6 +1743,19 @@
   &__price
     font-weight: 700
     line-height: 24px
+  &__chars
+    position: relative
+    width: 59.5%
+    +media-breakpoint-down(md)
+      width: 100%
+      margin-top: 34px
+    .chars
+      display: none
+  &__bottom
+    display: none
+  &__has
+    display: none
+
 
 // Pagination
 .pagination
@@ -1950,6 +1973,8 @@
       align-items: center
       justify-content: space-between
       flex-wrap: wrap
+    +media-breakpoint-down(sm)
+      flex-direction: column
     +media-breakpoint-down(xs)
       flex-direction: column
   &__price
@@ -1957,10 +1982,14 @@
     line-height: 38px
     font-weight: 700
     margin-bottom: 20px
+    display: flex
+    justify-content: flex-end
     +media-breakpoint-down(md)
       margin-bottom: 0
-    +media-breakpoint-down(xs)
+    +media-breakpoint-down(sm)
       margin-bottom: 15px
+    .val
+      margin-right: 5px
   &__have
     font-size: 17px
     line-height: 24px
@@ -1968,10 +1997,14 @@
     margin-bottom: 20px
     +media-breakpoint-down(md)
       margin-bottom: 0
-    +media-breakpoint-down(xs)
+    +media-breakpoint-down(sm)
       margin-bottom: 25px
     svg
       margin-left: 10px
+    span
+      font-weight: 500
+      text-decoration: underline
+      font-size: 16px
   &__btn
     border: none
     padding: 13px 0
@@ -2031,7 +2064,6 @@
     width: 20px
     height: 20px
     line-height: 18px
-    background: #ffffff
     text-align: center
     border-radius: 50%
     margin-right: 10px
@@ -2163,6 +2195,10 @@
       +media-breakpoint-down(xs)
         font-size: 16px
         line-height: 1.7
+    p.alert
+      font-size: 12px
+      color: rgba(0, 0, 0, 0.5)
+      margin: 11px 0 0 0
   &__result
     position: relative
     text-align: left
@@ -2185,6 +2221,16 @@
     line-height: 49px
     text-align: right
     margin-top: 23px
+    .val
+      font-size: 35px
+      font-weight: 700
+      color: $textcolor
+      opacity: 1
+      +media-breakpoint-down(md)
+        font-size: 35px
+        display: unset
+      +media-breakpoint-down(sm)
+        font-size: 26px
     +media-breakpoint-down(md)
       font-size: 28px
       line-height: 42px
@@ -2469,7 +2515,7 @@ img.mfp-img
     &__icon
       width: 36px
       height: 36px
-      line-height: 32px
+      line-height: 36px
       +media-breakpoint-down(xs)
         margin-right: 15px
       svg
@@ -2535,6 +2581,7 @@ img.mfp-img
     font-size: 17px
     line-height: 21px
     padding: 13px 30px
+    text-align: center
     border: none
     box-shadow: -7px -7px 6px #FFFFFF, 7px 7px 15px rgba(43, 43, 163, 0.31)
     border-radius: 24px
@@ -3365,6 +3412,10 @@ form.follow
   display: inline-block
   margin-left: 34px
   color: $textcolor
+  border: none
+  background: transparent
+  font-weight: 500
+  padding: 0
   +media-breakpoint-down(md)
     margin-left: 0
     margin-top: 20px
@@ -3430,6 +3481,146 @@ form.follow
   100%
     bottom: -33%
 
+.card
+  text-align: right
+  &-action
+    .btn
+      text-transform: none
+      padding: 9px 28px
+      border: none
+      font-size: 14px
+      line-height: 20px
+      border-radius: 38px
+      box-shadow: -7px -7px 6px #fff, 7px 7px 15px rgba(43,43,163,.31)
+      +media-breakpoint-down(lg)
+        margin-top: 20px
+  #result
+    font-size: 14px
+    margin-top: 20px
+    text-align: center
+
+.catalog__items
+  .col-lg-12
+    .catalogItem
+      padding: 42px 50px
+      display: flex
+      +media-breakpoint-down(md)
+        flex-direction: column
+      +media-breakpoint-down(xs)
+        padding: 25px 15px 40px
+      &__image
+        flex: 0 0 234px
+        max-height: 197px
+        position: relative
+        margin-right: 50px
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-top: 5px
+        +media-breakpoint-down(md)
+          width: 100%
+          max-height: 300px
+          margin-right: 0
+          margin-top: 0
+          height: auto
+        +media-breakpoint-down(xs)
+          max-height: 230px
+        img
+          max-width: 100%
+          max-height: 197px
+          height: auto
+          object-fit: cover
+          +media-breakpoint-down(md)
+            max-height: 300px
+          +media-breakpoint-down(xs)
+            max-height: 230px
+      .chars
+        display: block
+        
+      &__bottom
+        display: flex
+        align-items: center
+        margin-top: 20px
+        +media-breakpoint-down(md)
+          flex-direction: column
+      &__has
+        display: block
+        font-size: 17px
+        line-height: 24px
+        color: rgba(0,0,0,.75)
+        margin-bottom: 20px
+        +media-breakpoint-down(md)
+          margin-bottom: 0
+        +media-breakpoint-down(sm)
+          margin-bottom: 25px
+      &__title
+        font-size: 20px
+        margin: 0 0 16px 0
+        font-weight: 700
+        line-height: 22px
+      &__foot
+        position: relative
+        text-align: right
+        display: block
+        +media-breakpoint-down(md)
+          display: flex
+          justify-content: space-between
+          align-items: center
+          margin-top: 20px
+          flex-wrap: wrap
+        +media-breakpoint-down(sm)
+          flex-direction: column
+      &__price
+        font-size: 27px
+        line-height: 38px
+        font-weight: 700
+        display: flex
+        justify-content: flex-end
+        margin-bottom: 20px
+        +media-breakpoint-down(md)
+          margin-bottom: 0
+        +media-breakpoint-down(sm)
+          margin-bottom: 15px
+      &__btn
+        padding: 13px 0
+        font-weight: 700
+        text-transform: uppercase
+        margin-top: 70px
+        width: 139px
+        border-radius: 24px
+        line-height: 17px
+        max-width: 100%
+        +media-breakpoint-down(md)
+          margin-top: 0
+        
+#genericForm_forms_flash
+  display: none
+
+.slider-nav
+  +media-breakpoint-down(lg)
+    display: none
+  &__next
+    position: absolute
+    right: -40px
+    top: 50%
+    opacity: 0.5
+    transition: $trs
+    &:hover
+      opacity: 1
+    &:active,
+    &:focus
+      outline: none
+  &__prev
+    position: absolute
+    top: 50%
+    left: -40px
+    opacity: 0.5
+    transition: $trs
+    &:hover
+      opacity: 1
+    &:active,
+    &:focus
+      outline: none
 
 @media screen and ( max-width: 1355px )
   .kassySlider
@@ -3474,3 +3665,4 @@ form.follow
     margin-bottom: 20px
   .signUp__tab
     font-size: 16px
+

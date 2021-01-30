@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	$(window).on("load", function () {
 		$(".preloader").delay(700).fadeOut("slow");
+		$(".ajax-preloader").delay(700).fadeOut("slow");
 	});
 
 	$('.popup').magnificPopup({
@@ -114,8 +115,6 @@ document.addEventListener("DOMContentLoaded", function() {
 				$mobileMenu.classList.add('mobileMenu-active')
 				document.body.style.overflow = 'hidden'
 			}
-			
-			
 		})
 	}
 
@@ -123,12 +122,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		const $acc = document.querySelectorAll('.accordion__header')
 		$acc.forEach(item => {
 			item.addEventListener('click', function () {
-				/*const $currentlyActuveAccHeader = document.querySelector('.accordion__header.accordion__header-active')
-				if ($currentlyActuveAccHeader && $currentlyActuveAccHeader !== item) {
-					$currentlyActuveAccHeader.classList.toggle('accordion__header-active')
-					$currentlyActuveAccHeader.parentNode.classList.toggle('active')
-					$currentlyActuveAccHeader.nextElementSibling.style.maxHeight = 0
-				}*/
 
 				this.classList.toggle('accordion__header-active')
 				this.parentNode.classList.toggle('active')
@@ -155,7 +148,10 @@ document.addEventListener("DOMContentLoaded", function() {
 			delay: 5000,
 			disableOnInteraction: true
 		},
-		centeredSlides: true,
+		navigation: {
+			nextEl: '.slider-nav__next',
+			prevEl: '.slider-nav__prev',
+		},
 		breakpoints: {
 			1200: {
 				spaceBetween: 49,
@@ -371,28 +367,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		})
 		scrollAnim.from('.home .form .themeForm', { y: 100, opacity: 0, duration: 2 })
 	}
-
-	function quantity() {
-		const $plusBtn = document.querySelectorAll('.quantity .plus')
-		const $minusBtn = document.querySelectorAll('.quantity .minus')
-
-		$plusBtn.forEach(plusItem => {
-			plusItem.addEventListener('click', function() {
-				plusItem.previousElementSibling.value++
-			})
-		})
-
-		$minusBtn.forEach(minusItem => {
-			minusItem.addEventListener('click', function() {
-				if(minusItem.nextElementSibling.value > 1){
-					minusItem.nextElementSibling.value--
-				}
-				
-			})
-		})
-
-	}
-
 	function repostIcon () {
 		$allShareBtn = document.querySelectorAll('.icon.share')
 		$allShareBtn.forEach(btn => {
@@ -423,7 +397,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		if($deleteBtn) {
 			$deleteBtn.addEventListener('click', function() {
 				let output = document.querySelector('.user-data__outputImage');
-				output.src = 'images/dest/no-image.png';
+				output.src = 'assets/images/dest/no-image.png';
 			})
 		}
 	}
@@ -446,6 +420,35 @@ document.addEventListener("DOMContentLoaded", function() {
 		})
 	})
 
+
+	function resizeCatalogItem(selector) {
+		$toggleBtn = document.querySelector(selector)
+		$btns = document.querySelectorAll('.showKind a')
+		$catalogItems = document.querySelectorAll('.catalog__items .col-lg-3.col-md-4')
+	
+		if($toggleBtn) {
+			$toggleBtn.addEventListener('click', function(e) {
+				if (!this.classList.contains('active') && this.classList.contains('vertical')){
+					$catalogItems.forEach(catalogEl => {
+						catalogEl.setAttribute('class', 'col-lg-12')
+					})
+				} else {
+					$catalogItems.forEach(catalogElHorizontal => {
+						catalogElHorizontal.setAttribute('class', 'col-lg-3 col-md-4 col-sm-6')
+					})
+				}
+				$btns.forEach(btn => {
+					btn.classList.remove('active')
+				})
+				this.classList.add('active')
+				e.preventDefault()
+				return false
+			})
+		}
+
+	}
+
+
 	$(".cabinet__tabItem").not(":first").hide();
 	$(".cabinet__wrapper .cabinet__tab").click(function() {
 		$(".cabinet__wrapper .cabinet__tab").removeClass("active").eq($(this).index()).addClass("active");
@@ -457,11 +460,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	hamburgerMenu()
 	accordion()
 	footerArrow()
-	quantity()
 	repostIcon()
 	loadFile()
 	deleteFile()
 	goBack()
+	resizeCatalogItem('.showKind .vertical')
+	resizeCatalogItem('.showKind .horizontal')
 
 	$complexMoreBtn = document.querySelector('.complexApproach__more')
 	if($complexMoreBtn) {

@@ -251,18 +251,14 @@
 											</div>
 											<span>В избранное</span>
 										</div>
-										<a href="#text-popup" class="popup delete-item">Удалить</a>
+										<button type="button" class="delete-item">
+											Удалить
+										</button>
 									</div>
 								</div>
 								<div class="horizontItem__right">
-									<div class="horizontItem__price">11 500 ₽</div>
-									<div class="horizontItem__have">Наличие:
-										<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path
-												d="M0.250808 7.9206C0.0697691 8.13009 -0.0183227 8.39678 0.00318006 8.67243C0.0246828 8.94807 0.152312 9.19891 0.363871 9.37808L5.49886 13.7512C5.68961 13.9132 5.92614 14 6.17446 14C6.20498 14 6.23619 13.9986 6.26741 13.9959C6.54833 13.9711 6.80151 13.8381 6.98047 13.6224L15.7633 3.00236C15.9395 2.78873 16.022 2.51998 15.995 2.24502C15.9672 1.97006 15.8347 1.72198 15.6197 1.54625L14.0119 0.234172C13.5686 -0.126926 12.9124 -0.0635275 12.5476 0.376819L5.78811 8.55045L3.07183 6.23846C2.63622 5.86909 1.97866 5.91802 1.60479 6.35079L0.250808 7.9206Z"
-												fill="#009F23" />
-										</svg>
-									</div>
+									<div class="horizontItem__price"><div class="_shopaholic-cart val">11 500 </div> <span>₽</span></div>
+									<div class="horizontItem__have">Наличие: <span>Под заказ</span></div>
 									<div class="quantity">
 										<button type="button" class="quantity__btn minus">
 											<svg width="20" height="4" viewBox="0 0 20 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -317,7 +313,7 @@
 											</div>
 											<span>В избранном</span>
 										</div>
-										<a href="#text-popup" class="popup delete-item">Удалить</a>
+										<a href="#text-popup" class="theme-btn delete-item">Удалить</a>
 									</div>
 								</div>
 								<div class="horizontItem__right">
@@ -499,8 +495,11 @@
 							<textarea name="comment" placeholder="Комментарии к заказу"></textarea>
 							<div class="ordering__result">
 								<span>Количество товаров в заказе - 4 шт.</span>
-								<div class="ordering__price">Итого 54 500 ₽</div>
+								<div class="ordering__price">Итого <span class="val">54 500</span> ₽</div>
 							</div>
+						</div>
+						<div class="ordering__row">
+							<p class="alert">* - поля, обязательные для заполнения</p>
 						</div>
 						<div class="ordering__row last">
 							<p class="note">

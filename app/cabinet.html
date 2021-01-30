@@ -756,10 +756,20 @@
 									<p>
 										Подпишитесь на email рассылку, чтобы получать последние новости по ФЗ 54, продуктам нашего сайта, акциям и актуальным предложениям.
 									</p>
-									<form class="follow">
-										<input type="checkbox" name="isFollow" id="isFollow">
-										<label for="isFollow">Подписка</label>
-									</form>
+									<div class="card">
+										<div class="card-content author">
+											<form name="form-subscribe-andradedev" id="form-subscribe-andradedev" data-request="formSubscribe::onAddSubscriber" data-request-update="'formSubscribe::alert': '#result'">
+												<input type="hidden" class="form-control" name="email" value="kuanyshovmaksat1@gmail.com" required="">
+												<input type="hidden" name="latitude" id="latitude" value="">
+												<input type="hidden" name="longitude" id="longitude" value="">
+											</form>
+										</div>
+										<div class="card-action">
+											<button class="btn btn-primary btn-block theme-btn" form="form-subscribe-andradedev">Подписаться</button>
+										</div>
+									
+										<div id="result">Вы уже подписаны</div>
+									</div>
 								</div>
 							</div>
 
